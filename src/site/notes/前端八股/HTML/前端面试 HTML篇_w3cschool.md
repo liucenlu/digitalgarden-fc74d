@@ -1,11 +1,10 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/HTML/前端面试 HTML篇_w3cschool/"}
+{"dg-publish":true,"permalink":"/前端八股/HTML/前端面试 HTML篇_w3cschool/","created":"2025-05-26T09:27:58.130+08:00","updated":"2025-06-15T00:19:50.262+08:00"}
 ---
 
  
 # 前端面试 HTML篇
 
-](https://wwads.cn/?utm_source=property-181&utm_medium=footer "点击了解万维广告联盟")
 
 ![](/img/user/前端八股/HTML/Attachments/1662455669550731.png)  
 
