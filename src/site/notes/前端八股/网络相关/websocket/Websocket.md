@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/网络相关/websocket/Websocket/"}
+{"dg-publish":true,"permalink":"/前端八股/网络相关/websocket/Websocket/","created":"2025-05-25T12:59:33.708+08:00","updated":"2025-06-15T13:14:04.443+08:00"}
 ---
 
 
@@ -93,4 +93,4 @@ WebSocket 消息格式由两个部分组成：消息头和消息体。
 消息体就是实际传输的数据，可以是文本或二进制数据。
 
 [轮询与websocket](websocket/轮询与websocket.md)
-[前端实时通信的8种方式及其优缺点和实现方式_websocket延时-CSDN博客](websocket/前端实时通信的8种方式及其优缺点和实现方式_websocket延时-CSDN博客.md)
+[前端实时通信的8种方式及其优缺点和实现方式-websocket延时-CSDN博客](前端实时通信的8种方式及其优缺点和实现方式-websocket延时-CSDN博客.md)

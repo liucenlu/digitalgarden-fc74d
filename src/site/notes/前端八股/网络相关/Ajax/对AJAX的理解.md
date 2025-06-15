@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/网络相关/Ajax/对AJAX的理解/"}
+{"dg-publish":true,"permalink":"/前端八股/网络相关/Ajax/对AJAX的理解/","created":"2025-05-29T11:32:42.131+08:00","updated":"2025-06-14T23:37:42.158+08:00"}
 ---
 
 ### 对AJAX的理解，实现一个AJAX请求

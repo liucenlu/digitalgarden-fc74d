@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/Javascript/Promise/"}
+{"dg-publish":true,"permalink":"/前端八股/Javascript/Promise/","created":"2025-05-25T12:55:17.815+08:00","updated":"2025-06-14T23:39:12.447+08:00"}
 ---
 
 ## 对Promise的理解

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/Webpack和Vite/webpack和vite的区别/"}
+{"dg-publish":true,"permalink":"/前端八股/Webpack和Vite/webpack和vite的区别/","created":"2025-05-26T18:57:39.028+08:00","updated":"2025-06-14T23:39:44.907+08:00"}
 ---
 
 ### 为什么不是webpack，和vite相比的区别？

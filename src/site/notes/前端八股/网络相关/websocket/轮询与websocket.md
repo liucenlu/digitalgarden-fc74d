@@ -1,8 +1,8 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/网络相关/websocket/轮询与websocket/"}
+{"dg-publish":true,"permalink":"/前端八股/网络相关/websocket/轮询与websocket/","created":"2025-05-27T18:16:37.000+08:00","updated":"2025-06-15T13:14:04.449+08:00"}
 ---
 
-[前端实时通信的8种方式及其优缺点和实现方式_websocket延时-CSDN博客](前端实时通信的8种方式及其优缺点和实现方式_websocket延时-CSDN博客.md)
+[前端实时通信的8种方式及其优缺点和实现方式-websocket延时-CSDN博客](前端实时通信的8种方式及其优缺点和实现方式-websocket延时-CSDN博客.md)
 [Websocket](Websocket.md)
 ##### 您说：
 
