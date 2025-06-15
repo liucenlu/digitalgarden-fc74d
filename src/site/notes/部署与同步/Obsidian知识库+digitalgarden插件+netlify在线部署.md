@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/部署与同步/Obsidian知识库+digitalgarden插件+netlify在线部署/","created":"2025-06-14T21:08:42.665+08:00","updated":"2025-06-15T16:37:02.895+08:00"}
+{"dg-publish":true,"permalink":"/部署与同步/Obsidian知识库+digitalgarden插件+netlify在线部署/","created":"2025-06-14T21:08:42.665+08:00","updated":"2025-06-15T16:41:27.193+08:00"}
 ---
 
 参考教程：[Obsidian 最简单的发布分享方式 - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/19256)
