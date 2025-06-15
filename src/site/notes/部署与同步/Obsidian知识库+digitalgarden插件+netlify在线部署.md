@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/部署与同步/Obsidian知识库+digitalgarden插件+netlify在线部署/","created":"2025-06-14T21:08:42.665+08:00","updated":"2025-06-15T17:05:37.293+08:00"}
+{"dg-publish":true,"permalink":"/部署与同步/Obsidian知识库+digitalgarden插件+netlify在线部署/","created":"2025-06-14T21:08:42.665+08:00","updated":"2025-06-15T17:19:46.303+08:00"}
 ---
 
 参考教程：[Obsidian 最简单的发布分享方式 - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/19256)
@@ -23,3 +23,7 @@
 ## 4.发布笔记
 打开笔记页面，搜索并打开命令 “Digital Garden: Quick Publish And Share Note”，笔记就发布好啦，并且自动将页面链接复制到剪贴板上，过一会在浏览器打开链接就可以看到发布好的页面。
 ![](/img/user/部署与同步/attachments/20250614215532.png)
+
+[^1]
+
+[digitalgarden插件文档]: [数字花园-免费发布黑曜石笔记 --- Digital Garden - Publish Obsidian Notes For Free](https://dg-docs.ole.dev/)
