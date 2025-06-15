@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/部署与同步/Obsidian知识库+digitalgarden插件+netlify在线部署/","created":"2025-06-14T21:08:42.665+08:00","updated":"2025-06-15T16:56:07.435+08:00"}
+{"dg-publish":true,"permalink":"/部署与同步/Obsidian知识库+digitalgarden插件+netlify在线部署/","created":"2025-06-14T21:08:42.665+08:00","updated":"2025-06-15T16:58:03.874+08:00"}
 ---
 
 参考教程：[Obsidian 最简单的发布分享方式 - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/19256)
@@ -8,7 +8,7 @@
 1. 点击[Deploy to Netlify | Create a new project from git | Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/oleeskild/digitalgarden)
 2. github授权之后，在 “Repository name” 框中输入一个存放笔记的 Github 仓库名称。或者直接使用默认的 “digitalgarden”（自动创建）。digitalgarden会自动创建这个仓库。
 3. done，出现以下页面说明部署成功。
-		![](/img/user/前端面试/attachments/Pasted image 20250614211440.png)
+		![](/img/user/部署与同步/attachments/Pasted image 20250614211440.png)
 4. 点击“Permalink” 就是你的网站，现在还什么都没有，只是一些默认内容。
 ## 2.安装ob插件
 在 Obsidian 插件市场中搜索digitalgarden，下载安装并点击启用即可。
