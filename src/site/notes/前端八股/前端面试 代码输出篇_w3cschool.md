@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/前端面试 代码输出篇_w3cschool/","created":"2025-05-26T10:11:09.556+08:00","updated":"2025-06-17T21:26:23.872+08:00"}
+{"dg-publish":true,"permalink":"/前端八股/前端面试 代码输出篇_w3cschool/","created":"2025-05-26T10:11:09.556+08:00","updated":"2025-06-17T21:46:05.673+08:00"}
 ---
 
  >[!attention]- 声明
@@ -16,7 +16,7 @@
 
 ### 1. 代码输出结果
 
-```
+``` js
 const promise = new Promise((resolve, reject) => {
   console.log(1);
   console.log(2);
@@ -39,7 +39,7 @@ promise.then 是微任务，它会在所有的宏任务执行完之后才会执�
 
 ### 2. 代码输出结果
 
-```
+``` js
 const promise1 = new Promise((resolve, reject) => {
   console.log('promise1')
   resolve('resolve1')
@@ -75,7 +75,7 @@ resolve1
 
 ### 3. 代码输出结果
 
-```
+```js
 const promise = new Promise((resolve, reject) => {
   console.log(1);
   setTimeout(() => {
@@ -115,7 +115,7 @@ success
 
 ### 4. 代码输出结果
 
-```
+```js
 Promise.resolve().then(() => {
   console.log('promise1');
   const timer2 = setTimeout(() => {
@@ -155,7 +155,7 @@ timer2
 
 ### 5. 代码输出结果
 
-```
+```js
 const promise = new Promise((resolve, reject) => {
     resolve('success1');
     reject('error');
@@ -178,7 +178,7 @@ then：success1
 
 ### 6. 代码输出结果
 
-```
+```js
 Promise.resolve(1)
   .then(2)
   .then(Promise.resolve(3))
@@ -198,7 +198,7 @@ then方法接受的参数是函数，而如果传递的并非是一个函数，�
 
 ### 7. 代码输出结果
 
-```
+```js
 const promise1 = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve('success')
@@ -228,7 +228,7 @@ promise2 Promise {<rejected>: Error: error!!}
 
 ### 8. 代码输出结果
 
-```
+```js
 Promise.resolve(1)
   .then(res => {
     console.log(res);
@@ -255,7 +255,7 @@ Promise是可以链式调用的，由于每次调用 `.then` 或者 `.catch`�
 
 ### 9. 代码输出结果
 
-```
+```js
 Promise.resolve().then(() => {
   return new Error('error!!!')
 }).then(res => {
@@ -275,7 +275,7 @@ Promise.resolve().then(() => {
 
 ### 10. 代码输出结果
 
-```
+```js
 const promise = Promise.resolve().then(() => {
   return promise;
 })
@@ -292,7 +292,7 @@ Uncaught (in promise) TypeError: Chaining cycle detected for promise #<Promise>
 
 ### 11. 代码输出结果
 
-```
+```js
 Promise.resolve(1)
   .then(2)
   .then(Promise.resolve(3))
@@ -311,7 +311,7 @@ Promise.resolve(1)
 
 ### 12. 代码输出结果
 
-```
+```js
 Promise.reject('err!!!')
   .then((res) => {
     console.log('success', res)
@@ -339,7 +339,7 @@ error err!!!
 
 但是，如果是像下面这样：  
 
-```
+```js
 Promise.resolve()
   .then(function success (res) {
     throw new Error('error!!!')
@@ -354,7 +354,7 @@ Promise.resolve()
 
 ### 13. 代码输出结果
 
-```
+```js
 Promise.resolve('1')
   .then(res => {
     console.log(res)
@@ -390,7 +390,7 @@ finally2后面的then函数 2
 
 `.finally()`的错误捕获：  
 
-```
+```js
 Promise.resolve('1')
   .finally(() => {
     console.log('finally1')
@@ -413,7 +413,7 @@ Promise.resolve('1')
 
 ### 14. 代码输出结果
 
-```
+```js
 function runAsync (x) {
     const p = new Promise(r => setTimeout(() => r(x, console.log(x)), 1000))
     return p
@@ -437,7 +437,7 @@ Promise.all([runAsync(1), runAsync(2), runAsync(3)]).then(res => console.log(res
 
 ### 15. 代码输出结果
 
-```
+```js
 function runAsync (x) {
   const p = new Promise(r => setTimeout(() => r(x, console.log(x)), 1000))
   return p
@@ -453,7 +453,7 @@ Promise.all([runAsync(1), runReject(4), runAsync(3), runReject(2)])
 
 输出结果如下：  
 
-```
+```js
 // 1s后输出
 1
 3
@@ -468,7 +468,7 @@ Error: 2
 
 ### 16. 代码输出结果
 
-```
+```js
 function runAsync (x) {
   const p = new Promise(r => setTimeout(() => r(x, console.log(x)), 1000))
   return p
@@ -491,7 +491,7 @@ then只会捕获第一个成功的方法，其他的函数虽然还会继续执�
 
 ### 17. 代码输出结果
 
-```
+```js
 function runAsync(x) {
   const p = new Promise(r =>
     setTimeout(() => r(x, console.log(x)), 1000)
@@ -525,7 +525,7 @@ Error: 0
 
 ### 18. 代码输出结果
 
-```
+```js
 async function async1() {
   console.log("async1 start");
   await async2();
@@ -557,7 +557,7 @@ async1 end
 
 ### 19. 代码输出结果
 
-```
+```js
 async function async1() {
   console.log("async1 start");
   await async2();
@@ -581,7 +581,7 @@ console.log("start")
 
 输出结果如下：  
 
-```
+```js
 async1 start
 async2
 start
@@ -601,7 +601,7 @@ timer1
 
 ### 20. 代码输出结果
 
-```
+```js
 async function async1 () {
   console.log('async1 start');
   await new Promise(resolve => {
@@ -628,7 +628,7 @@ script end
 
 ### 21. 代码输出结果
 
-```
+```js
 async function async1 () {
   console.log('async1 start');
   await new Promise(resolve => {
@@ -659,7 +659,7 @@ async1 end
 
 ### 22. 代码输出结果
 
-```
+```js
 async function async1() {
   console.log("async1 start");
   await async2();
@@ -713,7 +713,7 @@ setTimeout
 
 ### 23. 代码输出结果
 
-```
+```js
 async function async1 () {
   await async2();
   console.log('async1');
@@ -739,7 +739,7 @@ Uncaught (in promise) error
 
 如果想要让错误不足之处后面的代码执行，可以使用catch来捕获：
 
-```
+```js
 async function async1 () {
   await Promise.reject('error!!!').catch(e => console.log(e))
   console.log('async1');
@@ -760,7 +760,7 @@ async1 success
 
 ### 24. 代码输出结果
 
-```
+```js
 const first = () => (new Promise((resolve, reject) => {
     console.log(3);
     let p = new Promise((resolve, reject) => {
@@ -809,7 +809,7 @@ Promise{<resolved>: 1}
 
 ### 25. 代码输出结果
 
-```
+```js
 const async1 = async () => {
   console.log('async1');
   setTimeout(() => {
@@ -857,7 +857,7 @@ timer1
 
 ### 26. 代码输出结果
 
-```
+```js
 const p1 = new Promise((resolve) => {
   setTimeout(() => {
     resolve('resolve3');
@@ -886,7 +886,7 @@ Promise{<resolved>: undefined}
 
 ### 27. 代码输出结果
 
-```
+```js
 console.log('1');
 
 setTimeout(function() {
@@ -1002,7 +1002,7 @@ setTimeout(function() {
 
 ### 28. 代码输出结果
 
-```
+```js
 console.log(1)
 
 setTimeout(() => {
@@ -1057,7 +1057,7 @@ console.log(8)
 
 ### 29. 代码输出结果
 
-```
+```js
 console.log(1);
   
 setTimeout(() => {
@@ -1107,7 +1107,7 @@ console.log(7);
 
 ### 30. 代码输出结果
 
-```
+```js
 Promise.resolve().then(() => {
     console.log('1');
     throw 'Error';
@@ -1138,7 +1138,7 @@ Promise.resolve().then(() => {
 
 ### 31. 代码输出结果
 
-```
+```js
 setTimeout(function () {
   console.log(1);
 }, 100);
@@ -1190,7 +1190,7 @@ console.log(8);
 
 ### 1. 代码输出结果
 
-```
+```js
 function foo() {
   console.log( this.a );
 }
@@ -1214,7 +1214,7 @@ obj.doFoo()
 
 ### 2. 代码输出结果
 
-```
+```js
 var a = 10
 var obj = {
   a: 20,
@@ -1234,7 +1234,7 @@ obj.say.apply(anotherObj)
 
 但是，如果是普通函数，那么就会有完全不一样的结果：
 
-```
+```js
 var a = 10  
 var obj = {  
   a: 20,  
@@ -1253,7 +1253,7 @@ obj.say.apply(anotherObj)
 
 ### 3. 代码输出结果
 
-```
+```js
 function a() {
   console.log(this);
 }
@@ -1266,7 +1266,7 @@ a.call(null);
 
 要注意的是，在严格模式中，null 就是 null，undefined 就是 undefined：
 
-```
+```js
 'use strict';
 
 function a() {
@@ -1278,7 +1278,7 @@ a.call(undefined); // undefined
 
 ### 4. 代码输出结果
 
-```
+```js
 var obj = { 
   name: 'cuggz', 
   fun: function(){ 
@@ -1291,7 +1291,7 @@ new obj.fun() // undefined
 
 ### 6. 代码输出结果
 
-```
+```js
 var obj = {
    say: function() {
      var f1 = () =>  {
@@ -1327,7 +1327,7 @@ window对象
 
 ### 7. 代码输出结果
 
-```
+```js
 var myObject = {
     foo: "bar",
     func: function() {
@@ -1352,7 +1352,7 @@ myObject.func();
 
 ### 8. 代码输出问题
 
-```
+```js
 window.number = 2;
 var obj = {
  number: 3,
@@ -1379,7 +1379,7 @@ console.log(window.number);  // 40
 
 ### 9. 代码输出结果
 
-```
+```js
 var length = 10;
 function fn() {
     console.log(this.length);
@@ -1405,7 +1405,7 @@ obj.method(fn, 1);
 
 ### 10. 代码输出结果
 
-```
+```js
 var a = 1;
 function printA(){
   console.log(this.a);
@@ -1434,7 +1434,7 @@ foo(); // 1
 
 ### 11. 代码输出结果
 
-```
+```js
 var x = 3;
 var y = 4;
 var obj = {
@@ -1464,7 +1464,7 @@ console.log(obj.getY()) // 6
 
 ### 12. 代码输出结果
 
-```
+```js
  var a = 10; 
  var obt = { 
    a: 20, 
@@ -1488,7 +1488,7 @@ console.log(obj.getY()) // 6
 
 ### 13. 代码输出结果
 
-```
+```js
 function a(xx){
   this.x = xx;
   return this
@@ -1509,7 +1509,7 @@ console.log(y.x)  // 6
 
 ### 14. 代码输出结果
 
-```
+```js
 function foo(something){
     this.a = something
 }
