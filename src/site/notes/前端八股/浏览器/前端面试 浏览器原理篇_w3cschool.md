@@ -1,8 +1,9 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/浏览器/前端面试 浏览器原理篇_w3cschool/","created":"2025-06-02T22:00:06.000+08:00","updated":"2025-06-17T21:05:44.616+08:00"}
+{"dg-publish":true,"permalink":"/前端八股/浏览器/前端面试 浏览器原理篇_w3cschool/","created":"2025-06-02T22:00:06.000+08:00","updated":"2025-06-17T21:37:31.277+08:00"}
 ---
 
- 
+> [!attention]- 声明
+> 本知识库中所有以 \_w3cschool 为后缀的笔记内容均整理自编程狮（[前端面试八股文_w3cschool](https://www.w3cschool.cn/web_interview/)）。原本仅用于个人学习和本地检索，因便于知识链接和查阅，现上线个人知识库，绝无获取流量等商业用途。如有版权问题，请联系我，我将第一时间删除相关内容。
 # 前端面试 浏览器原理篇
 
 ![](/img/user/前端八股/浏览器/Attachments/1664171276867514.png)
@@ -356,7 +357,6 @@ self.addEventListener('fetch', e => {
 
 打开页面，可以在开发者工具中的 `Application` 看到 Service Worker 已经启动了：  
 
-![image](./前端面试%20浏览器原理篇_w3cschool_files/errno-404)  
 
 在 Cache 中也可以发现所需的文件已被缓存：  
 
