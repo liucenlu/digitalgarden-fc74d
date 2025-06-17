@@ -1,8 +1,9 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/CSS/前端面试 CSS篇_w3cschool/","created":"2025-05-26T09:43:55.792+08:00","updated":"2025-06-14T23:38:54.016+08:00"}
+{"dg-publish":true,"permalink":"/前端八股/CSS/前端面试 CSS篇_w3cschool/","created":"2025-05-26T09:43:55.792+08:00","updated":"2025-06-17T21:27:41.634+08:00"}
 ---
 
-
+>[!attention]- 声明
+> 本知识库中所有以 \_w3cschool 为后缀的笔记内容均整理自编程狮（[前端面试八股文_w3cschool](https://www.w3cschool.cn/web_interview/)）。原本仅用于个人学习和本地检索，因便于知识链接和查阅，现上线个人知识库，绝无获取流量等商业用途。如有版权问题，请联系我，我将第一时间删除相关内容。
 # 前端面试 CSS篇
 
 ![](/img/user/前端八股/CSS/Attachments/1662542278573425.png)
