@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/Vue/前端面试 Vue篇_w3cschool/","created":"2025-06-01T11:29:56.000+08:00","updated":"2025-06-17T21:28:19.675+08:00"}
+{"dg-publish":true,"permalink":"/前端八股/Vue/前端面试 Vue篇_w3cschool/","created":"2025-06-01T11:29:56.000+08:00","updated":"2025-06-17T21:39:58.415+08:00"}
 ---
 
 >[!attention]- 声明
@@ -652,7 +652,9 @@ this.$nextTick(() => {
 > 因为在created()钩子函数中，页面的DOM还未渲染，这时候也没办法操作DOM，所以，此时如果想要操作DOM，必须将操作的代码放在 `nextTick()`的回调函数中。  
 
 
-![](/img/user/前端八股/Vue/Attachments/Pasted image 20250526185556.png)
+
+![](/img/user/前端八股/Vue/Attachments/20250526185556.png)
+
 ### 19. Vue 中给 data 中的对象属性添加一个新的属性时会发生什么？如何解决？
 
 ```
