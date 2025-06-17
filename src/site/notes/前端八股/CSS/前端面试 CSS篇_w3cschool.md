@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/CSS/前端面试 CSS篇_w3cschool/","created":"2025-05-26T09:43:55.792+08:00","updated":"2025-06-17T21:27:41.634+08:00"}
+{"dg-publish":true,"permalink":"/前端八股/CSS/前端面试 CSS篇_w3cschool/","created":"2025-05-26T09:43:55.792+08:00","updated":"2025-06-17T21:37:40.563+08:00"}
 ---
 
 >[!attention]- 声明
@@ -95,7 +95,7 @@
 - cursor：光标显示为何种形态
 
 ### 3. display的属性值及其作用
-![](/img/user/前端八股/CSS/Attachments/Pasted image 20250606100157.png)
+![](/img/user/前端八股/CSS/Attachments/20250606100157.png)
 
 |**属性值**|**作用**|
 |---|---|
@@ -230,7 +230,7 @@ CSS3中的盒模型有以下两种：标准盒子模型、IE盒子模型
 
 - ​`box-sizeing: content-box`​表示标准盒模型（默认值）
 - ​`box-sizeing: border-box`​表示IE盒模型（怪异盒模型）
-![](/img/user/前端八股/CSS/Attachments/Pasted image 20250606095807.png)
+![](/img/user/前端八股/CSS/Attachments/20250606095807.png)
 ### 12. 为什么有时候⽤translate来改变位置而不是定位？
 
 translate 是 transform 属性的⼀个值。改变transform或opacity不会触发浏览器重新布局（reflow）或重绘（repaint），只会触发复合（compositions）。⽽改变绝对定位会触发重新布局，进⽽触发重绘和复合。transform使浏览器为元素创建⼀个 GPU 图层，但改变绝对定位会使⽤到 CPU。 因此translate()更⾼效，可以缩短平滑动画的绘制时间。 ⽽translate改变位置时，元素依然会占据其原始空间，绝对定位就不会发⽣这种情况。  
@@ -337,7 +337,6 @@ CSSSprites（精灵图），将一个页面涉及到的所有图片都包含到�
 
 对于图片来说，为了保证其不失真，1 个图片像素至少要对应一个物理像素，假如原始图片是 500300 像素，那么在 3 倍屏上就要放一个 1500900 像素的图片才能保证 1 个物理像素至少对应一个图片像素，才能不失真。  
 
-![](./前端面试%20CSS篇_w3cschool_files/errno-404(2))  
 
 当然，也可以针对所有屏幕，都只提供最高清图片。虽然低密度屏幕用不到那么多图片像素，而且会因为下载多余的像素造成带宽浪费和下载延迟，但从结果上说能保证图片在所有屏幕上都不会失真。
 
@@ -550,7 +549,6 @@ CSS 工程化是为了解决以下问题：
 
 PostCss 仍然是一个对 CSS 进行解析和处理的工具，它会对 CSS 做这样的事情：  
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(3))  
 
 它和预处理器的不同就在于，预处理器处理的是 类CSS，而 PostCss 处理的就是 CSS 本身。Babel 可以将高版本的 JS 代码转换为低版本的 JS 代码。PostCss 做的是类似的事情：它可以编译尚未被浏览器广泛支持的先进的 CSS 语法，还可以自动为一些需要额外兼容的语法增加前缀。更强的是，由于 PostCss 有着强大的插件机制，支持各种各样的扩展，极大地强化了 CSS 的能力。
 
@@ -586,9 +584,7 @@ Webpack 能处理 CSS 吗：
 - ​`imgs.offsetTop`​ 是元素顶部距离文档顶部的高度（包括滚动条的距离）；
 - 内容达到显示区域的：​`img.offsetTop < window.innerHeight + document.body.scrollTop;`​
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(4))  
-
-### 30. z-index属性在什么情况下会失效
+30. z-index属性在什么情况下会失效
 
 通常 z-index 的使用是在有两个重叠的标签，在一定的情况下控制其中一个在另一个的上方或者下方出现。z-index值越大就越是在上层。z-index元素的position属性需要是relative，absolute或是fixed。
 
@@ -1170,7 +1166,6 @@ clear属性只有块级元素才有效的，而::after等伪元素默认都是�
 
 层叠顺序，英文称作 stacking order，表示元素发生层叠时有着特定的垂直显示顺序。下面是盒模型的层叠规则：  
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(5))  
 
 对于上图，由上到下分别是：  
 
@@ -1206,17 +1201,11 @@ position有以下属性值：
 
 **relative：**元素的定位永远是相对于元素自身位置的，和其他元素没关系，也不会影响其他元素。
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(6))  
 
 **fixed：**元素的定位是相对于 window （或者 iframe）边界的，和其他元素没有关系。但是它具有破坏性，会导致其他元素位置的变化。  
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(7))  
 
 **absolute：**元素的定位相对于前两者要复杂许多。如果为 absolute 设置了 top、left，浏览器会根据什么去确定它的纵向和横向的偏移量呢？答案是浏览器会递归查找该元素的所有父元素，如果找到一个设置了 `position:relative/absolute/fixed`的元素，就以该元素为基准定位，如果没找到，就以浏览器边界定位。如下两个图所示：  
-
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(8))  
-
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(9))  
 
 ### 7. display、float、position的关系
 
@@ -1270,8 +1259,6 @@ div {
 
 将元素的长宽都设置为0，显示出来的效果是这样的：  
 
-![image](./前端面试%20CSS篇_w3cschool_files/errno-404(10))  
-
 所以可以根据border这个特性来绘制三角形：  
 
 **（1）三角1**  
@@ -1286,7 +1273,6 @@ div {
 }
 ```
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(11))  
 
 **（2）三角2**  
 
@@ -1300,7 +1286,6 @@ div {
 }
 ```
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(12))  
 
 **（3）三角3**  
 
@@ -1314,7 +1299,6 @@ div {
 }
 ```
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(13))  
 
 **（4）三角4**  
 
@@ -1328,7 +1312,6 @@ div {
 }
 ```
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(14))  
 
 **（5）三角5**  
 
@@ -1341,7 +1324,6 @@ div {
 }
 ```
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(15))  
 
 还有很多，就不一一实现了，总体的原则就是通过上下左右边框来控制三角形的方向，用边框的宽度比来控制三角形的角度。  
 
@@ -1359,7 +1341,6 @@ div{
 }
 ```
 
-![img](./前端面试%20CSS篇_w3cschool_files/errno-404(16))  
 
 ### 3. 实现一个宽高自适应的正方形
 
@@ -1435,7 +1416,6 @@ window.devicePixelRatio = 设备的物理像素 / CSS像素。
 
 打开 Chrome 浏览器，启动移动端调试模式，在控制台去输出这个 `devicePixelRatio` 的值。这里选中 iPhone6/7/8 这系列的机型，输出的结果就是2：  
 
-![image](./前端面试%20CSS篇_w3cschool_files/errno-404(17))  
 
 这就意味着设置的 1px CSS 像素，在这个设备上实际会用 2 个物理像素单元来进行渲染，所以实际看到的一定会比 1px 粗一些。  
 
@@ -1511,163 +1491,3 @@ metaEl.setAttribute('content', `width=device-width,user-scalable=no,initial-scal
 这样解决了，但这样做的副作用也很大，整个页面被缩放了。这时 1px 已经被处理成物理像素大小，这样的大小在手机上显示边框很合适。但是，一些原本不需要被缩小的内容，比如文字、图片等，也被无差别缩小掉了。  
 
   
-
-以上内容是否对您有帮助：
-
-在文档使用的过程中是否遇到以下问题：
-
-- [ ] 内容错误
-- [ ] 更新不及时
-- [ ] 链接错误
-- [ ] 缺少代码/图片示列
-- [ ] 太简单/步骤待完善
-- [ ] 其他
-
-更多建议：
-
-[提交建议](javascript:;)
-
-← [前端面试 HTML篇](https://www.w3cschool.cn/web_interview/web_interview-5pv93ptv.html "上一篇：前端面试 HTML篇")
-
-[前端面试 JavaScript篇](https://www.w3cschool.cn/web_interview/web_interview-u8jo3pu4.html "下一篇：前端面试 JavaScript篇") →
-
-[写笔记](javascript:;)
-
-[我要补充](javascript:;)
-
-[](https://wwads.cn/click/bait)[![万维广告联盟](/img/user/前端八股/CSS/Attachments/tCsMFF956EX0JzAB8kkMuGpAUwWcW7KoJnzN1fY5.jpg)](https://wwads.cn/click/bundle?code=ygL5KDmTMD9TVcbR7PK2SirPLsunfK)
-
-[🛒 B2B2C商家入驻平台系统java版 **Java+vue+uniapp** 功能强大 稳定 支持diy 方便二开](https://wwads.cn/click/bundle?code=ygL5KDmTMD9TVcbR7PK2SirPLsunfK)[广告](https://wwads.cn/?utm_source=property-181&utm_medium=footer "点击了解万维广告联盟")
-
-精选笔记
-
-[](https://www.w3cschool.cn/web_interview/web_interview-5pv93ptv.html "上一篇：前端面试 HTML篇")[](https://www.w3cschool.cn/web_interview/web_interview-u8jo3pu4.html "下一篇：前端面试 JavaScript篇")
-
-Copyright©2021 [w3cschool](https://www.w3cschool.cn/ "w3cschool")编程狮|[闽ICP备15016281号-3](https://beian.miit.gov.cn/)|[闽公网安备35020302033924号](http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35020302033924)
-
-违法和不良信息举报电话：173-0602-2364|[举报邮箱：jubao@eeedong.com](mailto:jubao@eeedong.com)
-
-在线笔记
-
-App下载
-
-![App下载](/img/user/前端八股/CSS/Attachments/app-qrcode2.png)
-
-扫描二维码
-
-下载编程狮App
-
-公众号
-
-![微信公众号](/img/user/前端八股/CSS/Attachments/mp-qrcode.png)
-
-编程狮公众号
-
-意见反馈
-
-意见反馈 X
-
-- 意见反馈：
-    
-    联系方式：
-    
-
-提交
-
-[查看完整版笔记](https://www.w3cschool.cn/my/note) 保存 关闭
-
-教程纠错 教程纠错
-
-违规举报 X
-
--  广告等垃圾信息
--  不友善内容
--  违反法律法规的内容
--  不宜公开讨论的政治内容
--  其他 
-
-提交
-
-[登录w3cschool，全站1000+教程免费学，学习精选优质好课快人一步!](https://www.w3cschool.cn/register)
-
-[注册w3cschool](https://www.w3cschool.cn/register?refer=/web_interview/web_interview-lvq13ptx.html)或直接[微信登录](javascript:;)
-
-[已有账号，登录](https://www.w3cschool.cn/login?refer=/web_interview/web_interview-lvq13ptx.html)
-
-[X](javascript:; "关闭")
-
-工具
-
-推荐 [更多](https://123.w3cschool.cn/webtools)
-
-[
-
-![](/img/user/前端八股/CSS/Attachments/879591733360918.png)
-
-豆包AI编程](https://www.doubao.com/chat/coding?channel=w3cschool&source=hw_db_w3cschool)[
-
-![](/img/user/前端八股/CSS/Attachments/Turtle.png)
-
-Turtle绘图](https://www.w3cschool.cn/tools/index?name=pythonturtle)[
-
-![](/img/user/前端八股/CSS/Attachments/Markdown.png)
-
-Markdown编辑器](https://www.w3cschool.cn/tools/index?name=editormd)[
-
-![](/img/user/前端八股/CSS/Attachments/shijianchuo.png)
-
-Unix时间戳](https://www.w3cschool.cn/tools/index?name=timestamptrans)[
-
-![](/img/user/前端八股/CSS/Attachments/Mermaid.png)
-
-Mermaid编辑器](https://www.w3cschool.cn/tools/index?name=mermaid)[
-
-![](/img/user/前端八股/CSS/Attachments/Python.png)
-
-Python在线编译器](https://www.w3cschool.cn/tryrun/runcode?lang=python3)[
-
-![](/img/user/前端八股/CSS/Attachments/shiseqi.png)
-
-在线拾色器](https://www.w3cschool.cn/tools/index?name=cpicker)[
-
-![](/img/user/前端八股/CSS/Attachments/zhengze.png)
-
-正则工具](https://www.w3cschool.cn/tools/index?name=decode_encode_tool)
-
-AI编程工具 [更多](https://123.w3cschool.cn/navaitools)
-
-[
-
-![](./前端面试%20CSS篇_w3cschool_files/faviconV2)
-
-Trae](https://www.trae.com.cn/?utm_source=advertising&utm_medium=w3cschool_ug_cpa&utm_term=hw_trae_w3cschool)[
-
-![](data:image/svg+xml,%3csvg%20id='raccoon_sm_light'%20data-name='raccoon'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='50%2040%20200%20120'%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23fff;%20}%20.cls-2%20{%20fill:%20%23192842;%20}%20%3c/style%3e%3c/defs%3e%3cg%3e%3cpath%20class='cls-1'%20d='M244.52,103.68l-22-22A5.42,5.42,0,0,1,221,77.13l3.92-28.95a8.31,8.31,0,0,0-8.23-9.42H195.4a12.37,12.37,0,0,0-12.14,9.58,3.92,3.92,0,0,1-3.79,3H120.53a3.92,3.92,0,0,1-3.79-3,12.37,12.37,0,0,0-12.14-9.58H83.33a8.31,8.31,0,0,0-8.23,9.42L79,77.13a5.42,5.42,0,0,1-1.53,4.54l-22,22a15.09,15.09,0,0,0,0,21.31l33.18,33.19A10.43,10.43,0,0,0,96,161.24H204a10.43,10.43,0,0,0,7.38-3.06L244.52,125A15.09,15.09,0,0,0,244.52,103.68Z'/%3e%3cg%3e%3cpath%20class='cls-2'%20d='M161.65,110.58a4.23,4.23,0,0,0-2.79-7.41H141.14a4.23,4.23,0,0,0-2.79,7.41l6.12,5.36a8.38,8.38,0,0,0,11.06,0Z'/%3e%3cpath%20class='cls-2'%20d='M211.33,70.49l2.52-18.59a3.49,3.49,0,0,0-3.46-4H197.21a3.49,3.49,0,0,0-2.47,6Z'/%3e%3cpath%20class='cls-2'%20d='M88.61,70.49,105.2,53.9a3.49,3.49,0,0,0-2.47-6H89.55a3.5,3.5,0,0,0-3.46,4Z'/%3e%3cpath%20class='cls-2'%20d='M234.77,108.45,192.36,66.12a14.93,14.93,0,0,0-10.56-4.37H164.55a13.25,13.25,0,0,0-8.13,2.79l-4.19,3.26a3.63,3.63,0,0,1-4.46,0l-4.19-3.26a13.25,13.25,0,0,0-8.13-2.79H118.2a14.93,14.93,0,0,0-10.56,4.37L65.23,108.45a8.32,8.32,0,0,0,0,11.75L94,148.94a6.61,6.61,0,0,0,4.68,1.94H121.8l-16.64-16.64a6.73,6.73,0,0,1,0-9.52l39.45-39.43a7.63,7.63,0,0,1,10.78,0l31.48,31.47-34.13,34.12h14.65l26.8-26.8.65.64a6.73,6.73,0,0,1,0,9.52L178.2,150.88h23.14a6.61,6.61,0,0,0,4.68-1.94l28.75-28.74A8.32,8.32,0,0,0,234.77,108.45ZM118.36,93.26a5.48,5.48,0,1,1,5.48-5.48A5.49,5.49,0,0,1,118.36,93.26Zm63.28,0a5.48,5.48,0,1,1,5.48-5.48A5.48,5.48,0,0,1,181.64,93.26Z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e)
-
-代码小浣熊](https://www.xiaohuanxiong.com/login?utm_source=blmay41)[
-
-![](./前端面试%20CSS篇_w3cschool_files/aitool-icon.png)
-
-星辰Agent](https://agent.xfyun.cn/home?ch=xcagent-aitool16)[
-
-![](/img/user/前端八股/CSS/Attachments/aitool-icon-1.png)
-
-通义灵码](https://www.w3cschool.cn/tongyilingma/)[
-
-![](/img/user/前端八股/CSS/Attachments/aitool-icon-5.png)
-
-文心快码](https://comate.baidu.com/zh)[
-
-![](/img/user/前端八股/CSS/Attachments/11734432755.png)
-
-CodeGeeX](https://www.w3cschool.cn/codegeex/)[
-
-![](/img/user/前端八股/CSS/Attachments/aitool-icon-3.png)
-
-GitHub Copilot](https://github.com/features/copilot)[
-
-![](./前端面试%20CSS篇_w3cschool_files/aitool-icon-4.png)
-
-Fitten Code](https://code.fittentech.com/)
-
-![](/img/user/前端八股/CSS/Attachments/aitool-m.png)
