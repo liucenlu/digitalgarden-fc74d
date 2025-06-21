@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/浏览器/事件循环 Event Loop/","created":"2025-06-16T22:00:22.441+08:00","updated":"2025-06-21T13:53:06.385+08:00"}
+{"dg-publish":true,"permalink":"/浏览器/事件循环 Event Loop/","created":"2025-06-16T22:00:22.441+08:00","updated":"2025-06-21T14:14:07.680+08:00"}
 ---
 
 # 事件循环
@@ -58,7 +58,7 @@
    > 将来该默认模式可能会有所改变，一个站点一个进程而不是一个标签页一个进程[chrome官方说明文档](https://chromium.googlesource.com/chromium/src/+/main/docs/process_model_and_site_isolation.md#Modes-and-Availability)
    
    
-[[../浏览器进程.canvas|浏览器进程]]
+[[浏览器进程.canvas|浏览器进程]]
 
 
 ## 渲染主线程是如何工作的？
