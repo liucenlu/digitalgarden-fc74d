@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/浏览器/事件循环 Event Loop/","created":"2025-06-16T22:00:22.441+08:00","updated":"2025-06-21T11:20:09.370+08:00"}
+{"dg-publish":true,"permalink":"/浏览器/事件循环 Event Loop/","created":"2025-06-16T22:00:22.441+08:00","updated":"2025-06-21T11:25:02.670+08:00"}
 ---
 
 # 事件循环
@@ -41,8 +41,7 @@
 
 为了避免相互影响，为了减少连环崩溃的几率，当启动浏览器后，它会自动启动多个进程。
 
-![image-20220809213152371](http://mdrs.yuanjin.tech/img/202208092131410.png)
-
+![attachments/Paste-image-20250621-4.png](/img/user/%E6%B5%8F%E8%A7%88%E5%99%A8/attachments/Paste-image-20250621-4.png)
 > 可以在浏览器的任务管理器中查看当前的所有进程
 
 ![attachments/20250621100806.png](/img/user/%E6%B5%8F%E8%A7%88%E5%99%A8/attachments/20250621100806.png)
@@ -62,7 +61,7 @@
    
 [[../浏览器进程.canvas|浏览器进程]]
 
-[[Excalidraw/Drawing 2025-06-21 11.14.24.excalidraw\|Drawing 2025-06-21 11.14.24.excalidraw]]
+[[Excalidraw/浏览器进程.excalidraw\|浏览器进程.excalidraw]]
 ## 渲染主线程是如何工作的？
 
 渲染主线程是浏览器中最繁忙的线程，需要它处理的任务包括但不限于：
