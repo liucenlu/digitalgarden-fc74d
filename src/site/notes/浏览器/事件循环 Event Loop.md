@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/浏览器/事件循环 Event Loop/","created":"2025-06-16T22:00:22.441+08:00","updated":"2025-06-21T14:14:07.680+08:00"}
+{"dg-publish":true,"permalink":"/浏览器/事件循环 Event Loop/","created":"2025-06-16T22:00:22.441+08:00","updated":"2025-06-21T14:49:29.693+08:00"}
 ---
 
 # 事件循环
@@ -57,16 +57,14 @@
 4. GPU进程
    > 将来该默认模式可能会有所改变，一个站点一个进程而不是一个标签页一个进程[chrome官方说明文档](https://chromium.googlesource.com/chromium/src/+/main/docs/process_model_and_site_isolation.md#Modes-and-Availability)
    
-   
-[[浏览器进程.canvas|浏览器进程]]
 
 
 ## 渲染主线程是如何工作的？
-
+[[前端八股/浏览器/前端面试 浏览器原理篇_w3cschool#3. 浏览器渲染进程的线程有哪些\|渲染进程有哪些线程]]
 渲染主线程是浏览器中最繁忙的线程，需要它处理的任务包括但不限于：
 
 - 解析 HTML
-- 解析 CSS
+- 解析 CSS 
 - 计算样式
 - 布局
 - 处理图层
@@ -218,5 +216,5 @@ Promise.resolve().then(函数)
 > 3. 按照 W3C 的标准，浏览器实现计时器时，如果嵌套层级超过 5 层，则会带有 4 毫秒的最少时间，这样在计时时间少于 4 毫秒时又带来了偏差
 > 4. 受事件循环的影响，计时器的回调函数只能在主线程空闲时运行，因此又带来了偏差
 
-总结：
+总结：[[浏览器进程.canvas|浏览器进程]]
 ![attachments/浏览器进程.png](/img/user/%E6%B5%8F%E8%A7%88%E5%99%A8/attachments/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B.png)
