@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/浏览器/事件循环 Event Loop/","created":"2025-06-16T22:00:22.441+08:00","updated":"2025-06-21T13:49:50.456+08:00"}
+{"dg-publish":true,"permalink":"/浏览器/事件循环 Event Loop/","created":"2025-06-16T22:00:22.441+08:00","updated":"2025-06-21T13:53:06.385+08:00"}
 ---
 
 # 事件循环
@@ -219,4 +219,4 @@ Promise.resolve().then(函数)
 > 4. 受事件循环的影响，计时器的回调函数只能在主线程空闲时运行，因此又带来了偏差
 
 总结：
-[[attachments/浏览器进程.png]]
+![attachments/浏览器进程.png](/img/user/%E6%B5%8F%E8%A7%88%E5%99%A8/attachments/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B.png)
