@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/浏览器/事件循环 Event Loop/","created":"2025-06-16T22:00:22.441+08:00","updated":"2025-06-21T11:10:03.566+08:00"}
+{"dg-publish":true,"permalink":"/浏览器/事件循环 Event Loop/","created":"2025-06-16T22:00:22.441+08:00","updated":"2025-06-21T11:20:09.370+08:00"}
 ---
 
 # 事件循环
@@ -61,6 +61,8 @@
    
    
 [[../浏览器进程.canvas|浏览器进程]]
+
+[[Excalidraw/Drawing 2025-06-21 11.14.24.excalidraw\|Drawing 2025-06-21 11.14.24.excalidraw]]
 ## 渲染主线程是如何工作的？
 
 渲染主线程是浏览器中最繁忙的线程，需要它处理的任务包括但不限于：
