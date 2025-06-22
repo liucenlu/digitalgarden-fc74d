@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-22T15:23:13.074+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-22T19:33:13.211+08:00"}
 ---
 
 # HTML核心
@@ -207,54 +207,121 @@ pre元素功能的本质：它有一个默认的css属性
 
 实体字符通常用于在页面中显示一些特殊符号。
 
-1. &单词;
-2. &#数字;
+1. ==&单词==;
+2. ==&#数字==;
 
 
 - 小于符号
 
-&lt;
+	\&lt;
 
 - 大于符号
 
-&gt;
+	\&gt;
 
 - 空格符号
 
-&nbsp;
+	\&nbsp;
 
 - 版权符号
 
-&copy;
+	\&copy;
 
 - &符号
 
-&amp;
+	\&amp;
 ## 5.a元素
+
 超链接
 
 ### href属性
 
-hyper reference：通常表示跳转地址
+hyper *reference*(引用)：通常表示跳转地址
 
 1. 普通链接
 2. 锚链接
-
-id属性：全局属性，表示元素在文档中的唯一编号
-
+	 `#+id`
+	id属性：全局属性，表示元素在文档中的唯一编号
 3. 功能链接
+	点击后，触发某个功能
+	- 执行JS代码，javascript:
+	- 发送邮件，mailto:
+	要求用户计算机上安装有邮件发送软件：exchange
+	- 拨号，tel:
+	要求用户计算机上安装有拨号软件，或使用的是移动端访问
+```html
+<!DOCTYPE html>
 
-点击后，触发某个功能
+<html lang="en">
 
-- 执行JS代码，javascript:
-- 发送邮件，mailto:
+<head>
 
-要求用户计算机上安装有邮件发送软件：exchange
+  <meta charset="UTF-8">
 
-- 拨号，tel:
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-要求用户计算机上安装有拨号软件，或使用的是移动端访问
+  <title>Document</title>
 
+</head>
+
+<body>
+
+  <!-- 功能链接 -->
+
+  <a href="Javascript:alert('hello world')">弹出helloword</a>
+
+  <br>
+
+  <a href="mailto:m17179656827@163.com">发送邮件给我</a>
+
+  <br>
+
+  <a href="tel:10086">打电话</a>
+
+  <br>
+
+  <!-- 锚链接 -->
+
+  <a href="#chapter1">章节1</a>
+
+  <a href="#chapter2">章节2</a>
+
+  <a href="#chapter3">章节3</a>
+
+  <a href="#chapter4">章节4</a>
+
+  <a href="#chapter5">章节5</a>
+
+  <a href="#chapter6">章节6</a>
+
+  <h1 id="chapter1">章节1</h1>
+
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis exercitationem veritatis enim debitis nam at aut quae, modi cupiditate accusantium distinctio non fugiat tempora impedit nostrum ab, blanditiis ratione sapiente. Sed fugiat </p>
+
+  <h1 id="chapter2">章节2</h1>
+
+  <p>Quia quos libero quis optio numquam, nihil iure impedit minus sapiente sint in eligendi accusamus corrupti pariatur! Expedita</p>
+
+  <h1 id="chapter3">章节3</h1>
+
+  <p>Nulla, voluptas corporis. Modi sint molestias placeat non deserunt atque aperiam? Officiis itaque ex nostrum impedit, nulla accusantium accusamus fugiat sint ipsum quibusdam provident eveniet vero sed a perferendis maiores non ipsam aspernatur q</p>
+
+  <h1 id="chapter4">章节4</h1>
+
+  <p>Nulla, voluptas corporis. Modi sint molestias placeat non deserunt atque aperiam? Officiis itaque ex nostrum impedit, nulla accusantium accusamus fugiat sint ipsum quibusdam provident eveniet vero sed a perferendis maiores non ipsam aspernatur q</p>
+
+  <h1 id="chapter5">章节5</h1>
+
+  <p>ernatur eius beatae. Necessitatibus sed neque atque ad! Tenetur praesentium consequatur omnis iure inventore molestiae animi quas, amet expedita dignissimo</p>
+
+  <h1 id="chapter6">章节6</h1>
+
+  <p>Eligendi in enim asperiores quibusdam suscipit, optio laborum obcaecati </p>
+
+</body>
+
+</html>
+```
 ### target属性
 
 表示跳转窗口位置。
