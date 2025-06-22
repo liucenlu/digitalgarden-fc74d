@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-22T19:33:13.211+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-22T20:18:20.518+08:00"}
 ---
 
 # HTML核心
@@ -249,6 +249,9 @@ hyper *reference*(引用)：通常表示跳转地址
 	要求用户计算机上安装有邮件发送软件：exchange
 	- 拨号，tel:
 	要求用户计算机上安装有拨号软件，或使用的是移动端访问
+
+[scroll]
+
 ```html
 <!DOCTYPE html>
 
