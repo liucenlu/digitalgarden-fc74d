@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML核心/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-22T14:25:21.062+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML核心/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-22T14:43:05.964+08:00"}
 ---
 
 # HTML核心
@@ -159,14 +159,18 @@ UTF-8 是 Unicode 编码的一个版本
 2. 为了让浏览器理解网页
 	阅读模式、语音模式
 ## 3.文本元素
-HTML5中支持的元素：HTML5元素周期表
-
+HTML5中支持的元素：[HTML5元素周期表](https://www.xuanfengge.com/funny/html5/element/)
+![attachments/Paste-image-20250622.png](/img/user/01_HTML+CSS/HTML%E6%A0%B8%E5%BF%83/attachments/Paste-image-20250622.png)
 ### h
 
 标题：head
 
 h1~h6：表示1级标题~6级标题
 
+> [!note]- 小技巧
+> 在vscode中输入`h$*6{$级标题}`，Emmet插件会自动生成以下内容
+> `$`表示变量
+> ![attachments/Paste-image-20250622-1.png](/img/user/01_HTML+CSS/HTML%E6%A0%B8%E5%BF%83/attachments/Paste-image-20250622-1.png)
 ### p
 
 段落，paragraphs
