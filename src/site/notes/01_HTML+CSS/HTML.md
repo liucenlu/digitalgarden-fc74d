@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-22T14:44:37.923+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-22T14:49:46.332+08:00"}
 ---
 
 # HTML核心
@@ -134,7 +134,7 @@ UTF-8 是 Unicode 编码的一个版本
 ==文档体==，页面上所有要参与显示的元素，都应该放置到文档体中。
 ## 2.语义化
 ### 什么是语义化
-[[../../前端八股/HTML/前端面试 HTML篇_w3cschool#2. 对HTML语义化的理解|对HTML5语义化的理解]]
+[[前端八股/HTML/前端面试 HTML篇_w3cschool#2. 对HTML语义化的理解|对HTML5语义化的理解]]
 
 1. 每一个HTML元素都有具体的含义
 	a元素：超链接
