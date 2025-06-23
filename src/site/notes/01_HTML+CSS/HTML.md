@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-23T14:07:44.350+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-23T14:16:30.336+08:00"}
 ---
 
 # HTML核心
@@ -373,9 +373,9 @@ schema://host:port/path
 
 image缩写，空元素
 
-src属性：source
+- src属性：source
 
-alt属性：当图片资源失效时，将使用该属性的文字替代图片
+- alt属性：当图片资源失效时，将使用该属性的文字替代图片
 
 ```html
 <img src='./solar.jpg' alt="这是一张太阳系图片">
@@ -473,17 +473,17 @@ audio 音频
 
 ### video
 
-==**controls**==: 控制控件的显示，取值只能为controls
+- ==**controls**==: 控制控件的显示，取值只能为controls
 
-==**布尔属性**==:某些属性，只有两种状态：1. 不写   2. 取值为属性名，这种属性叫做布尔属性
+- ==**布尔属性**==:某些属性，只有两种状态：1. 不写   2. 取值为属性名，这种属性叫做布尔属性
 
-布尔属性，在HTML5中，可以不用书写属性值
+	- 布尔属性，在HTML5中，可以不用书写属性值
 
-==autoplay==: 布尔属性，自动播放。
+- ==autoplay==: 布尔属性，自动播放。
 
-==muted==: 布尔属性，静音播放。
+- ==muted==: 布尔属性，静音播放。
 
-==loop==: 布尔属性，循环播放
+- ==loop==: 布尔属性，循环播放
 
 ```html
    <video src="./media/open.mp4"
@@ -515,9 +515,9 @@ mp4、webm
 ## 9.列表元素
 ### 有序列表
 
-ol: ordered list
+- ol: ordered list
 
-li：list item 
+- li：list item 
 
 属性
 type：i（以罗马数字排序）、a（使用字母排序）、A（使用大写字母排序）
@@ -542,11 +542,11 @@ ul：unordered list
 
 通常用于一些术语的定义
 
-dl: definition list
-
-dt: definition title
-
-dd: definition description
+> dl: definition list
+> 
+> dt: definition title
+> 
+> dd: definition description
 
 ```html
   <dl>
@@ -563,15 +563,15 @@ dd: definition description
 
 ### 语义化容器元素
 
-header: 通常用于表示页头，也可以用于表示文章的头部
+- header: 通常用于表示页头，也可以用于表示文章的头部
 
-footer: 通常用于表示页脚，也可以用于表示文章的尾部
+- footer: 通常用于表示页脚，也可以用于表示文章的尾部
 
-article: 通常用于表示整篇文章
+- article: 通常用于表示整篇文章
 
-section: 通常用于表示文章的章节
+- section: 通常用于表示文章的章节
 
-aside: 通常用于表示侧边栏
+- aside: 通常用于表示侧边栏
 ## 11.元素包含关系
 以前：块级元素可以包含行级元素，行级元素不可以包含块级元素，a元素除外
 
