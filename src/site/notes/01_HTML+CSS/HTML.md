@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-23T16:59:10.203+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-23T16:59:59.691+08:00"}
 ---
 
 # HTML核心
@@ -593,7 +593,381 @@ ul：unordered list
 [scroll]
 
 ```html
+<!DOCTYPE html>
 
+<html lang="en">
+
+  
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>百度新闻——海量中文资讯平台</title>
+
+</head>
+
+  
+
+<body>
+
+  <!-- 头部 -->
+
+  <header>
+
+    <!-- 顶部行 -->
+
+    <div>
+
+      <div>
+
+        <ul>
+
+          <li><a href="">网页</a></li>
+
+          <li><a href="">新闻</a></li>
+
+          <li><a href="">贴吧</a></li>
+
+          <li><a href="">知道</a></li>
+
+          <li><a href="">音乐</a></li>
+
+          <li><a href="">图片</a></li>
+
+          <li><a href="">视频</a></li>
+
+          <li><a href="">地图</a></li>
+
+          <li><a href="">文库</a></li>
+
+        </ul>
+
+      </div>
+
+      <div>
+
+        <ul>
+
+          <li><a href="">百度首页</a></li>
+
+          <li><a href="">我</a>
+
+            <ul>
+
+              <li><a href="">账号设置</a></li>
+
+              <li><a href="">退出</a></li>
+
+            </ul>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- 搜索行 -->
+
+    <div>
+
+      <div>
+
+        <a href="https://news.baidu.com/">
+
+          <img src="./image/log-news.png" alt="百度新闻logo" style="width:600px;">
+
+        </a>
+
+      </div>
+
+      <div>
+
+        <input type="text">
+
+        <button>
+
+          百度一下
+
+        </button>
+
+      </div>
+
+      <div>
+
+        <a href="">帮助</a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  
+
+  <!-- 中间主体 -->
+
+  <div>
+
+    <!-- 左边区域 -->
+
+    <div>
+
+      <div>
+
+        <h2>热点要闻</h2>
+
+      </div>
+
+      <div>
+
+        <ul>
+
+          <li>
+
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+
+          </li>
+
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dignissimos sit, sint quae,
+
+            necessitatibus voluptates cumque vitae, non aliquam quisquam delectus blanditiis nisi quibusdam? Sed vel
+
+            laudantium ea iste nam!</li>
+
+          <li>Nulla, commodi nobis ullam itaque ratione sit et odit, architecto iure recusandae esse exercitationem quam
+
+            iusto laudantium tempore soluta. Quis recusandae praesentium ea quo sed repellat placeat eaque culpa atque!
+
+          </li>
+
+          <li>Sunt iure, laudantium accusamus veritatis incidunt blanditiis. Consectetur provident iusto reiciendis
+
+            animi doloremque laboriosam porro praesentium dolor assumenda ea quibusdam, maiores incidunt, perspiciatis
+
+            perferendis impedit nemo. Molestiae, sed doloremque? Sit.</li>
+
+          <li>Maxime ex similique reprehenderit, odit quo tenetur repudiandae rem possimus ullam dolores voluptatibus,
+
+            qui dolor maiores velit sit blanditiis provident natus delectus quis placeat labore autem perspiciatis?
+
+            Provident, aliquam voluptatibus?</li>
+
+        </ul>
+
+        <ul>
+
+          <li>
+
+            <h3>Tempora voluptates recusandae vero dolorum? Quo, amet perferendis.</h3>
+
+          </li>
+
+          <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam cupiditate ab numquam doloremque
+
+            dignissimos aut ex modi neque ullam ducimus a cumque quibusdam corrupti labore, optio velit, nam
+
+            consequuntur dolores.</li>
+
+          <li>Dolorem impedit ea, perspiciatis dignissimos, voluptatem reprehenderit quibusdam quia dolor unde accusamus
+
+            inventore, voluptatum dolorum aliquam odio deleniti itaque debitis earum nesciunt ad cumque at. Dolores
+
+            ipsum deleniti illo aperiam!</li>
+
+          <li>Omnis modi reprehenderit aliquid alias sed est, fugit quos. Amet minus, velit aliquid voluptatum placeat
+
+            provident ipsam vitae enim a obcaecati magni porro, repudiandae eaque corporis tenetur soluta ea maxime.
+
+          </li>
+
+          <li>Quos molestias quod est placeat, sint omnis quis numquam voluptate dolorem fuga. Iusto quo voluptatum
+
+            ducimus excepturi autem velit at, nobis recusandae nostrum amet quod, ipsam consectetur possimus dolorum
+
+            fugit.</li>
+
+        </ul>
+
+        <ul>
+
+          <li>
+
+            <h3>Doloremque quaerat necessitatibus consequuntur maxime inventore vitae impedit.</h3>
+
+          </li>
+
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ducimus veniam libero. Soluta accusantium,
+
+            ad numquam sed quasi commodi ea quidem cupiditate repellendus, sint, dolorum explicabo consequuntur qui
+
+            velit impedit!</li>
+
+          <li>Atque non eius dolor rem ipsa provident minus eveniet voluptatibus dolorem porro autem, dolorum distinctio
+
+            voluptatem qui architecto a exercitationem commodi unde eligendi assumenda! Optio omnis tempora quis
+
+            incidunt aut.</li>
+
+          <li>Aliquam doloribus aut eos earum facilis nisi. Accusamus voluptas animi earum, aut qui deleniti cum facere
+
+            repellendus explicabo excepturi modi pariatur quod, perspiciatis culpa dolorum voluptatibus. Reiciendis
+
+            ipsam aliquam sit?</li>
+
+          <li>Iure eveniet dolorem illo, consequuntur officia quos corporis vel. Ea consequatur inventore error porro
+
+            enim sed et minus, laborum aliquid mollitia dolores provident iste sapiente, nisi saepe non ipsum incidunt.
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- 右边区域 -->
+
+    <div>
+
+      <!-- 上边区域 -->
+
+      <div>
+
+        <!-- 轮播图主体 -->
+
+        <div>
+
+          <!-- 图片+标题 -->
+
+          <div>
+
+            <div>
+
+              <div>
+
+                <a href=""><img src="./image/banner01.jpeg" alt="" target="_blank">
+
+                  <h3>Lorem ipsum dolor sit amet.</h3>
+
+                </a>
+
+              </div>
+
+              <div>
+
+                <a href=""><img src="./image/banner02.jpeg" alt="" target="_blank">
+
+                  <h3>Lorem ipsum dolor sit amet.</h3>
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- 左右箭头 -->
+
+           <div>
+
+            <span>&lt</span><span>&gt</span>
+
+           </div>
+
+           <!-- 点点点 -->
+
+          <div>
+
+            <ul>
+
+              <li></li>
+
+              <li></li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+        <!-- 广告 -->
+
+        <div>
+
+          <a href=""><img src="./image/ad.png" alt=""></a>
+
+        </div>
+
+      </div>
+
+      <!-- 下边区域 -->
+
+      <div>
+
+        <!-- 热搜词 -->
+
+         <div>
+
+          <h3>热搜新闻词<span>HOT WORDS</span></h3>
+
+         </div>
+
+         <div>
+
+          <ul>
+
+            <li>Lorem.</li>
+
+            <li>Eveniet!</li>
+
+            <li>Repudiandae?</li>
+
+            <li>Soluta?</li>
+
+            <li>Tenetur.</li>
+
+          </ul>
+
+         </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 页脚 -->
+
+  <footer>
+
+    <p>
+
+      <a href="">用户协议</a>
+
+      <a href="">隐私策略</a>
+
+      <a href="">企业推广</a>
+
+      <a href="">投诉中心</a>
+
+      京公网安备11000002000001号 《互联网新闻信息服务许可》编号：11220180008 《互联网宗教信息服务许可证》编号：京（2022）0000043 ©2025Baidu 使用百度前必读
+
+    </p>
+
+  </footer>
+
+</body>
+
+  
+
+</html>
 ```
 
 # HTML进阶
