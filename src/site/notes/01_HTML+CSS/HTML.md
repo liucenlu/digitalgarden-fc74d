@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-22T20:18:20.518+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-23T13:18:23.218+08:00"}
 ---
 
 # HTML核心
@@ -210,6 +210,7 @@ pre元素功能的本质：它有一个默认的css属性
 1. ==&单词==;
 2. ==&#数字==;
 
+[list2table]
 
 - 小于符号
 
@@ -362,11 +363,11 @@ schema://host:port/path
 
 2. 相对路径
 
-以./开头，./表示当前资源所在的目录
+以`./`开头，`./`表示当前资源所在的目录
 
-可以书写../表示返回上一级目录
+可以书写`./../`表示返回上一级目录
 
-相对路径中：./可以省略
+相对路径中：`./`可以省略
 ## 7.图片元素
 ### img元素
 
@@ -376,23 +377,84 @@ src属性：source
 
 alt属性：当图片资源失效时，将使用该属性的文字替代图片
 
-### 和a元素联用
+```html
+<img src='./solar.jpg' alt="这是一张太阳系图片">
+```
 
+### 和a元素联用
+```html
+<a target="_blank" href="https://baike.baidu.com/item/%E">
+	<img src="./solar.jpg" alt="这是一张太阳系图片">
+</a>
+```
 ### 和map元素
+
+>点击图片不同区域产生不同效果
 
 map：地图
 
 map的子元素：area
 
+> [!NOTE]
+> 圆形（圆心坐标、半径）
+> 矩形（左上角坐标、右下角坐标）
+> 多边形（每一个顶点的坐标）
+
 衡量坐标时，为了避免衡量误差，需要使用专业的衡量工具：
 
-ps、pxcook、cutpro（本人开发）
-
+ps、pxcook、cutpro
+![attachments/Paste-image-20250623.png](/img/user/01_HTML+CSS/attachments/Paste-image-20250623.png)
 ### 和figure元素
 
 指代、定义，通常用于把图片、图片标题、描述包裹起来
 
 子元素：figcaption
+
+
+[scroll]
+
+```html
+<body>
+
+    <figure>
+
+        <a target="_blank" href="https://baike.baidu.com/item/%E5%A4%AA%E9%98%B3%E7%B3%BB/173281?fr=aladdin">
+
+            <img usemap="#solarMap" src="./img/solar.jpg" alt="这是一张太阳系的图片">
+
+        </a>
+
+        <figcaption>
+
+            <h2>太阳系</h2>
+
+        </figcaption>
+
+        <p>
+
+            太阳系是以太阳为中心，和所有受到太阳的引力约束天体的集合体。包括八大行星（由离太阳从近到远的顺序：水星、金星、地球、火星、木星、土星、天王星、海王星）、以及至少173颗已知的卫星、5颗已经辨认出来的矮行星和数以亿计的太阳系小天体,和哈雷彗星。
+
+        </p>
+
+    </figure>
+
+  
+  
+
+    <map name="solarMap">
+
+        <area shape="circle" coords="360,204,48" href="https://baike.baidu.com/item/%E6%9C%A8%E6%98%9F/222105?fr=aladdin" target="_blank">
+
+        <area shape="rect" coords="323,282,395,320" href="https://baike.baidu.com/item/%E6%9C%A8%E6%98%9F/222105?fr=aladdin" target="_blank">
+
+        <area shape="poly" coords="601,371,645,312,678,338,645,392" href="https://baike.baidu.com/item/%E5%86%A5%E7%8E%8B%E6%98%9F/137498?fr=aladdin" target="_blank">
+
+    </map>
+
+</body>
+```
+
+
 ## 8.多媒体元素
 video 视频
 
