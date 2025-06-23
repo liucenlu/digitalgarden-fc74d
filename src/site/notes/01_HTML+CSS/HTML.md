@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-23T13:45:37.999+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-23T14:07:44.350+08:00"}
 ---
 
 # HTML核心
@@ -519,6 +519,17 @@ ol: ordered list
 
 li：list item 
 
+属性
+type：i（以罗马数字排序）、a（使用字母排序）、A（使用大写字母排序）
+>除非是一些重要的法律条文，尽量避免使用type控制列表样式，而应该通过CSS属性进行控制
+
+```html
+  <ol type="i">
+    <li>打开冰箱门</li>
+    <li>大象进去</li>
+    <li>冰箱门关上</li>
+  </ol>
+```
 ### 无序列表
 
 把ol改成ul
@@ -526,7 +537,7 @@ li：list item
 ul：unordered list
 
 无序列表常用于制作菜单 或 新闻列表。
-
+![attachments/Paste-image-20250623-1.png](/img/user/01_HTML+CSS/attachments/Paste-image-20250623-1.png)
 ### 定义列表
 
 通常用于一些术语的定义
@@ -536,6 +547,13 @@ dl: definition list
 dt: definition title
 
 dd: definition description
+
+```html
+  <dl>
+    <dt>HTML</dt>
+    <dd>组成HTML文本的单元</dd>
+  </dl>
+```
 ## 10.容器元素
 容器元素：该元素代表一个块区域，内部用于放置其他元素
 
