@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-23T13:18:23.218+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-23T13:45:37.999+08:00"}
 ---
 
 # HTML核心
@@ -395,6 +395,17 @@ map：地图
 
 map的子元素：area
 
+```html
+  <a target="_blank" href="">
+
+    <img usemap='#solarMap' src="" alt="这是一张太阳系图片">
+
+  </a>
+  <map name="solarMap">
+    <area shape="circle" coords="672,789,90" href="" target="_blank">
+  </map>
+```
+
 > [!NOTE]
 > 圆形（圆心坐标、半径）
 > 矩形（左上角坐标、右下角坐标）
@@ -462,18 +473,22 @@ audio 音频
 
 ### video
 
-controls: 控制控件的显示，取值只能为controls
+==**controls**==: 控制控件的显示，取值只能为controls
 
-某些属性，只有两种状态：1. 不写   2. 取值为属性名，这种属性叫做布尔属性
+==**布尔属性**==:某些属性，只有两种状态：1. 不写   2. 取值为属性名，这种属性叫做布尔属性
 
 布尔属性，在HTML5中，可以不用书写属性值
 
-autoplay: 布尔属性，自动播放。
+==autoplay==: 布尔属性，自动播放。
 
-muted: 布尔属性，静音播放。
+==muted==: 布尔属性，静音播放。
 
-loop: 布尔属性，循环播放
+==loop==: 布尔属性，循环播放
 
+```html
+   <video src="./media/open.mp4"
+  controls autoplay loop muted style="width:800px;"></video>
+```
 ### audio
 
 和视频完全一致
@@ -485,6 +500,18 @@ loop: 布尔属性，循环播放
 2. 不同的浏览器支持的音视频格式可能不一致
 
 mp4、webm
+
+为了更好的兼容性，上面的代码可以这么写，使用source元素
+
+```html
+<video controls autoplay muted loop style="width:500px;">
+        <source src="media/open.mp4">
+        <source src="media/open.webm">
+        <p>
+            对不起，你的浏览器不支持video元素，请点击这里下载最新版本的浏览器
+        </p>
+    </video>
+```
 ## 9.列表元素
 ### 有序列表
 
