@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/算法刷题/JS知识点/","created":"2025-06-22T16:48:37.034+08:00","updated":"2025-06-24T13:24:57.767+08:00"}
+{"dg-publish":true,"permalink":"/算法刷题/JS知识点/","created":"2025-06-22T16:48:37.034+08:00","updated":"2025-06-24T13:33:49.731+08:00"}
 ---
 
 
@@ -186,13 +186,13 @@ parseInt("08");        // 返回 8（在ES5及之后按十进制解析，而不�
 	+ 哈希集合
 		+ Set：内置类，用于存储唯一值，不允许重复
 + 示例
-	  - 哈希表		  
+	+ 哈希表		  
 	    ```js
-			const map = new Map();
-			map.set('name', 'Alice');
-			map.set('age', 20);
+		const map = new Map();
+		map.set('name', 'Alice');
+		map.set('age', 20);
 			
-			console.log(map.get('name')); // 'Alice'
+		console.log(map.get('name')); // 'Alice'
 	    ```
 	- 哈希集合
 		```js
@@ -232,7 +232,7 @@ JavaScript 的解构赋值（Destructuring Assignment）是一种从数组或对
 	const nestedArr = [[1, 2], [3, 4]];
 	const [[a], [b]] = nestedArr; // a=1, b=3
 
-		```
+	```
 + 对象解构
 	从对象中按属性名提取值，变量名需与对象的键名一致：
 	```js
