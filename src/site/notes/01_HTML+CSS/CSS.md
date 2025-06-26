@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T20:33:50.059+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T20:35:40.049+08:00"}
 ---
 
 # CSS基础
@@ -306,7 +306,7 @@ span::after {
 3. 使用继承
 4. 使用默认值
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-9.png)
-![](/img/user/01_HTML+CSS/attachments/attachments/Pasted image 20250626190025.png)
+![](/img/user/01_HTML+CSS/attachments/attachments/20250626190025.png)
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-11.png)
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-12.png)
 `color:inherit;`
