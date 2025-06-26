@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T19:40:27.874+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T20:33:50.059+08:00"}
 ---
 
 # CSS基础
@@ -336,7 +336,7 @@ display默认值为inline
 ### 盒子的组成部分
 
 无论是行盒、还是块盒，都由下面几个部分组成，从内到外分别是：
-![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-13.png)
+![](/img/user/01_HTML+CSS/attachments/attachments/Pasted image 20250626195811.png)
 1. 内容  content
 	width、height，设置的是盒子内容的宽高
 	*内容部分通常叫做整个盒子的**内容盒 content-box***
@@ -375,31 +375,47 @@ display默认值为inline
 衡量设计稿尺寸的时候，往往使用的是边框盒，但设置width和height，则设置的是内容盒
 
 1. 精确计算
-2. CSS3：box-sizing
+2. CSS3：==box-sizing==（border-box、content-box）
 
 ### 改变背景覆盖范围
 
 默认情况下，背景覆盖边框盒
 
-可以通过background-clip进行修改
+可以通过==background-clip==（border-box、content-box）进行修改
 
 ### 溢出处理
 
-overflow，控制内容溢出边框盒后的处理方式
-
+==overflow==(auto|hidden|scroll|……)，控制内容溢出边框盒后的处理方式
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-14.png)
 ### 断词规则
 
-word-break，会影响文字在什么位置被截断换行
+==word-break==，会影响文字在什么位置被截断换行
 
-normal：普通。CJK字符（文字位置截断），非CJK字符（单词位置截断）
-
-break-all：截断所有。所有字符都在文字处截断
-
-keep-all：保持所有。所有文字都在单词之间截断
+- normal：普通。CJK字符（文字位置截断），非CJK字符（单词位置截断）
+- break-all：截断所有。所有字符都在文字处截断
+- keep-all：保持所有。所有文字都在单词之间截断
 
 ### 空白处理
 
-white-space: nowrap
+white-space: nowrap，遇到空白不换行，可能导致溢出
+white-space: pre，遇到空格不折叠
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-15.png)
+
+```css
+    li {
+      border-bottom: 1px dashed #ccc;
+      line-height:2;
+      border-left:3px solid #008c8c;
+      margin:1em 0;
+      width: 200px;
+      padding-left:10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      /* 文本溢出显示圆点 */
+    }
+```
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-16.png)
 ## 9.行盒的盒模型
 常见的行盒：包含具体内容的元素
 
