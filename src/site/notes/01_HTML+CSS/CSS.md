@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T11:41:17.860+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T19:40:27.874+08:00"}
 ---
 
 # CSS基础
@@ -187,7 +187,8 @@ h1{
 	元素内部文字的水平排列方式
 	
 ## 3.选择器
-选择器：帮助你精准的选中想要的元素
+
+选择器：帮助精准的选中想要的元素
 
 ### 简单选择器
 
@@ -195,38 +196,48 @@ h1{
 2. 元素选择器
 3. 类选择器
 4. 通配符选择器
-
-*，选中所有元素
-
+	\*，选中所有元素
 5. 属性选择器
-
-根据属性名和属性值选中元素
-
+	根据属性名和属性值选中元素
+	```css
+	[href="https://www.xina.com"] {
+	  color:red;
+	}
+	```
 6. 伪类选择器
-
-选中某些元素的某种状态
-
-1）link: 超链接未访问时的状态
-
-2）visited: 超链接访问过后的状态
-
-3）hover: 鼠标悬停状态
-
-4）active：激活状态，鼠标按下状态
-
-爱恨法则：love hate
-
+	选中某些元素的某种状态
+	1）link: 超链接未访问时的状态
+	2）visited: 超链接访问过后的状态
+	3）hover: 鼠标悬停状态
+	4）active：激活状态，鼠标按下状态
+	如果4个规则都写，按以上顺序，否则可能失效
+	爱恨法则：love hate
+	```css
+	/* 选中鼠标悬停的a元素 */
+	a :hover{
+	  color: brown;
+	}
+	```
 7. 伪元素选择器
-
-before
-
-after
-
+	通常用于生成或选中某元素内部的第一个子元素或最后一个子元素
+	+ before
+	+ after
+```css
+/* <div><span>HTML&CSS</span></div> */
+span::before {
+	content:"《";
+}
+span::after {
+	content:"》";
+	color:red
+}
+```
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-4.png)
 ### 选择器的组合
 
-1. 并且
-2. 后代元素 —— 空格
-3. 子元素 —— >
+1. 并且`p.red{}`
+2. 后代元素 —— 空格`.red li{}`
+3. 子元素 —— >`.red>li{}`(只能选中子元素，区别于后代)
 4. 相邻兄弟元素 —— +
 5. 后面出现的所有兄弟元素 —— ~
 
@@ -234,74 +245,79 @@ after
 
 多个选择器, 用逗号分隔
 
-语法糖
+>这是一个语法糖
+
 ## 4.层叠
-声明冲突：同一个样式，多次应用到同一个元素
 
-层叠：解决声明冲突的过程，浏览器自动处理（权重计算）
+>声明冲突：同一个样式，多次应用到同一个元素
 
+==层叠==：解决声明冲突的过程，浏览器自动处理（也叫权重计算）
+
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-5.png)
 ### 1. 比较重要性
 
 重要性从高到底：
 
 > 作者样式表：开发者书写的样式
 
-1） 作者样式表中的!important样式
+  1）作者样式表中的!important样式（慎加）
 2)  作者样式表中的普通样式
 3)  浏览器默认样式表中的样式
 
 ### 2. 比较特殊性
-
 看选择器
-
-总体规则：选择器选中的范围越窄，越特殊
-
-具体规则：通过选择器，计算出一个4位数（x x x x）
+总体规则：选择器选中的范围越窄，越特殊越重要
+权重计算具体规则：通过选择器，计算出一个4位数（x x x x）
 
 1. 千位：如果是内联样式，记1，否则记0
 2. 百位：等于选择器中所有id选择器的数量
 3. 十位：等于选择器中所有类选择器、属性选择器、伪类选择器的数量
 4. 个位：等于选择器中所有元素选择器、伪元素选择器的数量
-
+[1. CSS选择器及其优先级](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#1.%20CSS选择器及其优先级)
 ### 3. 比较源次序
-
 代码书写靠后的胜出
-
-
 
 ### 应用
 
 1. 重置样式表
-
-书写一些作者样式，覆盖浏览器的默认样式
-
-重置样式表 -> 浏览器的默认样式
-
-常见的重置样式表：normalize.css、reset.css、meyer.css
-
+	+ 书写一些作者样式，覆盖浏览器的默认样式
+	+ 重置样式表 -> 浏览器的默认样式
+	+ 常见的重置样式表：normalize.css、reset.css、meyer.css
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-6.png)
 2. 爱恨法则
-
-link > visited > hover > active
+	+ link > visited > hover > active
+	+ 层叠到源次序，源次序靠后的重要
 
 ## 5.继承
 子元素会继承父元素的某些CSS属性
-
 通常，跟文字内容相关的属性都能被继承
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-7.png)
 ## 6.属性值的计算过程
 一个元素一个元素依次渲染，顺序按照页面文档的树形目录结构进行
 
 ![attachments/Paste-image-20250622.png](/img/user/01_HTML+CSS/attachments/Paste-image-20250622.png)
 
 渲染每个元素的前提条件：该元素的所有CSS属性必须有值
-
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-8.png)
 一个元素，从所有属性都没有值，到所有的属性都有值，这个计算过程，叫做属性值计算过程
+[属性值计算过程简介](属性值计算过程简介.pdf)
+1. 确定声明值
+2. 层叠冲突
+3. 使用继承
+4. 使用默认值
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-9.png)
+![](/img/user/01_HTML+CSS/attachments/attachments/Pasted image 20250626190025.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-11.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-12.png)
+`color:inherit;`
 
 特殊的两个CSS取值：
 
 - inherit：手动（强制）继承，将父元素的值取出应用到该元素
-    
+    `color:inherit;`
 - initial：初始值，将该属性设置为默认值
 ## 7.盒模型
+
 box：盒子，每个元素在页面中都会生成一个矩形区域（盒子）
 
 盒子类型：
@@ -320,42 +336,35 @@ display默认值为inline
 ### 盒子的组成部分
 
 无论是行盒、还是块盒，都由下面几个部分组成，从内到外分别是：
-
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-13.png)
 1. 内容  content
-
-width、height，设置的是盒子内容的宽高
-
-内容部分通常叫做整个盒子的**内容盒 content-box**
-
+	width、height，设置的是盒子内容的宽高
+	*内容部分通常叫做整个盒子的**内容盒 content-box***
+	
 2. 填充(内边距)  padding
-
-盒子边框到盒子内容的距离
-
-padding-left、padding-right、padding-top、padding-bottom
-
-padding: 简写属性
-
-padding: 上 右 下 左
-
-填充区+内容区 = **填充盒 padding-box**
-
+	*盒子边框到盒子内容的距离*
+	padding-left、padding-right、padding-top、padding-bottom
+	padding: 简写属性
+	padding: 上 右 下 左
+	
+	*填充区+内容区 = **填充盒 padding-box***
+	
 3. 边框  border
+	边框 = 边框宽度 + 边框样式 + 边框颜色
 
-边框 = 边框样式 + 边框宽度 + 边框颜色
-
-边框样式：border-style
-边框宽度：border-width
-边框颜色：border-color
-
-边框+填充区+内容区 = **边框盒 border-box**
-
+	边框样式：border-style
+	边框宽度：border-width
+	边框颜色：border-color
+	
+	*边框+填充区+内容区 = **边框盒 border-box***
+	
 4. 外边距  margin
 
-边框到其他盒子的距离
-
-margin-top、margin-left、margin-right、margin-bottom
-
-速写属性margin
+	边框到其他盒子的距离
+	
+	margin-top、margin-left、margin-right、margin-bottom
+	
+	速写属性margin
 ## 8.盒模型应用
 ### 改变宽高范围
 
