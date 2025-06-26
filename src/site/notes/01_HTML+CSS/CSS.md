@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T10:52:46.107+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T11:25:08.651+08:00"}
 ---
 
 # CSS基础
@@ -125,9 +125,10 @@ h1{
 		==2em：父元素字体大小的2倍==
 	每个元素必须有字体大小，如果没有声明，则直接使用父元素的字体大小，如果没有父元素（html），则使用基准字号（浏览器设置的）。
 > 	user agent，UA，用户代理（浏览器）
+> 	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626.png)
 
 4. ==font-weight==	
-	文字粗细程度，可以取值数字，可以取值为预设值
+	文字粗细程度，可以取值数字，可以取值为预设值（normal（相当于数值400）、bold（数值700））
 > 	strong，默认加粗
 
 5. ==font-family==
@@ -135,9 +136,15 @@ h1{
 	必须用户计算机中存在的字体才会有效。
 	使用多个字体，以匹配不同环境
 	sans-serif，非衬线字体
+	微软雅黑、楷体、Comic Sans MS
 6. ==font-style==
-	字体样式，通常用它设置斜体
+	字体样式，通常用它设置**斜体**
+	```css
+	font-style: italic;
+	```
+
 > 	i元素，em元素，默认样式，是倾斜字体; 实际使用中，通常用它表示一个图标（icon）
+> 	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-1.png)
 
 7. ==text-decoration==
 	文本修饰，给文本加线。
@@ -145,6 +152,11 @@ h1{
 > 	a元素
 > 	del元素：错误的内容
 > 	s元素：过期的内容
+
+```html
+  <div>成语：<del>章</del>张口就来</div>
+  <p>活动价格：9.9&nbsp 原价：<s>12.9</s></p>
+```
 
 8. ==text-indent==
 	首行文本缩进
