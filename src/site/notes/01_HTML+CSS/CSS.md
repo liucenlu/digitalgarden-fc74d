@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T11:25:08.651+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T11:37:15.107+08:00"}
 ---
 
 # CSS基础
@@ -157,7 +157,7 @@ h1{
   <div>成语：<del>章</del>张口就来</div>
   <p>活动价格：9.9&nbsp 原价：<s>12.9</s></p>
 ```
-
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-2.png)
 8. ==text-indent==
 	首行文本缩进
 
@@ -167,6 +167,12 @@ h1{
 	设置行高为容器的高度，可以让单行文本垂直居中
 	行高可以设置为纯数字，表示相对于当前元素的字体大小
 
+	```html
+	  <div style="background-color: #008c8c;color:#fff;height: 50px;line-height:50px">Lorem ipsum dolor sit amet.</div>
+	
+	  <p style="text-indent: 2em;line-height: 1.5;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ipsum voluptatem rem dolor officiis, aut placeat exercitationem? Dolorem tempore rem fugit accusamus eveniet ratione, nam, fuga, quos in deserunt voluptate.</p>
+	```
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-3.png)
 10.  ==width==
 	宽度
 
