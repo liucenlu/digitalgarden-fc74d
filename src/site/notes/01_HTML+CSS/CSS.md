@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T11:37:15.107+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T11:41:17.860+08:00"}
 ---
 
 # CSS基础
@@ -183,6 +183,7 @@ h1{
 	文字间隙
 
 13. ==text-align==
+	left/center/right
 	元素内部文字的水平排列方式
 	
 ## 3.选择器
