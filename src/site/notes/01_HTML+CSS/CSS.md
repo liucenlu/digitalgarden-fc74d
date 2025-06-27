@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-26T20:35:40.049+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-27T12:52:30.475+08:00"}
 ---
 
 # CSS基础
@@ -425,55 +425,126 @@ span、strong、em、i、img、video、audio
 
 1. 盒子沿着内容沿伸
 2. 行盒不能设置宽高
-
-调整行盒的宽高，应该使用字体大小、行高、字体类型，间接调整。
+	调整行盒的宽高，应该使用字体大小、行高、字体类型，间接调整。
 
 3. 内边距（填充区）
-
-水平方向有效，垂直方向不会实际占据空间。
-
+	水平方向有效，垂直方向(可以看到效果)不会实际占据空间。
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627.png)
 4. 边框
-
-水平方向有效，垂直方向不会实际占据空间。
+	水平方向有效，垂直方向(可以看到效果)不会实际占据空间。
 
 5. 外边距
+	水平方向有效，垂直方向不会实际占据空间，完全无效。
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-1.png)
 
-水平方向有效，垂直方向不会实际占据空间。
-
+> [!info]
+> 虽然设置 `line-height` 是在块级元素（如 `<p>`、`<div>`）上常见，但实际是影响其**内部行盒**的排列方式。也就是说，块盒只是**传播或继承**了 `line-height` 的值，具体效果还是体现在行盒上。
 
 ### 行块盒
+>对应以前的行内块级元素
 
 display：inline-block 的盒子
-
+既有块盒的特点又有行盒的特点：
 1. 不独占一行
 2. 盒模型中所有尺寸都有效
 
-### 空白折叠
+```css
+    a {
+      background-color: red;
+      color: #fff;
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      margin:50px;
+    }
+```
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-2.png)
+删掉`display: inline-block;`:a元素变为行盒
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-3.png)
+
+### 行快盒实现分页标签
+[scroll]
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #ccc;
+    }
+    a {
+      background-color: #fff;
+      color: #3951b3;
+      text-decoration: none;
+      display: inline-block;
+      width:36px;
+      height: 36px;
+      text-align: center;
+      line-height: 36px;
+      border-radius: 4px;
+      margin:0 2px;
+    }
+    div a:hover{
+      color:#fff;
+      background-color: #4e6ef2;
+    }
+    div a.selected{
+      color:#fff;
+      background-color: #4e6ef2;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href="">1</a>
+    <a href="">2</a>
+    <a href="" class="selected">3</a>
+    <a href="">4</a>
+    <a href="">5</a>
+    <a href="">6</a>
+    <a href="">7</a>
+    <a href="">8</a>
+    <a href="">9</a>
+    <a href="">10</a>
+  </div>
+</body>
+</html>
+```
+
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-4.png)
+#### 空白折叠
 
 空白折叠，发生在行盒（行块盒）内部 或 行盒（行块盒）之间
-
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-5.png)
+这些源码中的空白会被折叠为一个空格
 ### 可替换元素 和 非可替换元素
 
-大部分元素，页面上显示的结果，取决于元素内容，称为**非可替换元素**
++ 大部分元素，页面上显示的结果，取决于==元素内容==，称为**非可替换元素**
 
-少部分元素，页面上显示的结果，取决于元素属性，称为**可替换元素**
++ 少部分元素，页面上显示的结果，取决于==元素属性==，称为**可替换元素**
 
-可替换元素：img、video、audio
+可替换元素：img、video、audio、input、button等
 
-绝大部分可替换元素均为行盒。
+绝大部分可替换元素==均为行盒，但类似于行块盒，盒模型中所有尺寸都有效。==
+比如一个img元素，display属性默认值为inline，行盒元素，但是可以设置width、height
 
-可替换元素类似于行块盒，盒模型中所有尺寸都有效。
-
+object-fit：contain|fill|cover
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-6.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-7.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-8.png)
 ## 10.常规流
-盒模型：规定单个盒子的规则
 
-视觉格式化模型（布局规则）：页面中的多个盒子排列规则
+- 盒模型：规定单个盒子的规则
 
-视觉格式化模型，大体上将页面中盒子的排列分为三种方式：
-
-1. 常规流
-2. 浮动
-3. 定位
+- 视觉格式化模型（布局规则）：页面中的多个盒子排列规则
+	- 视觉格式化模型，大体上将页面中盒子的排列分为三种方式：
+	1. 常规流
+	2. 浮动
+	3. 定位
 
 ### 常规流布局
 
