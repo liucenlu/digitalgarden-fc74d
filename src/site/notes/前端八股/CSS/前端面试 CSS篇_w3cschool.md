@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/前端八股/CSS/前端面试 CSS篇_w3cschool/","created":"2025-05-26T09:43:55.792+08:00","updated":"2025-06-17T21:52:53.419+08:00"}
+{"dg-publish":true,"permalink":"/前端八股/CSS/前端面试 CSS篇_w3cschool/","created":"2025-05-26T09:43:55.792+08:00","updated":"2025-06-29T16:27:39.280+08:00"}
 ---
 
 >[!attention]- 声明
@@ -13,19 +13,20 @@
 ---
 
 ### 1. CSS选择器及其优先级
+[4.层叠|权重计算具体规则](../../01_HTML+CSS/CSS.md#4.层叠)
 
-|**选择器**|**格式**|**优先级权重**|
-|---|---|---|
-|id选择器|#id|100|
-|类选择器|.classname|10|
-|属性选择器|a[ref=“eee”]|10|
-|伪类选择器|li:last-child|10|
-|标签选择器|div|1|
-|伪元素选择器|li:after|1|
-|相邻兄弟选择器|h1+p|0|
-|子选择器|ul>li|0|
-|后代选择器|li a|0|
-|通配符选择器|*|0|
+| **选择器** | **格式**        | **优先级权重** |
+| ------- | ------------- | --------- |
+| id选择器   | \#id          | 100       |
+| 类选择器    | .classname    | 10        |
+| 属性选择器   | a[ref=“eee”]  | 10        |
+| 伪类选择器   | li:last-child | 10        |
+| 标签选择器   | div           | 1         |
+| 伪元素选择器  | li:after      | 1         |
+| 相邻兄弟选择器 | h1+p          | 0         |
+| 子选择器    | ul>li         | 0         |
+| 后代选择器   | li a          | 0         |
+| 通配符选择器  | *             | 0         |
 
 对于选择器的**优先级**：  
 
@@ -43,77 +44,76 @@
 - 样式表的来源不同时，优先级顺序为：内联样式 > 内部样式 > 外部样式 > 浏览器用户自定义样式 > 浏览器默认样式。
 
 ### 2. CSS中可继承与不可继承属性有哪些
-
+>影响页面结构和布局的属性不能被继承 不影响页面结构和布局的 比如样式类的属性 文本字体 字体大小可以用inherit关键字指定继承的属性
 #### 一、无继承性的属性
 
-1. **display**：规定元素应该生成的框的类型
+1. **display**：规定元素应该生成的盒子类型
 2. **文本属性**：
+	- vertical-align：垂直文本对齐
+	- text-decoration：规定添加到文本的装饰
+	- text-shadow：文本阴影效果
+	- white-space：空白符的处理
+	- unicode-bidi：设置文本的方向
 
-- vertical-align：垂直文本对齐
-- text-decoration：规定添加到文本的装饰
-- text-shadow：文本阴影效果
-- white-space：空白符的处理
-- unicode-bidi：设置文本的方向
-
-4. **盒子模型的属性**：width、height、margin、border、padding
-5. **背景属性**：background、background-color、background-image、background-repeat、background-position、background-attachment
-6. **定位属性**：float、clear、position、top、right、bottom、left、min-width、min-height、max-width、max-height、overflow、clip、z-index
-7. **生成内容属性**：content、counter-reset、counter-increment
-8. **轮廓样式属性**：outline-style、outline-width、outline-color、outline
-9. **页面样式属性**：size、page-break-before、page-break-after
-10. **声音样式属性**：pause-before、pause-after、pause、cue-before、cue-after、cue、play-during
+3. **盒子模型的属性**：width、height、margin、border、padding
+4. **背景属性**：background、background-color、background-image、background-repeat、background-position、background-attachment
+5. **定位属性**：float、clear、position、top、right、bottom、left、min-width、min-height、max-width、max-height、overflow、clip、z-index
+6. **生成内容属性**：content、counter-reset、counter-increment
+7. **轮廓样式属性**：outline-style、outline-width、outline-color、outline
+8. **页面样式属性**：size、page-break-before、page-break-after
+9. **声音样式属性**：pause-before、pause-after、pause、cue-before、cue-after、cue、play-during
 
 #### 二、有继承性的属性
 
 1. **字体系列属性**
 
-- font-family：字体系列
-- font-weight：字体的粗细
-- font-size：字体的大小
-- font-style：字体的风格
+	- font-family：字体系列
+	- font-weight：字体的粗细
+	- font-size：字体的大小
+	- font-style：字体的风格
 
 3. **文本系列属性**
 
-- text-indent：文本缩进
-- text-align：文本水平对齐
-- line-height：行高
-- word-spacing：单词之间的间距
-- letter-spacing：中文或者字母之间的间距
-- text-transform：控制文本大小写（就是uppercase、lowercase、capitalize这三个）
-- color：文本颜色
+	- text-indent：文本缩进
+	- text-align：文本水平对齐
+	- line-height：行高
+	- word-spacing：单词之间的间距
+	- letter-spacing：中文或者字母之间的间距
+	- text-transform：控制文本大小写（就是uppercase、lowercase、capitalize这三个）
+	- color：文本颜色
 
 5. **元素可见性**
 
-- visibility：控制元素显示隐藏
+	- visibility：控制元素显示隐藏
 
 7. **列表布局属性**
 
-- list-style：列表风格，包括list-style-type、list-style-image等
+	- list-style：列表风格，包括list-style-type、list-style-image等
 
 9. **光标属性**
 
-- cursor：光标显示为何种形态
+	- cursor：光标显示为何种形态
 
 ### 3. display的属性值及其作用
 ![](/img/user/前端八股/CSS/Attachments/20250606100157.png)
 
-|**属性值**|**作用**|
-|---|---|
-|none|元素不显示，并且会从文档流中移除。|
-|block|块类型。默认宽度为父元素宽度，可设置宽高，换行显示。|
-|inline|行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。|
-|inline-block|默认宽度为内容宽度，可以设置宽高，同行显示。|
-|list-item|像块类型元素一样显示，并添加样式列表标记。|
-|table|此元素会作为块级表格来显示。|
-|inherit|规定应该从父元素继承display属性的值。|
+| **属性值**      | **作用**                        |
+| ------------ | ----------------------------- |
+| none         | 元素不显示，并且会从文档流中移除。             |
+| block        | 块类型。默认宽度为父元素宽度，可设置宽高，换行显示。    |
+| inline       | 行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。 |
+| inline-block | 默认宽度为内容宽度，可以设置宽高，同行显示。        |
+| list-item    | 像块类型元素一样显示，并添加样式列表标记。         |
+| table        | 此元素会作为块级表格来显示。                |
+| inherit      | 规定应该从父元素继承display属性的值。        |
 
 ### 4. display的block、inline和inline-block的区别
 
-（1）**block：**会独占一行，多个元素会另起一行，可以设置width、height、margin和padding属性；
+（1）**block**：会独占一行，多个元素会另起一行，可以设置width、height、margin和padding属性；（块盒）
 
-（2）**inline：**元素不会独占一行，设置width、height属性无效。但可以设置水平方向的margin和padding属性，不能设置垂直方向的padding和margin；
+（2）**inline**：元素不会独占一行，设置width、height属性无效。但可以设置水平方向的margin和padding属性，不能设置垂直方向的padding和margin；（行盒）
 
-（3）**inline-block：**将对象设置为inline对象，但对象的内容作为block对象呈现，之后的内联对象会被排列在同一行内。
+（3）**inline-block**：将对象设置为inline对象，但对象的内容作为block对象呈现，之后的内联对象会被排列在同一行内。（行块盒、行内块级元素）
 
 对于行内元素和块级元素，其特点如下：
 
@@ -130,6 +130,10 @@
 - 可以自动换行；
 - 多个块状，默认排列从上到下。
 
+（3）行内块级元素
+- 不会自动换行；
+- 设置margin和padding都有效；
+
 ### 5. 隐藏元素的方法有哪些
 
 - **display: none**：渲染树不会包含该渲染对象，因此该元素不会在页面中占据位置，也不会响应绑定的监听事件。
@@ -141,21 +145,30 @@
 - **transform: scale(0,0)**：将元素缩放为 0，来实现元素的隐藏。这种方法下，元素仍在页面中占据位置，但是不会响应绑定的监听事件。
 
 ### 6. link和@import的区别
-
+[18._CSS_ 引用的方式有哪些？_link_ 和 _@import_ 的区别？import面试_ | link面试](../../前端面试/项目+八股文.md#18._CSS_%20引用的方式有哪些？_link_%20和%20_@import_%20的区别？import面试_%20link面试)
 两者都是外部引用CSS的方式，它们的区别如下：
 
 - link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。
 - link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。
 - link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。
 - link支持使用Javascript控制DOM去改变样式；而@import不支持。
-
+![](/img/user/前端八股/CSS/Attachments/Paste-image-20250629-1.png)
+1. _**link**_ **属于** _**HTML**_ **标签，而** _**@import**_ **完全是** _**CSS**_ **提供的一种方式，属于_CSS_范畴。**
+2. _link_ 标签除了可以加载 _CSS_ 外，还可以做很多其它的事情，比如定义 _RSS_，定义 _rel_ 连接属性等，_@import_ 就只能加载 _CSS_ 了。
+3. **加载顺序的差别。**
+	1. 比如，在 _a.css_ 中使用 _import_ 引用 _b.css_，只有当使用当使用 _import_ 命令的宿主 _css_ 文件 _a.css_ 被下载、解析之后，浏览器才会知道还有另外一个 _b.css_ 需要下载，这时才去下载，然后下载后开始解析、构建 _render tree_ 等一系列操作.
+4. **兼容性的差别。**
+	1. 由于 _@import_ 是 _CSS2.1_ 提出的所以老的浏览器不支持，_@import_ 只有在 _IE5_ 以上的才能识别，而 _link_ 标签无此问题。
+5. **当使用** _**JS**_ **控制** _**DOM**_ **去改变样式的时候，只能使用** _**link**_ **标签，因为** _**@import**_ **不是** _**DOM**_ **可以控制的**。 
+	1. 对于可换皮肤的网站而言，可以通过改变 _link_ 便签这两个的 _href_ 值来改变应用不用的外部样式表，但是对于 _import_ 是无法操作的，毕竟不是标签。
+	
 ### 7. transition和animation的区别
-
+[11._transition、transform、animate_ 的区别？动画面试](../../前端面试/项目+八股文.md#11._transition、transform、animate_%20的区别？动画面试)
 - **transition是过渡属性**，强调过渡，它的实现需要触发一个事件（比如鼠标移动上去，焦点，点击等）才执行动画。它类似于flash的补间动画，设置一个开始关键帧，一个结束关键帧。
 - **animation是动画属性**，它的实现不需要触发事件，设定好时间之后可以自己执行，且可以循环一个动画。它也类似于flash的补间动画，但是它可以设置多个关键帧（用@keyframe定义）完成动画。
 
 ### 8. display:none与visibility:hidden的区别
-
+[19.分析比较 _opacity: 0、visibility: hidden、display: none_ 优劣和适用场景。隐藏面试](../../前端面试/项目+八股文.md#19.分析比较%20_opacity%200、visibility%20hidden、display%20none_%20优劣和适用场景。隐藏面试)
 这两个属性都是让元素隐藏，不可见。**两者区别如下：**
 
 （1）**在渲染树中**
@@ -190,11 +203,11 @@ a:hover {color: #FF00FF}
 p:first-child {color: red}
 ```
 
-**总结：**伪类是通过在元素选择器上加⼊伪类改变元素状态，⽽伪元素通过对元素的操作进⾏对元素的改变。
+**总结**：伪类是通过在元素选择器上加⼊伪类改变元素状态，⽽伪元素通过对元素的操作进行对元素的改变。
 
 ### 10. 对requestAnimationframe的理解
 
-实现动画效果的方法比较多，Javascript 中可以通过定时器 setTimeout 来实现，CSS3 中可以使用 transition 和 animation 来实现，HTML5 中的 canvas 也可以实现。除此之外，HTML5 提供一个专门用于请求动画的API，那就是 requestAnimationFrame，顾名思义就是**请求动画帧**。  
+*实现动画效果的方法比较多，Javascript 中可以通过定时器 setTimeout 来实现，CSS3 中可以使用 transition 和 animation 来实现，HTML5 中的 canvas 也可以实现*。除此之外，HTML5 提供一个专门用于请求动画的API，那就是 requestAnimationFrame，顾名思义就是**请求动画帧**。  
 
 MDN对该方法的描述：  
 
@@ -202,13 +215,13 @@ MDN对该方法的描述：
 
 **语法：** `window.requestAnimationFrame(callback);` 其中，callback是**下一次重绘之前更新动画帧所调用的函数**(即上面所说的回调函数)。该回调函数会被传入DOMHighResTimeStamp参数，它表示requestAnimationFrame() 开始去执行回调函数的时刻。该方法属于**宏任务**，所以会在执行完微任务之后再去执行。  
 
-**取消动画：**使用cancelAnimationFrame()来取消执行动画，该方法接收一个参数——requestAnimationFrame默认返回的id，只需要传入这个id就可以取消动画了。  
+**取消动画**：使用cancelAnimationFrame()来取消执行动画，该方法接收一个参数——requestAnimationFrame默认返回的id，只需要传入这个id就可以取消动画了。  
 
 **优势：**
 
-- **CPU节能：**使用SetTinterval 实现的动画，当页面被隐藏或最小化时，SetTinterval 仍然在后台执行动画任务，由于此时页面处于不可见或不可用状态，刷新动画是没有意义的，完全是浪费CPU资源。而RequestAnimationFrame则完全不同，当页面处于未激活的状态下，该页面的屏幕刷新任务也会被系统暂停，因此跟着系统走的RequestAnimationFrame也会停止渲染，当页面被激活时，动画就从上次停留的地方继续执行，有效节省了CPU开销。
-- **函数节流：**在高频率事件( resize, scroll 等)中，为了防止在一个刷新间隔内发生多次函数执行，RequestAnimationFrame可保证每个刷新间隔内，函数只被执行一次，这样既能保证流畅性，也能更好的节省函数执行的开销，一个刷新间隔内函数执行多次时没有意义的，因为多数显示器每16.7ms刷新一次，多次绘制并不会在屏幕上体现出来。
-- **减少DOM操作：**requestAnimationFrame 会把每一帧中的所有DOM操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+- **CPU节能**：使用SetTinterval 实现的动画，当页面被隐藏或最小化时，SetTinterval 仍然在后台执行动画任务，由于此时页面处于不可见或不可用状态，刷新动画是没有意义的，完全是浪费CPU资源。而RequestAnimationFrame则完全不同，当页面处于未激活的状态下，该页面的屏幕刷新任务也会被系统暂停，因此跟着系统走的RequestAnimationFrame也会停止渲染，当页面被激活时，动画就从上次停留的地方继续执行，有效节省了CPU开销。
+- **函数节流**：在高频率事件( resize, scroll 等)中，为了防止在一个刷新间隔内发生多次函数执行，RequestAnimationFrame可保证每个刷新间隔内，函数只被执行一次，这样既能保证流畅性，也能更好的节省函数执行的开销，一个刷新间隔内函数执行多次时没有意义的，因为多数显示器每16.7ms刷新一次，多次绘制并不会在屏幕上体现出来。
+- **减少DOM操作**：requestAnimationFrame 会把每一帧中的所有DOM操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
 
 **setTimeout执行动画的缺点**：它通过设定间隔时间来不断改变图像位置，达到动画效果。但是容易出现卡顿、抖动的现象；原因是：  
 
@@ -216,6 +229,7 @@ MDN对该方法的描述：
 - settimeout的固定时间间隔不一定与屏幕刷新间隔时间相同，会引起丢帧。
 
 ### 11. 对盒模型的理解
+[7.盒模型](../../01_HTML+CSS/CSS.md#7.盒模型)
 
 CSS3中的盒模型有以下两种：标准盒子模型、IE盒子模型  
 
@@ -231,12 +245,17 @@ CSS3中的盒模型有以下两种：标准盒子模型、IE盒子模型
 - ​`box-sizeing: content-box`​表示标准盒模型（默认值）
 - ​`box-sizeing: border-box`​表示IE盒模型（怪异盒模型）
 ![](/img/user/前端八股/CSS/Attachments/20250606095807.png)
-### 12. 为什么有时候⽤translate来改变位置而不是定位？
+### 12. 为什么有时候用translate来改变位置而不是定位？
 
-translate 是 transform 属性的⼀个值。改变transform或opacity不会触发浏览器重新布局（reflow）或重绘（repaint），只会触发复合（compositions）。⽽改变绝对定位会触发重新布局，进⽽触发重绘和复合。transform使浏览器为元素创建⼀个 GPU 图层，但改变绝对定位会使⽤到 CPU。 因此translate()更⾼效，可以缩短平滑动画的绘制时间。 ⽽translate改变位置时，元素依然会占据其原始空间，绝对定位就不会发⽣这种情况。  
+translate 是 transform 属性的⼀个值。改变transform或opacity不会触发浏览器重新布局（reflow）或重绘（repaint），只会触发复合（compositions）。而改变绝对定位会触发重新布局，进⽽触发重绘和复合。transform使浏览器为元素创建⼀个 GPU 图层，但改变绝对定位会使用到 CPU。 因此translate()更高效，可以缩短平滑动画的绘制时间。 而translate改变位置时，元素依然会占据其原始空间，绝对定位就不会发⽣这种情况。  
 
+>为什么 transform 的效率高？
+>因为 transform 既不会影响布局也不会影响绘制指令，它影响的只是渲染流程的最后一个「draw」阶段
+>由于 draw 阶段在合成线程中，所以 transform 的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响 transform 的变化。
+
+![](/img/user/前端八股/CSS/Attachments/Paste-image-20250629-3.png)
 ### 13. li 与 li 之间有看不见的空白间隔是什么原因引起的？如何解决？
-
+[空白折叠](../../01_HTML+CSS/CSS.md#空白折叠)
 浏览器会把inline内联元素间的空白字符（空格、换行、Tab等）渲染成一个空格。为了美观，通常是一个 `<li>`放在一行，这导致 `<li>`换行后产生换行字符，它变成一个空格，占用了一个字符的宽度。  
 
 **解决办法：**
@@ -250,8 +269,8 @@ translate 是 transform 属性的⼀个值。改变transform或opacity不会触�
 （4）消除 ​`<ul>`​的字符间隔letter-spacing:-8px，不足：这也设置了 ​`<li>`​内的字符间隔，因此需要将 ​`<li>`​内的字符间隔设为默认letter-spacing:normal。
 
 ### 14. CSS3中有哪些新特性
-
-- 新增各种CSS选择器 （: not(.input)：所有 class 不是“input”的节点）
+[17._CSS3_ 新增了哪些新特性？C3面试](../../前端面试/项目+八股文.md#17._CSS3_%20新增了哪些新特性？C3面试)
+- 新增各种CSS选择器，属性选择器、伪类选择器、伪元素选择器 （: not(.input)：所有 class 不是“input”的节点）
 - 圆角 （border-radius:8px）
 - 多列布局 （multi-column layout）
 - 阴影和反射 （Shadoweflect）
@@ -261,17 +280,31 @@ translate 是 transform 属性的⼀个值。改变transform或opacity不会触�
 - 旋转 （transform）
 - 增加了旋转,缩放,定位,倾斜,动画,多背景
 
-### 15. 替换元素的概念及计算规则
+> [!NOTE]
+> 1. 新增选择器：属性选择器、伪类选择器、伪元素选择器
+> 2. 盒子模型属性：box-sizing、_border-radius、box-shadow、border-image_
+> 3. 背景：_background-size、background-origin、background-clip_
+> 4. 文本效果：_text-shadow文字阴影、word-wrap_
+> 5. 边框
+> 6. 颜色：新增 _RGBA，HSLA_ 模式
+> 7. 渐变：线性渐变、径向渐变
+> 8. 字体：_@font-face_（实现Web Fonts（网页字体））
+> 9. 2D/3D转换：_transform、transform-origin_
+> 10. 过渡与动画：_transition、@keyframes、animation（自定义动画）_
+> 11. 多列布局（`columns`、`column-count`、`column-width`）
+> 12. 媒体查询[27. 对媒体查询的理解？](#27.%20对媒体查询的理解？)
 
+### 15. 替换元素的概念及计算规则
+[可替换元素 和 非可替换元素](../../01_HTML+CSS/CSS.md#可替换元素%20和%20非可替换元素)
 img、input、textarea、select
 
-通过修改某个属性值呈现的内容就可以被替换的元素就称为“替换元素”。
+**通过修改某个属性值呈现的内容就可以被替换的元素就称为“替换元素”。**
 
 替换元素除了内容可替换这一特性以外，还有以下特性：
 
 - **内容的外观不受页面上的CSS的影响**：用专业的话讲就是在样式表现在CSS作用域之外。如何更改替换元素本身的外观需要类似appearance属性，或者浏览器自身暴露的一些样式接口。
 - **有自己的尺寸**：在Web中，很多替换元素在没有明确尺寸设定的情况下，其默认的尺寸（不包括边框）是300像素×150像素，如
-- **在很多CSS属性上有自己的一套表现规则**：比较具有代表性的就是vertical-align属性，对于替换元素和非替换元素，vertical-align属性值的解释是不一样的。比方说vertical-align的默认值的baseline，很简单的属性值，基线之意，被定义为字符x的下边缘，而替换元素的基线却被硬生生定义成了元素的下边缘。
+- **在很多CSS属性上有自己的一套表现规则**：比较具有代表性的就是vertical-align属性，对于替换元素和非替换元素，vertical-align属性值的解释是不一样的。比方说vertical-align的默认值的baseline，很简单的属性值，==基线==之意，被定义为字符x的下边缘，而替换元素的基线却被硬生生定义成了元素的下边缘。
 - **所有的替换元素都是内联水平元素**：也就是替换元素和替换元素、替换元素和文字都是可以在一行显示的。但是，替换元素默认的display值却是不一样的，有的是inline，有的是inline-block。
 
 替换元素的尺寸从内而外分为三类：
@@ -314,9 +347,9 @@ img、input、textarea、select
 - 在有损压缩的情况下，具有相同图片精度的WebP图片，文件大小要比JPEG小25%~34%；
 - WebP图片格式支持图片透明度，一个无损压缩的WebP图片，如果要支持透明度只需要22%的格外文件大小。
 
-### 17. 对 CSSSprites 的理解
+### 17. 对 CSS Sprites 的理解
 
-CSSSprites（精灵图），将一个页面涉及到的所有图片都包含到一张大图中去，然后利用CSS的 background-image，background-repeat，background-position属性的组合进行背景定位。  
+CSS Sprites（雪碧图、精灵图），将一个页面涉及到的所有图片都包含到一张大图中去，然后利用CSS的 background-image，background-repeat，background-position属性的组合进行背景定位。  
 
 **优点：**  
 
@@ -326,8 +359,9 @@ CSSSprites（精灵图），将一个页面涉及到的所有图片都包含到�
 **缺点：**  
 
 - 在图片合并时，要把多张图片有序的、合理的合并成一张图片，还要留好足够的空间，防止板块内出现不必要的背景。在宽屏及高分辨率下的自适应页面，如果背景不够宽，很容易出现背景断裂；
-- ​`CSSSprites`​在开发的时候相对来说有点麻烦，需要借助 ​`photoshop`​或其他工具来对每个背景单元测量其准确的位置。
+- ​`CSS Sprites`​在开发的时候相对来说有点麻烦，需要借助 ​`photoshop`​或其他工具来对每个背景单元测量其准确的位置。
 - 维护方面：​`CSS Sprites`​在维护的时候比较麻烦，页面背景有少许改动时，就要改这张合并的图片，无需改的地方尽量不要动，这样避免改动更多的 ​`CSS`​，如果在原来的地方放不下，又只能（最好）往下加图片，这样图片的字节就增加了，还要改动 ​`CSS`​。
+![](/img/user/前端八股/CSS/Attachments/Paste-image-20250629-4.png)
 
 ### 18. 什么是物理像素，逻辑像素和像素密度，为什么在移动端开发时需要用到@3x, @2x这种图片？
 
@@ -335,20 +369,20 @@ CSSSprites（精灵图），将一个页面涉及到的所有图片都包含到�
 
 而如果有一把尺子来实际测量这部手机的物理像素，实际为 1242*2688 物理像素；经过计算可知，1242/414=3，也就是说，在单边上，一个逻辑像素=3个物理像素，就说这个屏幕的像素密度为 3，也就是常说的 3 倍屏。  
 
-对于图片来说，为了保证其不失真，1 个图片像素至少要对应一个物理像素，假如原始图片是 500300 像素，那么在 3 倍屏上就要放一个 1500900 像素的图片才能保证 1 个物理像素至少对应一个图片像素，才能不失真。  
+对于图片来说，为了保证其不失真，1 个图片像素至少要对应一个物理像素，假如原始图片是 500/300 像素，那么在 3 倍屏上就要放一个 1500/900 像素的图片才能保证 1 个物理像素至少对应一个图片像素，才能不失真。  
 
 
 当然，也可以针对所有屏幕，都只提供最高清图片。虽然低密度屏幕用不到那么多图片像素，而且会因为下载多余的像素造成带宽浪费和下载延迟，但从结果上说能保证图片在所有屏幕上都不会失真。
 
 还可以使用 CSS 媒体查询来判断不同的像素密度，从而选择不同的图片:
 
-```
+```CSS
 my-image { background: (low.png); }
 @media only screen and (min-device-pixel-ratio: 1.5) {
   #my-image { background: (high.png); }
 }
 ```
-
+![](/img/user/前端八股/CSS/Attachments/Paste-image-20250629-5.png)
 ### 19. margin 和 padding 的使用场景
 
 - 需要在border外侧添加空白，且空白处不需要背景（色）时，使用 margin；
@@ -358,7 +392,7 @@ my-image { background: (low.png); }
 
 **（1）line-height的概念：**  
 
-- line-height 指一行文本的高度，包含了字间距，实际上是下一行基线到上一行基线距离；
+- line-height 指一行文本的高度，包含了字间距，实际上是下一行基线到上一行**基线**距离；
 - 如果一个标签没有定义 height 属性，那么其最终表现的高度由 line-height 决定；
 - 一个容器没有设置高度，那么撑开容器高度的是 line-height，而不是容器内的文本内容；
 - 把 line-height 值设置为 height 一样大小的值可以实现单行文字的垂直居中；
@@ -370,7 +404,7 @@ my-image { background: (low.png); }
 - 纯数字：会把比例传递给后代。例如，父级行高为 1.5，子元素字体为 18px，则子元素行高为 1.5 * 18 = 27px
 - 百分比：将计算后的值传递给后代
 
-### 21. CSS 优化和提高性能的方法有哪些？
+### 21. CSS优化和提高性能的方法有哪些？
 
 **加载性能：**  
 
@@ -390,7 +424,7 @@ my-image { background: (low.png); }
 
 （4）尽量少的去对标签进行选择，而是用class。
 
-（5）尽量少的去使用后代选择器，降低选择器的权重值。后代选择器的开销是最高的，尽量将选择器的深度降到最低，最高不要超过三层，更多的使用类来关联每一个标签元素。
+（5）尽量少的去使用后代选择器，降低选择器的权重值。**后代选择器的开销是最高的**，尽量将选择器的深度降到最低，最高不要超过三层，更多的使用类来关联每一个标签元素。
 
 （6）了解哪些属性是可以通过继承而来的，然后避免对这些属性重复指定规则。
 
@@ -416,7 +450,7 @@ my-image { background: (low.png); }
 
 （10）正确使用display的属性，由于display的作用，某些样式组合会无效，徒增样式体积的同时也影响解析性能。
 
-（11）不滥用web字体。对于中文网站来说WebFonts可能很陌生，国外却很流行。web fonts通常体积庞大，而且一些浏览器在下载web fonts时会阻塞页面渲染损伤性能。
+（11）不滥用web字体。对于中文网站来说WebFonts可能很陌生，国外却很流行。web fonts通常体积庞大，而且一些浏览器在下载web fonts时会阻塞页面渲染损伤性能。（`@font-face` 是 CSS 中专门用来**定义和加载 Web 字体**的规则。）
 
 **可维护性、健壮性：**  
 
@@ -426,10 +460,13 @@ my-image { background: (low.png); }
 
 ### 22. CSS预处理器/后处理器是什么？为什么要使用它们？
 
-**预处理器，**如：`less`，`sass`，`stylus`，用来预编译 `sass`或者 `less`，增加了 `css`代码的复用性。层级，`mixin`， 变量，循环， 函数等对编写以及开发UI组件都极为方便。  
+[10._less、sass_ 是什么？为什么要用它？](../../前端面试/项目+八股文.md#10._less、sass_%20是什么？为什么要用它？)
+[26. Sass、Less 是什么？为什么要使用他们？](#26.%20Sass、Less%20是什么？为什么要使用他们？)
 
+**预处理器**，如：`less`，`sass`，`stylus`，用来预编译 `sass`或者 `less`，增加了 `css`代码的复用性。层级，`mixin`， 变量，循环， 函数等对编写以及开发UI组件都极为方便。  
+[**（1）预处理器：为什么要用预处理器？它的出现是为了解决什么问题？**](#**（1）预处理器：为什么要用预处理器？它的出现是为了解决什么问题？**)
 **后处理器，** 如： `postCss`，通常是在完成的样式表中根据 `css`规范处理 `css`，让其更加有效。目前最常做的是给 `css`属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。  
-
+[**（2）PostCss：PostCss 是如何工作的？我们在什么场景下会使用 PostCss？**](#**（2）PostCss：PostCss%20是如何工作的？我们在什么场景下会使用%20PostCss？**)
 `css`预处理器为 `css`增加一些编程特性，无需考虑浏览器的兼容问题，可以在 `CSS`中使用变量，简单的逻辑程序，函数等在编程语言中的一些基本的性能，可以让 `css`更加的简洁，增加适应性以及可读性，可维护性等。  
 
 其它 `css`预处理器语言：`Sass（Scss）`, `Less`, `Stylus`, `Turbine`, `Swithch css`, `CSS Cacheer`, `DT Css`。  
@@ -442,7 +479,7 @@ my-image { background: (low.png); }
 - 完美的兼容了 ​`CSS`​代码，可以应用到老项目中
 
 ### 23. ::before 和 :after 的双冒号和单冒号有什么区别？
-
+[9. 伪元素和伪类的区别和作用？](#9.%20伪元素和伪类的区别和作用？)
 （1）冒号(`:`)用于 `CSS3`伪类，双冒号(`::`)用于 `CSS3`伪元素。  
 
 （2）`::before`就是以一个子元素的存在，定义在元素主体内容之前的一个伪元素。并不存在于 `dom`之中，只存在在页面之中。  
@@ -450,16 +487,18 @@ my-image { background: (low.png); }
 **注意：** `:before` 和 `:after` 这两个伪元素，是在 `CSS2.1`里新出现的。起初，伪元素的前缀使用的是单冒号语法，但随着 `Web`的进化，在 `CSS3`的规范里，伪元素的语法被修改成使用双冒号，成为 `::before`、`::after`。  
 
 ### 24. display:inline-block 什么时候会显示间隙？
+[13. li 与 li 之间有看不见的空白间隔是什么原因引起的？如何解决？](#13.%20li%20与%20li%20之间有看不见的空白间隔是什么原因引起的？如何解决？)
+[空白折叠](../../01_HTML+CSS/CSS.md#空白折叠)
 
 - 有空格时会有间隙，可以删除空格解决；
 - ​`margin`​正值时，可以让 ​`margin`​使用负值解决；
 - 使用 ​`font-size`​时，可通过设置 ​`font-size:0`​、​`letter-spacing`​、​`word-spacing`​解决；
 
 ### 25. 单行、多行文本溢出隐藏
-
+[8.如何用 _css_ 或 _js_ 实现多行文本溢出省略效果，考虑兼容性。溢出面试 | 省略面试](../../前端面试/项目+八股文.md#8.如何用%20_css_%20或%20_js_%20实现多行文本溢出省略效果，考虑兼容性。溢出面试%20省略面试)
 - 单行文本溢出
 
-```
+```css
 overflow: hidden;            // 溢出隐藏
 text-overflow: ellipsis;      // 溢出用省略号显示
 white-space: nowrap;         // 规定段落中的文本不进行换行
@@ -467,7 +506,7 @@ white-space: nowrap;         // 规定段落中的文本不进行换行
 
 - 多行文本溢出
 
-```
+```css
 overflow: hidden;            // 溢出隐藏
 text-overflow: ellipsis;     // 溢出用省略号显示
 display:-webkit-box;         // 作为弹性伸缩盒子模型显示。
@@ -475,39 +514,47 @@ display:-webkit-box;         // 作为弹性伸缩盒子模型显示。
 -webkit-line-clamp:3;        // 显示的行数
 ```
 
-注意：由于上面的三个属性都是 CSS3 的属性，没有浏览器可以兼容，所以要在前面加一个 `-webkit-` 来兼容一部分浏览器。  
-
+注意：由于这些多行文本省略的属性是 WebKit 专用的非标准 CSS3 扩展，为了兼容 Chrome、Safari 等浏览器，需要加上 `-webkit-` 前缀。
+- CSS3 是一系列新的 CSS 特性和规范的统称，很多 CSS3 新属性会先以 **带浏览器前缀** 的形式发布，比如 `-webkit-`（Chrome、Safari 内核）、`-moz-`（Firefox 内核）等。
+    
+- 这些前缀是为了让浏览器厂商在属性正式标准化之前先实现和测试新功能。
 ### 26. Sass、Less 是什么？为什么要使用他们？
-
+[22. CSS预处理器/后处理器是什么？为什么要使用它们？](#22.%20CSS预处理器/后处理器是什么？为什么要使用它们？)
 他们都是 CSS 预处理器，是 CSS 上的一种抽象层。他们是一种特殊的语法/语言编译成 CSS。 例如 Less 是一种动态样式语言，将 CSS 赋予了动态语言的特性，如变量，继承，运算， 函数，LESS 既可以在客户端上运行 (支持 IE 6+, Webkit, Firefox)，也可以在服务端运行 (借助 Node.js)。  
 
 **为什么要使用它们？**  
 
-- 结构清晰，便于扩展。 可以方便地屏蔽浏览器私有语法差异。封装对浏览器语法差异的重复处理， 减少无意义的机械劳动。
-- 可以轻松实现多重继承。 完全兼容 CSS 代码，可以方便地应用到老项目中。LESS 只是在 CSS 语法上做了扩展，所以老的 CSS 代码也可以与 LESS 代码一同编译。
+- 结构清晰，便于扩展。 **可以方便地屏蔽浏览器私有语法差异**。封装对浏览器语法差异的重复处理， 减少无意义的机械劳动。
+- 可以**轻松实现多重继承**。 完全兼容 CSS 代码，可以方便地应用到老项目中。LESS 只是在 CSS 语法上做了扩展，所以老的 CSS 代码也可以与 LESS 代码一同编译。
 
 ### 27. 对媒体查询的理解？
 
-媒体查询由⼀个可选的媒体类型和零个或多个使⽤媒体功能的限制了样式表范围的表达式组成，例如宽度、⾼度和颜⾊。媒体查询，添加⾃CSS3，允许内容的呈现针对⼀个特定范围的输出设备⽽进⾏裁剪，⽽不必改变内容本身，适合web⽹⻚应对不同型号的设备⽽做出对应的响应适配。  
+媒体查询由⼀个可选的媒体类型和零个或多个使用媒体功能的限制了样式表范围的表达式组成，例如宽度、高度和颜色。媒体查询，添加⾃CSS3，**允许内容的呈现针对⼀个特定范围的输出设备而进行裁剪，而不必改变内容本身**，**适合web网页应对不同型号的设备而做出对应的响应适配**。  
 
-媒体查询包含⼀个可选的媒体类型和满⾜CSS3规范的条件下，包含零个或多个表达式，这些表达式描述了媒体特征，最终会被解析为true或false。如果媒体查询中指定的媒体类型匹配展示⽂档所使⽤的设备类型，并且所有的表达式的值都是true，那么该媒体查询的结果为true。那么媒体查询内的样式将会⽣效。  
+媒体查询包含⼀个可选的媒体类型和满足CSS3规范的条件下，包含零个或多个表达式，这些表达式描述了媒体特征，最终会被解析为true或false。如果媒体查询中指定的媒体类型匹配展示文档所使用的设备类型，并且所有的表达式的值都是true，那么该媒体查询的结果为true。那么媒体查询内的样式将会生效。  
 
-```
+```css
 <!-- link元素中的CSS媒体查询 --> 
 <link rel="stylesheet" media="(max-width: 800px)" href="example.css" /> 
 <!-- 样式表中的CSS媒体查询 --> 
 <style> 
+@media (媒体特性) {
+  /* 在特定条件下才应用的 CSS */
+}
+
 @media (max-width: 600px) { 
   .facet_sidebar { 
     display: none; 
+    /*意思是：当屏幕宽度 ≤ 600px 时，隐藏 `.sidebar` 元素。*/
   } 
 }
+
 </style>
 ```
 
 简单来说，使用 @media 查询，可以针对不同的媒体类型定义不同的样式。@media 可以针对不同的屏幕尺寸设置不同的样式，特别是需要设置设计响应式的页面，@media 是非常有用的。当重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。  
 
-### 28. 对 CSS 工程化的理解
+### 28. 对 CSS工程化的理解
 
 CSS 工程化是为了解决以下问题：
 
@@ -524,7 +571,7 @@ CSS 工程化是为了解决以下问题：
 
 基于这三个方向，可以衍生出一些具有典型意义的子问题，这里我们逐个来看：
 
-**（1）预处理器：为什么要用预处理器？它的出现是为了解决什么问题？**  
+#### **（1）预处理器：为什么要用预处理器？它的出现是为了解决什么问题？**  
 
 预处理器，其实就是 CSS 世界的“轮子”。预处理器支持我们写一种类似 CSS、但实际并不是 CSS 的语言，然后把它编译成 CSS 代码：  
 
@@ -545,7 +592,7 @@ CSS 工程化是为了解决以下问题：
 - 支持循环语句的使用；
 - 支持将 CSS 文件模块化，实现复用。
 
-**（2）PostCss：PostCss 是如何工作的？我们在什么场景下会使用 PostCss？**  
+#### **（2）PostCss：PostCss 是如何工作的？我们在什么场景下会使用 PostCss？**  
 
 PostCss 仍然是一个对 CSS 进行解析和处理的工具，它会对 CSS 做这样的事情：  
 
@@ -558,7 +605,7 @@ PostCss 在业务中的使用场景非常多：
 - 当我们的 CSS 代码需要适配低版本浏览器时，PostCss 的 [Autoprefixer](https://www.w3cschool.cn/targetlink?url=https://github.com/postcss/autoprefixer) 插件可以帮助我们自动增加浏览器前缀；
 - 允许我们编写面向未来的 CSS：PostCss 能够帮助我们编译 CSS next 代码；
 
-**（3）Webpack 能处理 CSS 吗？如何实现？**  
+#### **（3）Webpack 能处理 CSS 吗？如何实现？**  
 
 Webpack 能处理 CSS 吗：  
 
@@ -584,7 +631,7 @@ Webpack 能处理 CSS 吗：
 - ​`imgs.offsetTop`​ 是元素顶部距离文档顶部的高度（包括滚动条的距离）；
 - 内容达到显示区域的：​`img.offsetTop < window.innerHeight + document.body.scrollTop;`​
 
-30. z-index属性在什么情况下会失效
+### 30. z-index属性在什么情况下会失效
 
 通常 z-index 的使用是在有两个重叠的标签，在一定的情况下控制其中一个在另一个的上方或者下方出现。z-index值越大就越是在上层。z-index元素的position属性需要是relative，absolute或是fixed。
 
@@ -627,7 +674,7 @@ z-index属性在下列情况下会失效：
 - vw/vm：相对于视窗的尺寸
 
 ### 2. px、em、rem的区别及使用场景
-
+[6.px、em和rem的区别是什么？rem面试](../../前端面试/项目+八股文.md#6.px、em和rem的区别是什么？rem面试)
 **三者的区别：**  
 
 - px是固定的像素，一旦设置了就无法因为适应页面大小而改变。
@@ -640,12 +687,13 @@ z-index属性在下列情况下会失效：
 - 对于需要适配各种移动设备，使用rem，例如需要适配iPhone和iPad等分辨率差别比较挺大的设备。
 
 ### 3. 两栏布局的实现
-
+[21.如何实现三栏布局。三栏面试](../../前端面试/项目+八股文.md#21.如何实现三栏布局。三栏面试)
 一般两栏布局指的是**左边一栏宽度固定，右边一栏宽度自适应**，两栏布局的具体实现：  
 
 - 利用浮动，将左边元素宽度设置为200px，并且设置向左浮动。将右边元素的margin-left设置为200px，宽度设置为auto（默认为auto，撑满整个父元素）。
 
-```
+[fold]
+```css
 .outer {
   height: 100px;
 }
@@ -663,7 +711,8 @@ z-index属性在下列情况下会失效：
 
 - 利用浮动，左侧元素设置固定大小，并左浮动，右侧元素设置overflow: hidden; 这样右边就触发了BFC，BFC的区域不会与浮动元素发生重叠，所以两侧就不会发生重叠。
 
-```
+[fold]
+```css
 .left{
      width: 100px;
      height: 200px;
@@ -677,9 +726,10 @@ z-index属性在下列情况下会失效：
  }
 ```
 
-- 利用flex布局，将左边元素设置为固定宽度200px，将右边的元素设置为flex:1。
+- 利用flex布局，将左边元素设置为固定宽度200px，将右边的元素设置为flex:1。[flex: 1](../../前端面试/项目+八股文.md#flex%201)
 
-```
+[fold]
+```css
 .outer {
   display: flex;
   height: 100px;
@@ -696,7 +746,9 @@ z-index属性在下列情况下会失效：
 
 - 利用绝对定位，将父级元素设置为相对定位。左边元素设置为absolute定位，并且宽度设置为200px。将右边元素的margin-left的值设置为200px。
 
-```
+[fold]
+
+```css
 .outer {
   position: relative;
   height: 100px;
@@ -715,7 +767,8 @@ z-index属性在下列情况下会失效：
 
 - 利用绝对定位，将父级元素设置为相对定位。左边元素宽度设置为200px，右边元素设置为绝对定位，左边定位为200px，其余方向定位为0。
 
-```
+[fold]
+```css
 .outer {
   position: relative;
   height: 100px;
@@ -740,7 +793,8 @@ z-index属性在下列情况下会失效：
 
 - 利用**绝对定位**，左右两栏设置为绝对定位，中间设置对应方向大小的margin的值。
 
-```
+[fold]
+```css
 .outer {
   position: relative;
   height: 100px;
@@ -772,7 +826,8 @@ z-index属性在下列情况下会失效：
 
 - 利用flex布局，左右两栏设置固定大小，中间一栏设置为flex:1。
 
-```
+[fold]
+```css
 .outer {
   display: flex;
   height: 100px;
@@ -796,7 +851,8 @@ z-index属性在下列情况下会失效：
 
 - 利用浮动，左右两栏设置固定大小，并设置对应方向的浮动。中间一栏设置左右两个方向的margin值，注意这种方式，中间一栏必须放到最后：
 
-```
+[fold]
+```css
 .outer {
   height: 100px;
 }
@@ -825,7 +881,8 @@ z-index属性在下列情况下会失效：
 
 - 圣杯布局，利用浮动和负边距来实现。父级元素设置左右的 padding，三列均设置向左浮动，中间一列放在最前面，宽度设置为父级元素的宽度，因此后面两列都被挤到了下一行，通过设置 margin 负值将其移动到上一行，再利用相对定位，定位到两边。
 
-```
+[fold]
+```css
 .outer {
   height: 100px;
   padding-left: 100px;
@@ -867,7 +924,8 @@ z-index属性在下列情况下会失效：
 
 - 双飞翼布局，双飞翼布局相对于圣杯布局来说，左右位置的保留是通过中间列的 margin 值来实现的，而不是通过父元素的 padding 来实现的。本质上来说，也是通过浮动和外边距负值来实现的。
 
-```
+[fold]
+```css
 .outer {
   height: 100px;
 }
@@ -909,7 +967,8 @@ z-index属性在下列情况下会失效：
 
 - 利用绝对定位，先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过translate来调整元素的中心点到页面的中心。该方法需要考虑浏览器兼容问题。
 
-```
+[fold]
+```css
 .parent {
     position: relative;
 }
@@ -924,7 +983,8 @@ z-index属性在下列情况下会失效：
 
 - 利用绝对定位，设置四个方向的值都为0，并将margin设置为auto，由于宽高固定，因此对应方向实现平分，可以实现水平和垂直方向上的居中。该方法适用于盒子有宽高的情况：
 
-```
+[fold]
+```css
 .parent {
     position: relative;
 }
@@ -941,7 +1001,8 @@ z-index属性在下列情况下会失效：
 
 - 利用绝对定位，先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过margin负值来调整元素的中心点到页面的中心。该方法适用于盒子宽高已知的情况
 
-```
+[fold]
+```css
 .parent {
     position: relative;
 }
@@ -957,7 +1018,8 @@ z-index属性在下列情况下会失效：
 
 - 使用flex布局，通过align-items:center和justify-content:center设置容器的垂直和水平方向上为居中对齐，然后它的子元素也可以实现垂直和水平的居中。该方法要考虑兼容的问题，该方法在移动端用的较多：
 
-```
+[fold]
+```css
 .parent {
     display: flex;
     justify-content:center;
@@ -966,16 +1028,16 @@ z-index属性在下列情况下会失效：
 ```
 
 ### 6. 如何根据设计稿进行移动端适配？
-
+[什么是响应式设计。设计面试](../../前端面试/项目+八股文.md#什么是响应式设计。设计面试)
 移动端适配主要有两个维度：  
 
-- **适配不同像素密度，**针对不同的像素密度，使用 CSS 媒体查询，选择不同精度的图片，以保证图片不会失真；
-- **适配不同屏幕大小，**由于不同的屏幕有着不同的逻辑像素大小，所以如果直接使用 px 作为开发单位，会使得开发的页面在某一款手机上可以准确显示，但是在另一款手机上就会失真。为了适配不同屏幕的大小，应按照比例来还原设计稿的内容。
+- **适配不同像素密度**，针对不同的像素密度，使用 CSS 媒体查询，选择不同精度的图片，以保证图片不会失真；
+- **适配不同屏幕大小**，由于不同的屏幕有着不同的逻辑像素大小，所以如果直接使用 px 作为开发单位，会使得开发的页面在某一款手机上可以准确显示，但是在另一款手机上就会失真。为了适配不同屏幕的大小，应按照比例来还原设计稿的内容。
 
 为了能让页面的尺寸自适应，可以使用 rem，em，vw，vh 等相对单位。  
 
 ### 7. 对Flex布局的理解及其使用场景
-
+[_flex_ 布局如何使用？_flex_ 布局面试 | flex面试](../../前端面试/项目+八股文.md#_flex_%20布局如何使用？_flex_%20布局面试%20flex面试)
 Flex是FlexibleBox的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。任何一个容器都可以指定为Flex布局。行内元素也可以使用Flex布局。注意，设为Flex布局以后，**子元素的float、clear和vertical-align属性将失效**。采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis），项目默认沿水平主轴排列。  
 
 以下6个属性设置在**容器上**：  
@@ -1001,14 +1063,14 @@ Flex是FlexibleBox的缩写，意为"弹性布局"，用来为盒状模型提供
 flex布局是CSS3新增的一种布局方式，可以通过将一个元素的display属性值设置为flex从而使它成为一个flex容器，它的所有子元素都会成为它的项目。一个容器默认有两条轴：一个是水平的主轴，一个是与主轴垂直的交叉轴。可以使用flex-direction来指定主轴的方向。可以使用justify-content来指定元素在主轴上的排列方式，使用align-items来指定元素在交叉轴上的排列方式。还可以使用flex-wrap来规定当一行排列不下时的换行方式。对于容器中的项目，可以使用order属性来指定项目的排列顺序，还可以使用flex-grow来指定当排列空间有剩余的时候，项目的放大比例，还可以使用flex-shrink来指定当排列空间不足时，项目的缩小比例。  
 
 ### 8. 响应式设计的概念及基本原理
-
+[什么是响应式设计。设计面试](../../前端面试/项目+八股文.md#什么是响应式设计。设计面试)
 响应式网站设计 `（Responsive Web design`）是一个网站能够兼容多个终端，而不是为每一个终端做一个特定的版本。  
 
 关于原理： 基本原理是通过媒体查询 `（@media）`查询检测不同的设备屏幕尺寸做处理。  
 
 关于兼容： 页面头部必须有mate声明的 `viewport`。  
 
-```
+```css
 <meta name="’viewport’" content="”width=device-width," initial-scale="1." maximum-scale="1,user-scalable=no”"/>
 ```
 
@@ -1018,7 +1080,7 @@ flex布局是CSS3新增的一种布局方式，可以通过将一个元素的dis
 
 ### 1. 为什么需要清除浮动？清除浮动的方式
 
-**浮动的定义：** 非IE浏览器下，容器不设高度且子元素浮动时，容器高度不能被内容撑开。 此时，内容会溢出到容器外面而影响布局。这种现象被称为浮动（溢出）。  
+**浮动的定义：** 非IE浏览器下，容器不设高度且子元素浮动时，容器高度不能被内容撑开（[高度坍塌](../../01_HTML+CSS/CSS.md#高度坍塌)）。 此时，内容会溢出到容器外面而影响布局。这种现象被称为浮动（溢出）。  
 
 **浮动的工作原理：**  
 
@@ -1040,7 +1102,7 @@ flex布局是CSS3新增的一种布局方式，可以通过将一个元素的dis
 - 包含浮动元素的父级标签添加 ​`overflow:hidden`​或者 ​`overflow:auto` ​
 - 使用 :after 伪元素。由于IE6-7不支持 :after，使用 zoom:1 触发 hasLayout
 
-```
+```css
 .clearfix:after{
     content: "\200B";
     display: table; 
@@ -1056,7 +1118,7 @@ flex布局是CSS3新增的一种布局方式，可以通过将一个元素的dis
 
 使用clear属性清除浮动，其语法如下：  
 
-```
+```css
 clear:none|left|right|both
 ```
 
@@ -1066,9 +1128,9 @@ clear:none|left|right|both
 
 还需要注意 clear 属性指的是元素盒子的边不能和前面的浮动元素相邻，注意这里“**前面的**”3个字，也就是clear属性对“后面的”浮动元素是不闻不问的。考虑到float属性要么是left，要么是right，不可能同时存在，同时由于clear属性对“后面的”浮动元素不闻不问，因此，当clear:left有效的时候，clear:right必定无效，也就是此时clear:left等同于设置clear:both；同样地，clear:right如果有效也是等同于设置clear:both。由此可见，clear:left和clear:right这两个声明就没有任何使用的价值，至少在CSS世界中是如此，直接使用clear:both吧。  
 
-一般使用伪元素的方式清除浮动：  
+==一般使用伪元素的方式清除浮动==：  
 
-```
+```css
 .clear::after{
   content:'';
   display: block; 
@@ -1079,11 +1141,11 @@ clear:none|left|right|both
 clear属性只有块级元素才有效的，而::after等伪元素默认都是内联水平，这就是借助伪元素清除浮动影响时需要设置display属性值的原因。  
 
 ### 3. 对BFC的理解，如何创建BFC
-
+[4.BFC是什么？它可以解决什么问题？bfc面试](../../前端面试/项目+八股文.md#4.BFC是什么？它可以解决什么问题？bfc面试)
 先来看两个相关的概念：  
 
-- Box: Box 是 CSS 布局的对象和基本单位，⼀个⻚⾯是由很多个 Box 组成的，这个Box就是我们所说的盒模型。
-- Formatting context：块级上下⽂格式化，它是⻚⾯中的⼀块渲染区域，并且有⼀套渲染规则，它决定了其⼦元素将如何定位，以及和其他元素的关系和相互作⽤。
+- Box: Box 是 CSS 布局的对象和基本单位，⼀个页面是由很多个 Box 组成的，这个Box就是我们所说的盒模型。
+- Formatting context：块级上下文格式化，它是页面中的⼀块渲染区域，并且有⼀套渲染规则，它决定了其⼦元素将如何定位，以及和其他元素的关系和相互作⽤。
 
 块格式化上下文（Block Formatting Context，BFC）是Web页面的可视化CSS渲染的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。
 
@@ -1091,7 +1153,7 @@ clear属性只有块级元素才有效的，而::after等伪元素默认都是�
 
 **创建BFC的条件：**  
 
-- 根元素：body；
+- 根元素：html；
 - 元素设置浮动：float 除 none 以外的值；
 - 元素设置绝对定位：position (absolute、fixed)；
 - display 值为：inline-block、table-cell、table-caption、flex等；
@@ -1112,7 +1174,7 @@ clear属性只有块级元素才有效的，而::after等伪元素默认都是�
 - **解决高度塌陷的问题**：在对子元素设置浮动后，父元素会发生高度塌陷，也就是父元素的高度变为0。解决这个问题，只需要把父元素变成一个BFC。常用的办法是给父元素设置 ​`overflow:hidden`​。
 - **创建自适应两栏布局**：可以用来创建自适应两栏布局：左边的宽度固定，右边的宽度自适应。
 
-```
+```css
 .left{
      width: 100px;
      height: 200px;
@@ -1132,10 +1194,10 @@ clear属性只有块级元素才有效的，而::after等伪元素默认都是�
 左侧设置 `float:left`，右侧设置 `overflow: hidden`。这样右边就触发了BFC，BFC的区域不会与浮动元素发生重叠，所以两侧就不会发生重叠，实现了自适应两栏布局。  
 
 ### 4. 什么是margin重叠问题？如何解决？
-
+[15.请描述margin边界叠加 / 外边距塌陷 是什么及解决方案。margin面试 | 外边距面试 |坍塌面试](../../前端面试/项目+八股文.md#15.请描述margin边界叠加%20/%20外边距塌陷%20是什么及解决方案。margin面试%20外边距面试%20坍塌面试)
 **问题描述：**  
 
-两个块级元素的上外边距和下外边距可能会合并（折叠）为一个外边距，其大小会取其中外边距值大的那个，这种行为就是外边距折叠。需要注意的是，**浮动的元素和绝对定位**这种脱离文档流的元素的外边距不会折叠。重叠只会出现在**垂直方向**。  
+两个块级元素的上外边距和下外边距可能会合并（折叠）为一个外边距，其大小会取其中外边距值大的那个，这种行为就是**外边距折叠**。需要注意的是，**浮动的元素和绝对定位**这种脱离文档流的元素的外边距不会折叠。重叠只会出现在**垂直方向**。  
 
 **计算原则：**  
 
@@ -1166,8 +1228,7 @@ clear属性只有块级元素才有效的，而::after等伪元素默认都是�
 
 层叠顺序，英文称作 stacking order，表示元素发生层叠时有着特定的垂直显示顺序。下面是盒模型的层叠规则：  
 
-
-对于上图，由上到下分别是：  
+对于上图，由上到下分别是（显示优先级越来越高）：  
 
 （1）背景和边框：建立当前层叠上下文元素的背景和边框。
 
@@ -1186,26 +1247,25 @@ clear属性只有块级元素才有效的，而::after等伪元素默认都是�
 **注意:** 当定位元素z-index:auto，生成盒在当前层叠上下文中的层级为 0，不会建立新的层叠上下文，除非是根元素。  
 
 ### 6. position的属性有哪些，区别是什么
-
+[12_position_ 有哪些值，各自的用法如何？。_positon面试_](../../前端面试/项目+八股文.md#12_position_%20有哪些值，各自的用法如何？。_positon面试_)
 position有以下属性值：  
 
-|属性值|概述|
-|---|---|
-|absolute|生成绝对定位的元素，相对于static定位以外的一个父元素进行定位。元素的位置通过left、top、right、bottom属性进行规定。|
-|relative|生成相对定位的元素，相对于其原来的位置进行定位。元素的位置通过left、top、right、bottom属性进行规定。|
-|fixed|生成绝对定位的元素，指定元素相对于屏幕视⼝（viewport）的位置来指定元素位置。元素的位置在屏幕滚动时不会改变，⽐如回到顶部的按钮⼀般都是⽤此定位⽅式。|
-|static|默认值，没有定位，元素出现在正常的文档流中，会忽略 top, bottom, left, right 或者 z-index 声明，块级元素从上往下纵向排布，⾏级元素从左向右排列。|
-|inherit|规定从父元素继承position属性的值|
+| 属性值      | 概述                                                                                        |
+| -------- | ----------------------------------------------------------------------------------------- |
+| absolute | 生成绝对定位的元素，相对于static定位以外的一个父元素进行定位。元素的位置通过left、top、right、bottom属性进行规定。                     |
+| relative | 生成相对定位的元素，相对于其原来的位置进行定位。元素的位置通过left、top、right、bottom属性进行规定。                               |
+| fixed    | 生成绝对定位的元素，指定元素相对于屏幕视⼝（viewport）的位置来指定元素位置。元素的位置在屏幕滚动时不会改变，⽐如回到顶部的按钮⼀般都是⽤此定位⽅式。            |
+| static   | 默认值，没有定位，元素出现在正常的文档流中，会忽略 top, bottom, left, right 或者 z-index 声明，块级元素从上往下纵向排布，⾏级元素从左向右排列。 |
+| inherit  | 规定从父元素继承position属性的值                                                                      |
 
 前面三者的定位方式如下：  
 
-**relative：**元素的定位永远是相对于元素自身位置的，和其他元素没关系，也不会影响其他元素。
+**relative**：元素的定位永远是相对于元素自身位置的，和其他元素没关系，也不会影响其他元素。
 
 
-**fixed：**元素的定位是相对于 window （或者 iframe）边界的，和其他元素没有关系。但是它具有破坏性，会导致其他元素位置的变化。  
+**fixed**：元素的定位是相对于 window （或者 iframe）边界的，和其他元素没有关系。但是它具有破坏性，会导致其他元素位置的变化。 
 
-
-**absolute：**元素的定位相对于前两者要复杂许多。如果为 absolute 设置了 top、left，浏览器会根据什么去确定它的纵向和横向的偏移量呢？答案是浏览器会递归查找该元素的所有父元素，如果找到一个设置了 `position:relative/absolute/fixed`的元素，就以该元素为基准定位，如果没找到，就以浏览器边界定位。如下两个图所示：  
+**absolute**：元素的定位相对于前两者要复杂许多。如果为 absolute 设置了 top、left，浏览器会根据什么去确定它的纵向和横向的偏移量呢？答案是浏览器会递归查找该元素的所有父元素，如果找到一个设置了 `position:relative/absolute/fixed`的元素，就以该元素为基准定位，如果没找到，就以浏览器边界定位。如下两个图所示：  
 
 ### 7. display、float、position的关系
 
@@ -1238,6 +1298,19 @@ sticky 英文字面意思是粘贴，所以可以把它称之为粘性定位。�
 
 粘性定位的元素是依赖于用户的滚动，在 **position:relative** 与 **position:fixed** 定位之间切换。它的行为就像 **position:relative;** 而当页面滚动超出目标区域时，它的表现就像 **position:fixed;**，它会固定在目标位置。元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。这个特定阈值指的是 top, right, bottom 或 left 之一，换言之，指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。  
 
+### 10.grid网格布局
+[CSS Grid 网格布局教程 - 阮一峰的网络日志](https://ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
+
+网格布局（Grid）是最强大的 CSS 布局方案。
+
+它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。以前，只能通过复杂的 CSS 框架达到的效果，现在浏览器内置了。
+![](/img/user/前端八股/CSS/Attachments/Paste-image-20250629.png)
+上图这样的布局，就是 Grid 布局的拿手好戏。
+
+Grid 布局与 [Flex 布局](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。
+
+Flex 布局是轴线布局，只能指定"项目"针对轴线的位置，可以看作是**一维布局**。Grid 布局则是将容器划分成"行"和"列"，产生单元格，然后指定"项目所在"的单元格，可以看作是**二维布局**。Grid 布局远比 Flex 布局强大。
+
 ## 四、场景应用
 
 ---
@@ -1248,7 +1321,7 @@ CSS绘制三角形主要用到的是border属性，也就是边框。
 
 平时在给盒子设置边框时，往往都设置很窄，就可能误以为边框是由矩形组成的。实际上，border属性是右三角形组成的，下面看一个例子：
 
-```
+```css
 div {
     width: 0;
     height: 0;
@@ -1263,7 +1336,7 @@ div {
 
 **（1）三角1**  
 
-```
+```css
 div {
     width: 0;
     height: 0;
@@ -1276,7 +1349,7 @@ div {
 
 **（2）三角2**  
 
-```
+```css
 div {
     width: 0;
     height: 0;
@@ -1289,7 +1362,7 @@ div {
 
 **（3）三角3**  
 
-```
+```css
 div {
     width: 0;
     height: 0;
@@ -1302,7 +1375,7 @@ div {
 
 **（4）三角4**  
 
-```
+```css
 div {
     width: 0;
     height: 0;
@@ -1315,7 +1388,7 @@ div {
 
 **（5）三角5**  
 
-```
+```css
 div {
     width: 0;
     height: 0;
@@ -1331,7 +1404,7 @@ div {
 
 用CSS实现扇形的思路和三角形基本一致，就是多了一个圆角的样式，实现一个90°的扇形：  
 
-```
+```css
 div{
     border: 100px solid transparent;
     width: 0;
@@ -1346,7 +1419,7 @@ div{
 
 - 利用vw来实现：
 
-```
+```css
 .square {
   width: 10%;
   height: 10vw;
@@ -1356,7 +1429,7 @@ div{
 
 - 利用元素的margin/padding百分比是相对父元素width的性质来实现：
 
-```
+```css
 .square {
   width: 20%;
   height: 0;
@@ -1367,7 +1440,7 @@ div{
 
 - 利用子元素的margin-top的值来实现：
 
-```
+```css
 .square {
   width: 30%;
   overflow: hidden;
@@ -1384,13 +1457,13 @@ div{
 
 - 采用transform: scale()的方式，该方法用来定义元素的2D 缩放转换：
 
-```
+```css
 transform: scale(0.5,0.5);
 ```
 
 - 采用meta viewport的方式
 
-```
+```css
 <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5"/>
 ```
 
@@ -1425,19 +1498,19 @@ window.devicePixelRatio = 设备的物理像素 / CSS像素。
 
 如果之前 1px 的样式这样写：  
 
-```
+```css
 border:1px solid #333
 ```
 
 可以先在 JS 中拿到 window.devicePixelRatio 的值，然后把这个值通过 JSX 或者模板语法给到 CSS 的 data 里，达到这样的效果（这里用 JSX 语法做示范）：  
 
-```
+```css
 <div id="container" data-device={{window.devicePixelRatio}}></div>
 ```
 
 然后就可以在 CSS 中用属性选择器来命中 devicePixelRatio 为某一值的情况，比如说这里尝试命中 devicePixelRatio 为2的情况：  
 
-```
+```css
 #container[data-device="2"] {
   border:0.5px solid #333
 }
@@ -1453,7 +1526,7 @@ border:1px solid #333
 
 代码如下：  
 
-```
+```css
 #container[data-device="2"] {
     position: relative;
 }
@@ -1476,13 +1549,13 @@ border:1px solid #333
 
 这个思路就是对 meta 标签里几个关键属性下手：  
 
-```
+```css
 <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
 ```
 
 这里针对像素比为2的页面，把整个页面缩放为了原来的1/2大小。这样，本来占用2个物理像素的 1px 样式，现在占用的就是标准的一个物理像素。根据像素比的不同，这个缩放比例可以被计算为不同的值，用 js 代码实现如下：  
 
-```
+```css
 const scale = 1 / window.devicePixelRatio;
 // 这里 metaEl 指的是 meta 标签对应的 Dom
 metaEl.setAttribute('content', `width=device-width,user-scalable=no,initial-scale=${scale},maximum-scale=${scale},minimum-scale=${scale}`);
