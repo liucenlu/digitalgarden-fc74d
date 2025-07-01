@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-01T16:21:40.668+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-01T20:30:41.948+08:00"}
 ---
 
 # CSS基础
@@ -1086,43 +1086,42 @@ img {
 ### 更多伪类选择器
 
 1. first-child
-
-选择第一个子元素
-
-first-of-type，选中子元素中第一个指定类型的元素
+	选择第一个子元素
+	
+	first-of-type，选中子元素中第一个指定类型的元素
 
 2. last-child
 
 
 3. nth-child
-
-选中指定的第几个子元素
-
-even：关键字，等同于2n
-odd: 关键字，等同于2n+1
+	
+	选中指定的第几个子元素
+	
+	even：关键字，等同于2n
+	odd: 关键字，等同于2n+1
 
 4. nth-of-type
-
-选中指定的子元素中第几个某类型的元素
+	
+	选中指定的子元素中第几个某类型的元素
 
 ### 更多的伪元素选择器
 
 1. first-letter
-
-选中元素中的第一个字母
+	
+	选中元素中的第一个字母
 
 2. first-line
-
-选中元素中第一行的文字
+	
+	选中元素中第一行的文字
 
 3. selection
-
-选中被用户框选的文字
+	
+	选中被用户框选的文字
 ## 17.更多的样式
 ### 透明度
 
 1. opacity，它设置的是整个元素的透明，它的取值是0 ~ 1
-2. 在颜色位置设置alpha通道(rgba )
+2. 在颜色位置设置alpha通道(rgba )，推荐
 
 ### 鼠标
 
@@ -1146,35 +1145,38 @@ img元素是属于HTML的概念
 
 #### 涉及的css属性
 
-1. background-image
+1. background-image:url()
 
-2. background-repeat
+2. background-repeat:repeat|no-repeat
 
-默认情况下，背景图会在横坐标和纵坐标中进行重复
+	默认情况下，背景图会在横坐标和纵坐标中进行重复
 
-3. background-size
+3. background-size:contain|cover|100%|300px
+	控制背景图的尺寸
+	预设值：contain、cover，类似于object-fit
+	数值或百分比
 
-预设值：contain、cover，类似于object-fit
-数值或百分比
+4. background-position：（横向） （纵向）
 
-4. background-position
+	设置背景图的位置。
+	
+	预设值：left、bottom、right、top、center
+	
+	数值或百分比
+	
+	雪碧图（精灵图）（spirit）：多个图标合成到一张图，用某个图标显示相应位置
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250701-6.png)
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250701-5.png)
 
-设置背景图的位置。
+5. background-attachment:fixed
 
-预设值：left、bottom、right、top、center
+	通常用它控制背景图是否固定。
 
-数值或百分比
-
-雪碧图（精灵图）（spirit）
-
-5. background-attachment
-
-通常用它控制背景图是否固定。
-
-6. 背景图和背景颜色混用
+6. 背景图和背景颜色混用（用相同颜色填充白边）
 
 7. 速写（简写）background
 ## 18.背景图练习
+
 # CSS进阶
 ## 1.@规则
 at-rule: @规则、@语句、CSS语句、CSS指令
