@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-06-27T12:52:30.475+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-01T16:21:40.668+08:00"}
 ---
 
 # CSS基础
@@ -233,6 +233,7 @@ span::after {
 }
 ```
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-4.png)
+[9. 伪元素和伪类的区别和作用？](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#9.%20伪元素和伪类的区别和作用？)
 ### 选择器的组合
 
 1. 并且`p.red{}`
@@ -263,7 +264,7 @@ span::after {
   1）作者样式表中的!important样式（慎加）
 2)  作者样式表中的普通样式
 3)  浏览器默认样式表中的样式
-
+样式表的来源不同时，优先级顺序为：内联样式 > 内部样式 > 外部样式 > 浏览器用户自定义样式 > 浏览器默认样式。
 ### 2. 比较特殊性
 看选择器
 总体规则：选择器选中的范围越窄，越特殊越重要
@@ -317,7 +318,7 @@ span::after {
     `color:inherit;`
 - initial：初始值，将该属性设置为默认值
 ## 7.盒模型
-
+[11. 对盒模型的理解](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#11.%20对盒模型的理解)
 box：盒子，每个元素在页面中都会生成一个矩形区域（盒子）
 
 盒子类型：
@@ -462,7 +463,7 @@ display：inline-block 的盒子
 删掉`display: inline-block;`:a元素变为行盒
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-3.png)
 
-### 行快盒实现分页标签
+### 行块盒实现分页标签
 [scroll]
 
 ```html
@@ -522,6 +523,7 @@ display：inline-block 的盒子
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-5.png)
 这些源码中的空白会被折叠为一个空格
 ### 可替换元素 和 非可替换元素
+[15. 替换元素的概念及计算规则](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#15.%20替换元素的概念及计算规则)
 
 + 大部分元素，页面上显示的结果，取决于==元素内容==，称为**非可替换元素**
 
@@ -548,55 +550,54 @@ object-fit：contain|fill|cover
 
 ### 常规流布局
 
-常规流、文档流、普通文档流、常规文档流
+>也叫：常规流、文档流、普通文档流、常规文档流
 
-所有元素，默认情况下，都属于常规流布局
+*所有元素，默认情况下，都属于常规流布局*
 
-总体规则：块盒独占一行，行盒水平依次排列
+- 总体规则：==块盒独占一行，行盒水平依次排列==
 
-包含块（containing block）：每个盒子都有它的包含块，包含块决定了盒子的排列区域。
-
-绝大部分情况下：盒子的包含块，为其父元素的内容盒
+==**包含块**==（containing block）：每个盒子都有它的包含块，包含块决定了盒子的排列区域。
+- 绝大部分情况下：盒子的包含块，为其**父元素的内容盒**
 
 **块盒**
 
 1. 每个块盒的总宽度，必须刚好等于包含块的宽度
 
-宽度的默认值是auto
+	宽度的默认值是auto(auto：将剩余空间吸收掉)
+	margin的取值也可以是auto，默认值0
 
-margin的取值也可以是auto，默认值0
-
-auto：将剩余空间吸收掉
-
-width吸收能力强于margin
-
-若宽度、边框、内边距、外边距计算后，仍然有剩余空间，该剩余空间被margin-right全部吸收
-
-在常规流中，块盒在其包含快中居中，可以定宽、然后左右margin设置为auto。
+	width吸收能力强于margin
+	
+	根据 **W3C CSS 2.1/3 标准**，在标准流下，一个块级盒子在没有浮动、绝对定位、`display: inline` 等干扰的前提下：
+	```
+	`margin-left + border-left + padding-left + width + padding-right + border-right + margin-right = 包含块的 width`
+	```
+	如果没有显式指定这些值，浏览器会按规则 **自动计算 margin 或 width 的 `auto` 值** 来让等式成立(如果没有任何auto值参与，则多余部分留空，不会被吸收)。
+	
+	==在常规流中，块盒在其包含块中居中的方式，可以定宽、然后左右margin设置为auto。==
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-9.png)
 
 2. 每个块盒垂直方向上的auto值
-
-height:auto， 适应内容的高度
-
-margin:auto， 表示0
+	height:auto， 适应内容的高度
+	margin:auto， 在垂直方向上表示0
 
 3. 百分比取值
 
-padding、宽、margin可以取值为百分比
-
-以上的所有百分比相对于包含块的宽度。
-
-高度的百分比：
-
-1）. 包含块的高度是否取决于子元素的高度，设置百分比无效
-2）. 包含块的高度不取决于子元素的高度，百分比相对于父元素高度
+	**padding、宽、margin**可以取值为百分比
+	
+	以上的所有百分比相对于==包含块的宽度==。
+	
+	**高度**的百分比：
+	
+	1）. 包含块的高度取决于子元素的高度，设置百分比无效
+	2）. 包含块的高度不取决于子元素的高度，百分比相对于父元素高度
 
 4. 上下外边距的合并
-
-两个常规流块盒，上下外边距相邻，会进行合并。
-
-两个外边距取最大值。
+	**两个**常规流块盒，上下外边距相邻，会进行合并。	
+	两个外边距取最大值。
 ## 11.常规流练习
+还原设计稿
+![](/img/user/01_HTML+CSS/attachments/设计稿.png)
 
 ## 12.浮动
 视觉格式化模型，大体上将页面中盒子的排列分为三种方式：
@@ -617,10 +618,12 @@ padding、宽、margin可以取值为百分比
 - left：左浮动，元素靠上靠左
 - right：右浮动，元素靠上靠右
 
-默认值为none
+默认值为none，常规流
 
-1. 当一个元素浮动后，元素必定为块盒(更改display属性为block)
-2. 浮动元素的包含块，和常规流一样，为父元素的内容盒
+> [!NOTE]
+> 1. 当一个元素浮动后，元素必定为块盒(更改display属性为block)
+> 2. 浮动元素的包含块，和常规流一样，为父元素的内容盒
+> 
 
 ### 盒子尺寸
 
@@ -634,23 +637,78 @@ padding、宽、margin可以取值为百分比
 1. 左浮动的盒子靠上靠左排列
 2. 右浮动的盒子考上靠右排列
 3. 浮动盒子在包含块中排列时，会避开常规流块盒
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250628-1.png)
 4. 常规流块盒在排列时，无视浮动盒子
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250628.png)
 5. 行盒在排列时，会避开浮动盒子
 6. 外边距合并不会发生
 
-> 如果文字没有在行盒中，浏览器会自动生成一个行盒包裹文字，该行盒叫做匿名行盒。
+> 如果文字没有在行盒中，浏览器会自动生成一个行盒包裹文字，该行盒叫做**匿名行盒**。
 
 ### 高度坍塌
 
-高度坍塌的根源：常规流盒子的自动高度，在计算时，不会考虑浮动盒子
+高度坍塌的根源：常规流盒子的自动高度，在计算时，==不会考虑浮动盒子==
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250628-2.png)
 
-清除浮动，涉及css属性：clear
-
-- 默认值：none
+**清除浮动**，涉及css属性：==clear==
+- none：默认值
 - left：清除左浮动，该元素必须出现在前面所有左浮动盒子的下方
 - right：清除右浮动，该元素必须出现在前面所有右浮动盒子的下方
 - both：清除左右浮动，该元素必须出现在前面所有浮动盒子的下方
+[scroll]
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      background-color: red;
+      padding: 20px;
+      border: 1px solid black;
+    }
+    .item{
+      width:200px;
+      height:200px;
+      float: left;
+      background-color: aliceblue;
+      margin:6px;
+    }
+    .clearfix {
+      clear:both;
+      height:60px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="clearfix"></div>
+  </div>
+</body>
+</html>
+```
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250628-3.png)
+
+> [!NOTE]
+> 小技巧(常规做法)：**clearfix**：借助伪元素在浮动元素的父元素上创建一个清除浮动的元素，以此解决父元素高度塌陷问题。
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250628-4.png)
 ## 13.浮动练习
+猫眼电影首页
+ ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250628-5.png)
 ## 14.定位
 视觉格式化模型，大体上将页面中盒子的排列分为三种方式：
 
@@ -663,7 +721,7 @@ padding、宽、margin可以取值为百分比
 涉及的CSS属性：position
 
 ### position属性
-
+[6. position的属性有哪些，区别是什么](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#6.%20position的属性有哪些，区别是什么)
 - 默认值：static，静态定位（不定位）
 - relative：相对定位
 - absolute：绝对定位
@@ -688,13 +746,13 @@ padding、宽、margin可以取值为百分比
 - right
 - top
 - bottom
-
-盒子的偏移不会对其他盒子造成任何影响。
-
+**relative**：元素的定位永远是**相对于元素自身位置**的，和其他元素没关系，盒子的偏移不会对其他盒子造成任何影响。(所以相对定位盒子的主要作用就是作为绝对定位盒子的包含块)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250701.png)
 ### 绝对定位
 
 1. 宽高为auto，适应内容
 2. 包含块变化：找祖先中第一个定位元素，该元素的填充盒为其包含块。若找不到，则它的包含块为整个网页（初始化包含块）
+>	浏览器会递归查找该元素的所有父元素，如果找到一个设置了 `position:relative/absolute/fixed`的元素，就以该元素为基准定位，如果没找到，就以浏览器边界定位。如下两个图所示：  
 
 ### 固定定位
 
@@ -702,8 +760,12 @@ padding、宽、margin可以取值为百分比
 
 包含块不同：固定为视口（浏览器的可视窗口）
 
+浏览器的可视窗口和网页（初始化包含块）的区别：
+- 网页（初始化包含块）：html元素下，整个网页
+- 可视窗口：用户可见的浏览器窗口范围（拉动滚动条元素固定）
 
 ### 定位下的居中
+[1.div 怎么垂直居中？居中面试](../前端面试/项目+八股文.md#1.div%20怎么垂直居中？居中面试)
 
 某个方向居中：
 
@@ -712,23 +774,314 @@ padding、宽、margin可以取值为百分比
 3. 将左右（上下）margin设置为auto
 
 绝对定位和固定定位中，margin为auto时，会自动吸收剩余空间
-
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250701-1.png)
+![](/img/user/01_HTML+CSS/attachments/attachments/Pasted image 20250701104820.png)
 ### 多个定位元素重叠时
+[30. z-index属性在什么情况下会失效](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#30.%20z-index属性在什么情况下会失效)
+[5. 元素的层叠顺序](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#5.%20元素的层叠顺序)
 
-堆叠上下文
+- 堆叠上下文
 
-设置z-index，通常情况下，该值越大，越靠近用户
+- 设置z-index，通常情况下，该值越大，越靠近用户
 
-只有定位元素设置z-index有效
+- 只有定位元素设置z-index有效
 
-z-index可以是负数，如果是负数，则遇到常规流、浮动元素，则会被其覆盖
+- z-index可以是负数，如果是负数，则遇到常规流、浮动元素，则会被其覆盖
 
 ### 补充
 
 - 绝对定位、固定定位元素一定是块盒
 - 绝对定位、固定定位元素一定不是浮动
 - 没有外边距合并
+
 ## 15.定位练习
+
+### 二级菜单
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250701-3.png)
+[scroll]
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="topnav clearfix">
+      <ul>
+        <li>Lorem.</li>
+        <li>Laborum?</li>
+        <li>Fugit.</li>
+        <li>Id.
+          <div class="submenu">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, necessitatibus!</div>
+        </li>
+        <li>Beatae!</li>
+        <li>Veritatis.</li>
+      </ul>
+    </div>
+  </header>
+
+  <main> 
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error animi nulla, vero reprehenderit, doloremque repudiandae obcaecati possimus molestias v</div>
+  </main>
+</body>
+</html>
+```
+[scroll]
+```css
+.header {
+  background-color: #ccc;
+  color:rgb(80, 82, 89);
+  height: 36px;
+  line-height: 36px;
+  width:100%;
+  position: fixed;
+  left:0;
+  top:0;
+}
+.clearfix::after{
+  content:'';
+  display: block;
+  clear:both;
+}
+
+.topnav ul li {
+  float:left;
+  margin:0 20px;
+  padding: 0 5px;
+  width: 100px;
+  height:36px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+.topnav ul li:hover::after{
+  content:'';
+  position: absolute;
+  width:100%;
+  background:#fff;
+  height:2px;
+  left:0;
+  bottom: 0;
+}
+
+.topnav li:hover {
+  color: red;
+  border-left:1px solid rgb(80, 82, 89);
+  border-right:1px solid rgb(80, 82, 89);
+  line-height: 36px;
+  background-color: #fff;
+}
+.topnav li .submenu{
+  display: none;
+  color:red;
+  box-sizing: border-box;
+  border:1px solid rgb(80, 82, 89);
+  width: 200px;
+  position:absolute;
+  right: -1px;
+  top:35px;
+  background-color: #fff;
+  text-align: left;
+}
+.topnav li:hover .submenu {
+  display: block;
+  padding:3px;
+}
+.main{
+  background-color: lightblue;
+  height: 1500px;
+  position: relative;
+  top:36px;
+  left:0;
+  padding:5px;
+}
+body{
+  background-color: lightblue;
+}
+```
+### 轮播图
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250701-4.png)
+
+[scroll]
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/轮播图.css">
+</head>
+<body>
+  <div class="banner">
+    <div class="imgs">
+      <a href=""><img src="./img/1.jpg" alt=""></a>
+      <a href=""><img src="./img/2.jpg" alt=""></a>
+      <a href=""><img src="./img/3.jpg" alt=""></a>
+    </div>
+    <div class="left">&lt</div>
+    <div class="right">&gt</div>
+    <div class="modal">
+      <div class="title"><h2>黄河风景美如画</h2></div>
+      <div class="dots">
+        <ul>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+```
+
+[scroll]
+```css
+.banner {
+  width:520px;
+  height: 304px;
+  margin:20px auto;
+  overflow: hidden;
+  position: relative;
+}
+.banner .imgs {
+  width: 1560px;
+  height: 304px;
+  margin-left: -520px;
+}
+.banner .imgs img{
+  width:520px;
+  height:304px;
+  display: block;
+  float:left;
+}
+.banner .left,.right {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  color:#fff;
+  width:50px;
+  height:50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 3em;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.banner .left:hover,.right:hover{
+  color:red;
+  background-color: #fff;
+}
+.banner .left {
+  left:20px;
+
+}
+.banner .right {
+  right:20px
+}
+.banner .modal {
+  position: absolute;
+  background-color: rgb(0,0,0,.3);
+  width:100%;
+  height:40px;
+  bottom: 0;
+  left:0;
+  color: #fff;
+  line-height: 40px;
+  padding:0 20px;
+  box-sizing: border-box;
+}
+.banner .modal .title,.dots{
+  float:left;
+}
+.banner .modal .dots {
+  float: right;
+}
+.banner .modal .dots li{
+  display: inline-block;
+  background-color: #ccc;
+  width:6px;
+  height:6px;
+  border-radius: 50%;
+  margin:0 2px;
+  cursor: pointer;
+}
+.banner .modal .dots li:hover{
+  background-color: #369;
+}
+```
+### 弹出层
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250701-2.png)
+[scroll]
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/弹出层.css">
+</head>
+<body>
+  <img src="./jd.jpeg" alt="">
+  <div class="modal">
+    <div class="container">
+      <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt qui minus enim mollitia impedit amet provident illum debitis, quam omnis, culpa tenetur totam officiis, minima atque natus vel a eaque.</div>
+      <div class="close">X</div>
+    </div>
+  </div>
+</body>
+</html>
+```
+[scroll]
+```css
+img {
+  width:100%;
+}
+.modal {
+  position: fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background-color: rgb(0,0,0,.5);
+}
+.container {
+  width:405px;
+  height:500px;
+  position:absolute;
+  background-color: #fff;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding:20px;
+}
+.container .close {
+  background-color: red;
+  width:30px;
+  height: 30px;
+  border-radius: 50%;
+  color:#fff;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  top:0;
+  right:0;
+  transform: translate(50%,-50%);
+  cursor: pointer;
+}
+```
 ## 16.更多的选择器
 ### 更多伪类选择器
 
