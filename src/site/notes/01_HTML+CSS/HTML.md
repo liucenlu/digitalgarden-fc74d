@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-07-02T21:20:05.494+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-07-02T22:05:42.287+08:00"}
 ---
 
 # HTML核心
@@ -1223,29 +1223,131 @@ form元素对开发静态页面没有什么意义。
 ### 新的伪类
 
 1. focus
-
-元素聚焦时的样式
-
+	
+	元素聚焦时的样式
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250702-7.png)
+	浏览器给每一个元素都默认添加了聚焦样式
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250702-9.png)
+	按tab键可以切换聚焦元素
+	
 2. checked
-
-单选或多选框被选中的样式
+	单选或多选框被选中的样式
 
 ### 常见用法
 
 1. 重置表单元素样式
+	```css
+	input,
+	textarea,
+	button,
+	select {
+	    border: none;
+	}
+	
+	input:focus,
+	textarea:focus,
+	button:focus,
+	select:focus {
+	    outline: none;
+	    outline-offset: 0;
+	}
+	```
+	再根据设计稿设计样式
+	```css
+	input[type="text"], textarea, select {
+	    border: 1px solid #999;
+	}
+	
+	input[type="text"]:focus, textarea:focus, select:focus {
+	    border: 1px solid #008c8c;
+	}
+	
+	button{
+	    border: 2px solid #008c8c;
+	    border-radius: 5px;
+	}
+	```
 
 2. 设置textarea是否允许调整尺寸
-
-css属性resize：
-
-- both：默认值，两个方向都可以调整尺寸
-- none：不能调整尺寸
-- horizontal: 水平方向可以调整尺寸
-- vertical：垂直方向可以调整尺寸
+	
+	css属性`resize:both|none|horizontal|vertical`
+	
+	- both：默认值，两个方向都可以调整尺寸
+	- none：不能调整尺寸
+	- horizontal: 水平方向可以调整尺寸
+	- vertical：垂直方向可以调整尺寸
 
 3. 文本框边缘到内容的距离
+	1. padding
+	2. text-indent
 
-4. 控制单选和多选的样式
+4. 自定义单选和多选的样式
+[scroll]
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .radio-item .radio {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #999;
+            border-radius: 50%;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .radio-item input:checked+.radio{
+            border-color: #008c8c;
+        }
+
+        .radio-item input:checked~span{
+            color:#008c8c;
+        }
+
+        .radio-item input:checked+.radio::after {
+            content: "";
+            display: block;
+            width: 5px;
+            height: 5px;
+            background: #008c8c;
+            margin-left: 3.5px;
+            margin-top: 3.5px;
+            border-radius: 50%;
+        }
+
+        .radio-item input[type="radio"]{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>
+        请选择性别：
+        <label class="radio-item">
+            <input name="gender" type="radio">
+            <span class="radio"></span>
+            <span>男</span>
+        </label>
+
+        <label class="radio-item">
+            <input name="gender" type="radio">
+            <span class="radio"></span>
+            <span>女</span>
+        </label>
+    </p>
+</body>
+
+</html>
+```
+	
 ## 5.表单练习
 
 ## 6.表格元素
@@ -1258,6 +1360,7 @@ css属性resize：
 后台：面向管理员。对界面要求不高，对功能性要求高。
 
 表格不再适用于网页布局？表格的渲染速度过慢。
+
 ## 7.其他元素
 1. abbr
 	缩写词
