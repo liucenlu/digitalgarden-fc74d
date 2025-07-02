@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-01T20:30:41.948+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-02T14:47:32.142+08:00"}
 ---
 
 # CSS基础
@@ -1176,6 +1176,167 @@ img元素是属于HTML的概念
 
 7. 速写（简写）background
 ## 18.背景图练习
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250702.png)
+[scroll]
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>魔兽世界-首页</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/index.css">
+</head>
+<body>
+  <header class="header">
+    <ul>
+      <li><a href="" class="item">进入官网</a></li>
+      <li><a href="" class="item">账号注册</a></li>
+      <li><a href="" class="item">充值管理</a></li>
+      <li><a href="" class="item">游戏下载</a></li>
+      <li><a href="" class="item">客服中心</a></li>
+      <li><a href="" class="item">官方论坛</a></li>
+    </ul>
+    <div class="logo">
+      <a href=""></a>
+      <h1>魔兽世界</h1>
+    </div>
+  </header>
+  <div class="btn">
+    <div class="item"><a href="" class="details"><span>了解详情</span></a></div>
+    <div class="item"><a href="" class="download"><span>客户端下载</span></a></div>
+  </div>
+  <div class="adv clearfix">
+    <div class="item">
+      <a href="">
+        <div class="title"><h3>点卡兑换现已开启</h3></div>
+        <img src="./img/1.jpg" alt="">
+      </a>
+    </div>
+        <div class="item">
+      <a href="">
+        <div class="title"><h3>直升110级现已开启</h3></div>
+        <img src="./img/2.jpg" alt="">
+      </a>
+    </div>
+        <div class="item">
+      <a href="">
+        <div class="title"><h3>客户端下载</h3></div>
+        <img src="./img/3.jpg" alt="">
+      </a>
+    </div>
+        <div class="item">
+      <a href="">
+        <div class="title"><h3>免费注册</h3></div>
+        <img src="./img/4.jpg" alt="">
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+```
+
+[scroll]
+```css
+body {
+  background-image: url('../img/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.header {
+  background:url('../img/bg_nav.jpg');
+  width:1198px;
+  height: 73px;
+  position: absolute;
+  left:0;
+  right:0;
+  margin:0 auto;
+  margin-top: 45px;
+  color:#f8c12d;
+  line-height: 73px;
+  border:1px solid #3f2a22;
+  position: relative;
+}
+.header .item {
+  float:left;
+  width:158px;
+  height:73px;
+  text-align: center;
+  border:1px solid #3f2a22;
+}
+.header ul li:nth-child(3) a {
+  margin-right: 232px;
+}
+.header .logo a{
+  position:absolute;
+  left:0;
+  right:0;
+  margin:0 auto;
+  transform: translate(0,-30%);
+  background: url('../img/logo.png') no-repeat;
+  width:237px;
+  height:117px;
+}
+.header .logo h1{
+  display: none;
+}
+.btn {
+  margin-top:470px;
+  text-align: center;
+}
+.btn .item{
+  display: inline-block;
+  width:306px;
+  height:82px;
+  text-align: center;
+  line-height: 78px;
+  background: url('../img/btns.png');
+  background-position: -9px -6px;
+}
+.btn .item span{
+  display: none;
+}
+.btn .item:nth-child(2){
+  margin-left:25px;
+  background-position: -332px -6px;
+}
+.clearfix:after{ 
+  content:'';
+  display: block;
+  clear:both;
+}
+.adv{
+  width:1208px;
+  margin:90px auto 114px;
+}
+.adv .item{
+  float: left;
+  margin-right: 16px;
+  height: 204px;
+  outline:1px solid #3f2b22;
+}
+.adv .item:last-child {
+  margin-right: 0;
+}
+.adv .item a .title{
+  width:290px;
+  height:54px;
+  background-color: #201510;
+  color:#f8c12d;
+  line-height: 54px;
+  text-align: center;
+  font-weight: bold;
+}
+.adv .item img {
+  width: 290px;
+  height:150px;
+  box-sizing: border-box;
+  border:1px solid #3f2b22;
+}
+
+```
 
 # CSS进阶
 ## 1.@规则
