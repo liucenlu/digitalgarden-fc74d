@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-07-02T21:17:27.663+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-07-02T21:20:05.494+08:00"}
 ---
 
 # HTML核心
@@ -1206,6 +1206,7 @@ form元素对开发静态页面没有什么意义。
   <label for="email">邮箱：</label>
   <input type="email" id="email" name="email">
 </fieldset>
+
 ```html
 <fieldset>
   <legend>个人信息</legend>
