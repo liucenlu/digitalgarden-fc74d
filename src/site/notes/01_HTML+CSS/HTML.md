@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-07-02T20:27:56.497+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-07-02T21:17:27.663+08:00"}
 ---
 
 # HTML核心
@@ -1026,26 +1026,73 @@ iframe 可替换元素
 		- 以上不同type有其特有的一些属性
 	- value属性：输入框的值
 	- placeholder属性：显示提示的文本，文本框没有内容时显示
+	- checked属性：表示选中
+	- input元素还有丰富的状态属性、限制输入属性、表单控制属性
+
 `<input type="password" placeholder="请输入密码">`
 
 - input元素可以制作按钮
 	当type值为reset、button、submit时，input表示按钮。
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250702-4.png)
+
 ### select元素
 
 下拉列表选择框
-
 通常和option元素配合使用
+- selected属性表示选中
+#### 基本语法
+```html
+<select name="fruit">
+  <option value="apple">苹果</option>
+  <option value="banana">香蕉</option>
+  <option value="orange">橙子</option>
+</select>
+```
+#### selected常用属性
 
+| 属性名         | 说明                                  | 示例                      |
+| ----------- | ----------------------------------- | ----------------------- |
+| `name`      | 表单提交时的键名                            | `<select name="city">`  |
+| `id`        | 元素的唯一标识，可用于 JS 或 `<label for="id">` | `<select id="gender">`  |
+| `required`  | 表示为必选字段                             | `<select required>`     |
+| `disabled`  | 禁用选择框                               | `<select disabled>`     |
+| `multiple`  | 允许多选，按 Ctrl 或 Shift 进行多选            | `<select multiple>`     |
+| `size`      | 显示多少行选项（不设置时为下拉）                    | `<select size="3">`     |
+| `autofocus` | 页面加载后自动聚焦                           | `<select autofocus>`    |
+| `form`      | 指定该元素所属的表单 ID                       | `<select form="form1">` |
+#### optgroup元素：选项分组
+```html
+<select name="country">
+  <optgroup label="亚洲">
+    <option value="cn">中国</option>
+    <option value="jp">日本</option>
+  </optgroup>
+  <optgroup label="欧洲">
+    <option value="uk">英国</option>
+    <option value="fr">法国</option>
+  </optgroup>
+</select>
+
+```
+#### option元素常用属性
+
+| 属性名        | 说明            | 示例                                  |
+| ---------- | ------------- | ----------------------------------- |
+| `value`    | 选项的实际值（提交时使用） | `<option value="cn">中国</option>`    |
+| `selected` | 设置默认选中项       | `<option selected>`                 |
+| `disabled` | 禁用该选项         | `<option disabled>`                 |
+| `label`    | 提供选项的简短标签     | `<option label="China">中国</option>` |
 ### textarea元素
 
 文本域，多行文本框
-
+`<textarea name="comment"></textarea>`
 ### 按钮元素
 
 button
 
 type属性：reset、submit、button，默认值submit
+
+`<button type="submit">提交</button>`
 
 ### 表单状态
 
@@ -1058,28 +1105,119 @@ disabled属性：布尔属性，是否禁用，会改变表单显示样式
 #### label
 
 普通元素，通常配合单选和多选框使用
+`<label>` 元素是 HTML 表单中用于**定义标签文字**的元素，主要作用是**提升表单的可用性和可访问性**。它可以绑定到一个表单控件（如 `<input>`、`<select>`、`<textarea>`），**让用户点击文字时也能激活该控件**。
 
 - 显示关联
+	可以通过for属性，让label元素关联某一个表单元素，for属性书写表单元素id的值
+	```html
+	<label for="username">用户名：</label>
+	<input type="text" id="username" name="username">
 
-可以通过for属性，让label元素关联某一个表单元素，for属性书写表单元素id的值
+	```
+- 隐式关联（嵌套写法）
+	```html
+	<label>
+	  用户名：
+	  <input type="text" name="username">
+	</label>
 
-- 隐式关联
+	```
 
-#### datalist
+#### datalist元素
 
 数据列表
 
 该元素本身不会显示到页面，通常用于和普通文本框配合
 
+```html
+<label for="browser">请选择或输入浏览器：</label>
+<input list="browsers" id="browser" name="browser">
+
+<datalist id="browsers">
+  <option value="Chrome">
+  <option value="Firefox">
+  <option value="Edge">
+  <option value="Safari">
+  <option value="Opera">
+</datalist>
+
+```
+- `<input list="browsers">` 关联到 `<datalist id="browsers">`
+    
+- `<option>` 的 `value` 是可选项的值
+    
+- 用户既可以选，也可以输入其他不在列表中的值
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250702-5.png)
 #### form元素
 
 通常，会将整个表单元素，放置form元素的内部，作用是当提交表单时，会将form元素内部的表单内容以合适的方式提交到服务器。
 
 form元素对开发静态页面没有什么意义。
 
+```html
+<form action="/submit" method="post">
+  <label for="username">用户名：</label>
+  <input type="text" id="username" name="username">
+  
+  <label for="password">密码：</label>
+  <input type="password" id="password" name="password">
+  
+  <button type="submit">登录</button>
+</form>
+
+```
+
+| 属性           | 说明                             | 示例                        |
+| ------------ | ------------------------------ | ------------------------- |
+| `action`     | 表单提交的目标地址（URL）                 | `<form action="/submit">` |
+| `method`     | 提交方式：`get`（默认）或 `post`         | `<form method="post">`    |
+| `target`     | 提交结果的展示位置（如 `_blank`, `_self`） | `<form target="_blank">`  |
+| `name`       | 表单名称，可通过 JS 访问                 | `<form name="loginForm">` |
+| `id`         | 唯一标识                           | `<form id="myForm">`      |
+```html
+    <form action="https://www.baidu.com/" method="GET">
+        <p>
+            账号：
+            <input type="text" name="loginid">
+        </p>
+        <p>
+            密码：
+            <input type="password" name="loginpwd">
+        </p>
+        <p>
+            <button type="submit">提交</button>
+        </p>
+    </form>
+```
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250702-6.png)
 #### fieldset元素
 
 表单分组
+`<fieldset>` 元素是 HTML 表单中用于**对表单中的控件进行分组**的标签，常与 `<legend>` 元素搭配使用，提升表单的**结构性与可读性**。
+- `<legend>` 通常写在 `<fieldset>` 的**开头**。
+- 内容会显示为该字段集的标题。
+
+<fieldset>
+  <legend>个人信息</legend>
+
+  <label for="name">姓名：</label>
+  <input type="text" id="name" name="name">
+
+  <label for="email">邮箱：</label>
+  <input type="email" id="email" name="email">
+</fieldset>
+```html
+<fieldset>
+  <legend>个人信息</legend>
+
+  <label for="name">姓名：</label>
+  <input type="text" id="name" name="name">
+
+  <label for="email">邮箱：</label>
+  <input type="email" id="email" name="email">
+</fieldset>
+```
+
 ## 4. 美化表单元素
 ### 新的伪类
 
@@ -1108,6 +1246,7 @@ css属性resize：
 
 4. 控制单选和多选的样式
 ## 5.表单练习
+
 ## 6.表格元素
 在css技术出现之前，网页通常使用表格布局。
 
@@ -1120,50 +1259,32 @@ css属性resize：
 表格不再适用于网页布局？表格的渲染速度过慢。
 ## 7.其他元素
 1. abbr
-    
-
-缩写词
+	缩写词
 
 2. time
-    
-
-提供给浏览器或搜索引擎阅读的时间
+    提供给浏览器或搜索引擎阅读的时间
 
 3. b （bold）
-    
-
-以前是一个无语义元素，主要用于加粗字体
+    以前是一个无语义元素，主要用于加粗字体
 
 4. q
-    
-
-一小段引用文本
+    一小段引用文本
 
 5. blockquote
-    
-
-大段引用的文本
+    大段引用的文本
 
 6. br
-    
-
-无语义 主要用于在文本中换行
+    无语义 主要用于在文本中换行
 
 7. hr
-    
-
-无语义 主要用于分割
+    无语义 主要用于分割
 
 8. meta
-    
-
-还可以用于搜索引擎优化（SEO）
+    还可以用于搜索引擎优化（SEO）
 
 9. link
-    
-
-链接外部资源（CSS、图标）
-
-rel属性：relation，链接的资源和当前网页的关系
-
-type属性：链接的资源的MIME类型
+	链接外部资源（CSS、图标）
+	
+	rel属性：relation，链接的资源和当前网页的关系
+	
+	type属性：链接的资源的MIME类型
