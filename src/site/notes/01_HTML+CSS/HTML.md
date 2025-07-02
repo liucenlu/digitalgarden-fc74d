@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-06-23T16:59:59.691+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML/","created":"2025-06-22T10:46:28.670+08:00","updated":"2025-07-02T20:27:56.497+08:00"}
 ---
 
 # HTML核心
@@ -972,8 +972,9 @@ ul：unordered list
 
 # HTML进阶
 ## 1.iframe元素
-框架页
 
+框架页
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250702-1.png)
 通常用于在网页中嵌入另一个页面
 
 iframe 可替换元素
@@ -981,44 +982,55 @@ iframe 可替换元素
 1. 通常行盒
 2. 通常显示的内容取决于元素的属性
 3. CSS不能完全控制其中的样式
-4. 具有行快盒的特点
+4. 具有行块盒的特点
 ## 2.在页面中使用flash
-object
 
-embed
+在 HTML 中，Flash 曾是嵌入动态内容（如动画、视频、游戏）的主流技术，但随着 HTML5 的普及已逐渐被淘汰。
 
-它们都是可替换元素
+- object元素	
+	它们都是可替换元素
+	
+	`type="application/x-shockwave-flash"`，type的值是资源的MIME类型。
+	MIME(Multipurpose Internet Mail Extensions)
+	
+	多用途互联网邮件类型：
+	
+	比如，资源是一个jpg图片，MIME：image/jpeg
+	- 子元素parm
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250702-2.png)
+```html
+<object data='./example.swf' type="application/x-shockwave-flash"></object>
+```
 
-MIME(Multipurpose Internet Mail Extensions)
-
-多用途互联网邮件类型：
-
-比如，资源是一个jpg图片，MIME：image/jpeg
+- embed元素
+	- 与object写法不同，功能相似
+```html
+<embed quality="high" src="./example.swf" type="application/x-shockwave-flash"></embed>
+```
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250702-3.png)
 ## 3.表单元素
+
 一系列元素，主要用于收集用户数据
 
 ### input元素
 
-输入框
+- 输入框
+	- type属性：输入框类型
+		type: text， 普通文本输入框
+		type：password，密码框
+		type: date, 日期选择框，兼容性问题
+		type: search, 搜索框，兼容性问题
+		type: number，数字输入框
+		type: checkbox，多选框
+		type: radio，单选框
+		- 以上不同type有其特有的一些属性
+	- value属性：输入框的值
+	- placeholder属性：显示提示的文本，文本框没有内容时显示
+`<input type="password" placeholder="请输入密码">`
 
-- type属性：输入框类型
-
-type: text， 普通文本输入框
-type：password，密码框
-type: date, 日期选择框，兼容性问题
-type: search, 搜索框，兼容性问题
-type: number，数字输入框
-type: checkbox，多选框
-type: radio，单选框
-
-- value属性：输入框的值
-- placeholder属性：显示提示的文本，文本框没有内容时显示
-
-
-input元素可以制作按钮
-
-当type值为reset、button、submit时，input表示按钮。
-
+- input元素可以制作按钮
+	当type值为reset、button、submit时，input表示按钮。
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250702-4.png)
 ### select元素
 
 下拉列表选择框
