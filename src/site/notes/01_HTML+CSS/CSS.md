@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-05T20:16:24.813+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-05T20:17:59.249+08:00"}
 ---
 
 # CSS基础
@@ -234,7 +234,7 @@ span::after {
 ```
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-4.png)
 
-[[前端八股/CSS/前端面试 CSS篇_w3cschool#9. 伪元素和伪类的区别和作用？\|../前端八股/CSS/前端面试 CSS篇_w3cschool#9. 伪元素和伪类的区别和作用？]]
+[[前端八股/CSS/前端面试 CSS篇_w3cschool#9. 伪元素和伪类的区别和作用？\|伪元素和伪类的区别和作用？]]
 ### 选择器的组合
 
 1. 并且`p.red{}`
