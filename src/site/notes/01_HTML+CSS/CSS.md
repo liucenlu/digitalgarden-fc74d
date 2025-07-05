@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-05T20:17:59.249+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-05T20:36:34.992+08:00"}
 ---
 
 # CSS基础
@@ -275,7 +275,7 @@ span::after {
 2. 百位：等于选择器中所有id选择器的数量
 3. 十位：等于选择器中所有类选择器、属性选择器、伪类选择器的数量
 4. 个位：等于选择器中所有元素选择器、伪元素选择器的数量
-[1. CSS选择器及其优先级](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#1.%20CSS选择器及其优先级)
+[[前端八股/CSS/前端面试 CSS篇_w3cschool#1. CSS选择器及其优先级\|1. CSS选择器及其优先级]]
 ### 3. 比较源次序
 代码书写靠后的胜出
 
@@ -302,7 +302,7 @@ span::after {
 渲染每个元素的前提条件：该元素的所有CSS属性必须有值
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250626-8.png)
 一个元素，从所有属性都没有值，到所有的属性都有值，这个计算过程，叫做属性值计算过程
-[属性值计算过程简介](属性值计算过程简介.pdf)
+[[属性值计算过程简介.pdf|属性值计算过程简介]]
 1. 确定声明值
 2. 层叠冲突
 3. 使用继承
@@ -319,7 +319,7 @@ span::after {
     `color:inherit;`
 - initial：初始值，将该属性设置为默认值
 ## 7.盒模型
-[11. 对盒模型的理解](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#11.%20对盒模型的理解)
+[[前端八股/CSS/前端面试 CSS篇_w3cschool#11. 对盒模型的理解\|11. 对盒模型的理解]]
 box：盒子，每个元素在页面中都会生成一个矩形区域（盒子）
 
 盒子类型：
@@ -524,7 +524,7 @@ display：inline-block 的盒子
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250627-5.png)
 这些源码中的空白会被折叠为一个空格
 ### 可替换元素 和 非可替换元素
-[15. 替换元素的概念及计算规则](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#15.%20替换元素的概念及计算规则)
+[[前端八股/CSS/前端面试 CSS篇_w3cschool#15. 替换元素的概念及计算规则\|15. 替换元素的概念及计算规则]]
 
 + 大部分元素，页面上显示的结果，取决于==元素内容==，称为**非可替换元素**
 
@@ -722,7 +722,7 @@ object-fit：contain|fill|cover
 涉及的CSS属性：position
 
 ### position属性
-[6. position的属性有哪些，区别是什么](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#6.%20position的属性有哪些，区别是什么)
+[[前端八股/CSS/前端面试 CSS篇_w3cschool#6. position的属性有哪些，区别是什么\|6. position的属性有哪些，区别是什么]]
 - 默认值：static，静态定位（不定位）
 - relative：相对定位
 - absolute：绝对定位
@@ -766,7 +766,7 @@ object-fit：contain|fill|cover
 - 可视窗口：用户可见的浏览器窗口范围（拉动滚动条元素固定）
 
 ### 定位下的居中
-[1.div 怎么垂直居中？居中面试](../前端面试/项目+八股文.md#1.div%20怎么垂直居中？居中面试)
+[[前端面试/项目+八股文#1.div 怎么垂直居中？居中面试\|1.div 怎么垂直居中？居中面试]]
 
 某个方向居中：
 
@@ -778,8 +778,8 @@ object-fit：contain|fill|cover
 ![](/img/user/01_HTML+CSS/attachments/Paste-image-20250701-1.png)
 ![](/img/user/01_HTML+CSS/attachments/attachments/Pasted image 20250701104820.png)
 ### 多个定位元素重叠时
-[30. z-index属性在什么情况下会失效](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#30.%20z-index属性在什么情况下会失效)
-[5. 元素的层叠顺序](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#5.%20元素的层叠顺序)
+[[前端八股/CSS/前端面试 CSS篇_w3cschool#30. z-index属性在什么情况下会失效\|30. z-index属性在什么情况下会失效]]
+[[前端八股/CSS/前端面试 CSS篇_w3cschool#5. 元素的层叠顺序\|5. 元素的层叠顺序]]
 
 - 堆叠上下文
 
@@ -1504,7 +1504,7 @@ BFC渲染区域： 这个区域**由某个HTML元素创建**，以下元素会�
 
 1. 两栏布局
 	侧边栏定宽，主区域自适应（overflow:hidden创建bfc区域，避开浮动元素的常规流盒子）
-	[3. 两栏布局的实现](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#3.%20两栏布局的实现)
+	[[前端八股/CSS/前端面试 CSS篇_w3cschool#3. 两栏布局的实现\|3. 两栏布局的实现]]
 	```css
 	.clearfix::after{
 		content: "";
@@ -1530,7 +1530,7 @@ BFC渲染区域： 这个区域**由某个HTML元素创建**，以下元素会�
 	}
 	```
 2. 三栏布局
-	[4. 三栏布局的实现](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#4.%20三栏布局的实现)
+	[[前端八股/CSS/前端面试 CSS篇_w3cschool#4. 三栏布局的实现\|4. 三栏布局的实现]]
 ```css
 .clearfix::after {
 	content: "";
@@ -1818,7 +1818,7 @@ line_height=2的继承顺序是先继承到子元素，再进行计算
 解决方法：
 1. 设置父元素的字体大小为0（副作用：文字都会看不见）
 2. 将图片设置为块盒
-![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-18.png)
+![attachments/Paste-image-20250705-18.png](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-18.png)
 ## 9.\[扩展]参考线-深入理解字体
 font-size、line-height、vertical-align、font-family
 
