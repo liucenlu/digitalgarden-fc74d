@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-02T14:47:32.142+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-05T19:36:07.302+08:00"}
 ---
 
 # CSS基础
@@ -1340,60 +1340,431 @@ body {
 
 # CSS进阶
 ## 1.@规则
-at-rule: @规则、@语句、CSS语句、CSS指令
 
-1. import
-    
+at-rule: @规则、@语句、CSS语句、CSS指令（多种叫法）
 
-@import "路径";
+- import
+    @import "路径";
+    导入另外一个css文件
 
-导入另外一个css文件
-
-2. charset
-    
-
+- charset
+    @charset "utf-8";
+	告诉浏览器该CSS文件，使用的字符编码集是utf-8，必须写到第一行
+```css
 @charset "utf-8";
+@import "reset.css";
 
-告诉浏览器该CSS文件，使用的字符编码集是utf-8，必须写到第一行
+h1{
+    text-align: center;
+    font-size: 3em;
+}
+```
 ## 2.web字体和图标
 ### web字体
 
 用户电脑上没有安装相应字体，强制让用户下载该字体
 
-使用@font-face指令制作一个新字体
+使用==@font-face==指令制作一个新字体
+```html
+<head>
+…………
+    <title>Document</title>
+    <style>
+        /* 制作一个新的字体，名称叫做good night */
+        @font-face {
+            font-family: "good night";
+            src: url("./font/晚安体.ttf");
+        }
+        /* 使用该字体 */
+        p {
+            font-family: "good night";
+        }
+    </style>
+</head>
 
+<body>
+    <p>
+        长夜降至，我从今开始守望。
+    </p>
+</body>
+```
 ### 字体图标
 
-iconfont.cn
+iconfont.cn：[iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)
+
+将字体制作成图标的样式，将图标打包成字体文件，css中控制字体的样式同样使用于字体图标。
+
+以使用iconfont图标库为例：
+将需要的图标添加到项目中，可以在线/离线下载使用
+使用方式：
+- iconfont提供三种方式，分别是Unicode、Font class和Symbol
+- Font class的方式：link元素链接相关css文件，使用图标只需在元素中添加两个类名（iconfont + 图标对应的类名）
+- ps：如果图标本身是彩色的，需要在项目配置种勾选对应选项，否则显示出来的图标只有黑白的
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-1.png)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4967201_nm4stog87w.css">
+</head>
+<body>
+    <p>
+        <i class="iconfont icon-dianshizhibo"></i>
+        <span>adsfasdfasdf</span>
+        <i class="iconfont icon-fangwu"></i>
+    </p>
+</body>
+</html>
+```
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705.png)
+- Unicode的方式
+```html
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            /* project id 1206816 */
+            src: url('//at.alicdn.com/t/font_1206816_qshsac4925m.eot');
+            src: url('//at.alicdn.com/t/font_1206816_qshsac4925m.eot?#iefix') format('embedded-opentype'),
+                url('//at.alicdn.com/t/font_1206816_qshsac4925m.woff2') format('woff2'),
+                url('//at.alicdn.com/t/font_1206816_qshsac4925m.woff') format('woff'),
+                url('//at.alicdn.com/t/font_1206816_qshsac4925m.ttf') format('truetype'),
+                url('//at.alicdn.com/t/font_1206816_qshsac4925m.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont";
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <i class="iconfont">
+            &#xe62e;
+        </i>
+    </p>
+</body>
+```
 ## 3.块级格式化上下文
+
+全称Block Formatting Context，简称==BFC== 
+它是一块独立的渲染区域，它规定了在该区域中，==常规流块盒==的布局
+ - 常规流块盒在水平方向上，必须撑满包含块 
+ - 常规流块盒在包含块的垂直方向上依次摆放 
+ - 常规流块盒若外边距无缝相邻，则进行外边距合并 
+ - 常规流块盒的自动高度和摆放位置，无视浮动元素
+### BFC的产生
+BFC渲染区域： 这个区域**由某个HTML元素创建**，以下元素会在其内部创建BFC区域： 
+- **根元素** 意味着，\<html>元素创建的BFC区域，覆盖了网页中所有的元素
+- **浮动和绝对定位元素** 
+- **overflow不等于visible的块盒**
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-2.png)
+### BFC的规则
+不同的BFC区域，它们进行渲染时互不干扰 
+创建BFC的元素，隔绝了它内部和外部的联系，内部的渲染不会影响到外部 
+具体规则： 
+1. 创建BFC的元素，它的自动高度需要计算**浮动元素**（可以利用此规则解决浮动元素造成的高度坍塌） 
+2. 创建BFC的元素，它的边框盒不会与**浮动元素**重叠 （多栏布局）
+	![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-3.png)
+3. 创建BFC的元素，不会和它的子元素进行外边距合并
+	1. 因为父元素处于根元素所创建的BFC，而子元素处于父元素所创建的BFC，二者渲染时互不干扰
+	![](/img/user/01_HTML+CSS/attachments/attachments/Pasted image 20250705112636.png)
+
+#### 解决高度坍塌
+1. 添加clearfix类（以前的做法，副作用最小、最优）：在浮动元素的父元素下添加最后一个子元素，将其设置为块盒并添加一系列属性清除浮动
+	```css
+	.clearfix::after{
+		content:"";
+		display:block;
+		clear:both;
+	}
+	```
+2. 将浮动元素的父元素变为创建BFC的元素，让浮动元素处于父元素创建的BFC区域中。
+	给父元素添加以下属性（都会产生一定的副作用）:
+	1. position:absolute;
+	2. float:left;
+	3. overflow:hidden;
+	```css
+	.container{
+		background: lightblue;
+		/* position: absolute; */
+		/* float: left; */
+		/* 副作用最小的方式 */
+		overflow: hidden; 
+	}
+	```
 ## 4.布局
 ### 多栏布局
 
-两栏布局
+1. 两栏布局
+	侧边栏定宽，主区域自适应（overflow:hidden创建bfc区域，避开浮动元素的常规流盒子）
+	[3. 两栏布局的实现](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#3.%20两栏布局的实现)
+	```css
+	.clearfix::after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+	.container {
+		background: lightblue;
+		width: 90%;
+		margin: 0 auto;
+	}
+	.aside{
+		float: left;
+		background: #008c8c;
+		color: #fff;
+		width: 300px;
+		margin-right: 30px;
+	}
+	
+	.main{
+		overflow: hidden;
+		background: gray;
+	}
+	```
+2. 三栏布局
+	[4. 三栏布局的实现](../前端八股/CSS/前端面试%20CSS篇_w3cschool.md#4.%20三栏布局的实现)
+```css
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
 
-三栏布局
+.container {
+	padding: 30px;
+	border: 3px solid;
+}
+
+.left {
+	float: left;
+	width: 300px;
+	background: lightblue;
+	margin-right: 20px;
+}
+
+.right {
+	float: right;
+	width: 300px;
+	background: lightblue;
+	margin-left: 20px;
+}
+
+.main{
+	overflow: hidden;
+	border: 2px solid;
+}
+```
 
 ### 等高
 
 1. CSS3的弹性盒
 2. JS控制
 3. 伪等高
+	给侧边栏一个很高的height+负下外边距（这样实际高度不会很高），再给父容器设置溢出隐藏
+```css
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.container {
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.aside{
+	float: left;
+	background: #008c8c;
+	color: #fff;
+	width: 300px;
+	margin-right: 30px;
+	height: 10000px;
+	margin-bottom: -9990px;
+}
 
+.main{
+	overflow: hidden;
+	background: gray;
+}
+```
 ### 元素书写顺序
 
+要将浮动元素和常规流盒子并列排放，实现多栏布局，要注意一定要把浮动元素写在前面，因为浮动元素在浮动时会主动避开常规流盒子。
+```html
+    <div class="container clearfix">
+        <aside class="left">
+            Lorem ipsum dolor sit amet consectetur     </aside>
+
+        <aside class="right">
+            Lorem ipsum dolor, sit amet consectetur adipisicing         
+        </aside>
+
+        <div class="main">
+           Lorem ipsum, dolor sit amet consectetur adipisicing elit.       
+        </div>
+    </div>
+```
+
+- 利用**绝对定位**，左右两栏设置为绝对定位，中间设置对应方向大小的margin的值。（这种方式就不需要考虑元素书写顺序）
 ### 后台页面的布局
+整个页面使用定位fixed占满浏览器窗口
+头部使用绝对定位
+内容区为常规流盒子，使用padding-top避开头部
+内容区再分为侧边栏+核心区
+侧边栏浮动，核心区通过overflow:auto;产生bfc避开侧边栏
+[scroll]
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .app {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+
+        .header {
+            height: 60px;
+            background: #000;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .container{
+            width: 100%;
+            height: 100%;
+            background: lightblue;
+            padding-top: 60px;
+            box-sizing: border-box;
+        }
+
+        .container .left{
+            float: left;
+            width: 300px;
+            background: rgb(119, 119, 119);
+            color: #fff;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        .container .main{
+            overflow: hidden;
+            height: 100%;
+            background: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>的撒按时打发十分阿斯蒂发</h1>
+        </header>
+        <div class="container">
+            <aside class="left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio obcaecati molestias accusantium vel debitis. Nam facilis perferendis corporis ad natus corrupti perspiciatis nisi est, assumenda, ab dicta eos et rem, asperiores necessitatibus sequi quaerat non. Voluptas, perferendis? Est pariatur accusantium quibusdam nemo magnam maiores tenetur, necessitatibus, a esse voluptatem aperiam rerum quae aliquid placeat ullam alias enim
+            </aside>    
+            <div class="main">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates facilis numquam aspernatur, impedit similique, tempora temporibus, dicta quam aperiam dignissimos maxime deserunt nemo eum enim. Iusto odio voluptates doloribus cupiditate repellendus impedit, ipsa beatae atque fuga distinctio voluptas saepe nemo commodi, odit minima eveniet dolore voluptate enim! Vel dolores vero beatae eius, iusto quasi re
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+```
+
 ## 5.\[扩展]浮动的细节规则
+- 左浮动的盒子向上向左排列 
+- 浮动的盒子向上向右排列
+- 浮动盒子的顶边不得高于上一个盒子的顶边 
+- 若剩余空间无法放下浮动的盒子，则该盒子向下移动，直到具备足 够的空间能容纳盒子，然后再向左或向右移动
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-4.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-5.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-6.png)
+![](attachments/Pasted%20image%2020250705191120.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-8.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-9.png)
 ## 6.\[扩展]行高的取值
-line-height
+
+**line-height**
 
 1. px, 像素值
     
 2. 无单位的数字
     
-3. em单位
+3. em单位：元素字体大小的n倍
     
 4. 百分比
+
+```css
+.container {
+	line-height: 30px;
+}
+.p1{
+	font-size: 40px;
+}
+
+.p2{
+	font-size: 12px;
+}
+```
+多行文本设置行高为固定值可能带来的问题：
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-10.png)
+此时修改代码为
+```css
+.container {
+	/* 行高为字体大小的两倍 */
+	/* 先计算像素值，再继承 */
+	line-height: 2em; 
+}
+```
+发现问题依旧存在，因为container的字体大小未定义，其父元素body也没定义字体大小，最终继承了html中浏览器基准字体大小，也就是16px，2em=32px,所以子元素p1和p2继承到的line_height就是32px，与上述问题没有本质区别。
+因为line_height=2**em**的计算顺序是先计算像素值，子元素再继承(200%效果跟2em一样)
+
+再修改为
+```css
+.container {
+	/* 行高为字体大小的两倍 */
+	/* 先继承，再计算 */
+	line-height: 2;
+}
+```
+line_height=2的继承顺序是先继承到子元素，再进行计算
+所以p1的行高=p1的字体大小的两倍，也就是40px*2=80px，上述问题得到解决
+
 ## 7.\[扩展]body背景
+
 **画布 canvas**
 
 一块区域
