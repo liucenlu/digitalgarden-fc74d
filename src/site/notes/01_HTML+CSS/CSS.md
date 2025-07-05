@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-05T19:36:07.302+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-05T20:11:40.437+08:00"}
 ---
 
 # CSS基础
@@ -1765,7 +1765,12 @@ line_height=2的继承顺序是先继承到子元素，再进行计算
 
 ## 7.\[扩展]body背景
 
-**画布 canvas**
+一个奇怪的现象，body元素的背景会溢出到盒子以外
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-11.png)
+但是给html设置背景后body元素的背景正常了，html元素的背景会跟刚刚body元素一样溢出
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-12.png)
+这是因为画布的存在
+### **画布 canvas**
 
 一块区域
 
@@ -1785,27 +1790,34 @@ line_height=2的继承顺序是先继承到子元素，再进行计算
 如果HTML元素没有背景，BODY元素的背景覆盖画布
 
 **关于画布背景图**
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-13.png)
+背景颜色跟背景图不一样，不会有这个问题
 
 1. 背景图的宽度百分比，相对于视口
-2. 背景图的高度百分比，相对于网页高度
-3. 背景图的横向位置百分比、预设值，相对于视口
+2. 背景图的高度百分比，相对于网页高度（html高度）
+3. 背景图的横向位置百分比、预设值（background-position），相对于视口
 4. 背景图的纵向位置百分比、预设值，相对于网页高度
 ## 8.行盒的垂直对齐
 ### 多个行盒垂直方向上的对齐
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-14.png)
 
-给没有对齐元素设置vertical-align
+给没有对齐元素设置==vertical-align:(预设值|数值)==
 
-预设值
-
+预设值:top、middle、sub
 数值
+
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-15.png)
+
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-16.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-17.png)
 
 ### 图片的底部白边
 
 图片的父元素是一个块盒，块盒高度自动，图片底部和父元素底边之间往往会出现空白。
-
-1. 设置父元素的字体大小为0
+解决方法：
+1. 设置父元素的字体大小为0（副作用：文字都会看不见）
 2. 将图片设置为块盒
-
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250705-18.png)
 ## 9.\[扩展]参考线-深入理解字体
 font-size、line-height、vertical-align、font-family
 
