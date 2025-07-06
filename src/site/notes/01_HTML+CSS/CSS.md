@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-05T20:36:34.992+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/CSS/","created":"2025-06-22T11:11:06.656+08:00","updated":"2025-07-06T11:35:18.125+08:00"}
 ---
 
 # CSS基础
@@ -1902,26 +1902,163 @@ line-box是承载文字内容的必要条件，以下情况不生成行框：
 1. 行块盒最后一行有line-box，用最后一行的基线作为整个行块盒的基线。
 2. 如果行块盒内部没有行盒，则使用下外边距作为基线
 ## 10.\[扩展]堆叠上下文
+
 堆叠上下文（stack context），它是一块区域，这块区域由某个元素创建，它规定了该区域中的内容在Z轴上排列的先后顺序。
 
 ### 创建堆叠上下文的元素
 
 1. html元素（根元素）
-2. 设置了z-index（非auto）数值的定位元素
-
+2. 设置了z-index（非auto）数值的**定位元素**
+```html
+    <style>
+        .container{
+            position: relative;
+            z-index: -1;
+        }
+        /* div本身在html创建的堆叠上下文中，
+        div的子元素在div创建的堆叠上下文中 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p></p>
+        </div>
+    </div>
+</body>
+```
 ### 同一个堆叠上下文中元素在Z轴上的排列
 
-从后到前的排列顺序：
+从底层到上层的排列顺序：
 
 1. 创建堆叠上下文的元素的背景和边框
-2. 堆叠级别(z-index, stack level)为负值的堆叠上下文
+2. 堆叠级别(z-index, stack level)为负值的堆叠上下文，级别相同后出现的元素覆盖先出现的元素
 3. 常规流非定位的块盒
 4. 非定位的浮动盒子
 5. 常规流非定位行盒
-6. 任何 z-index 是 auto 的定位子元素，以及 z-index 是 0 的堆叠上下文
+6. 任何 z-index 是 auto 的定位子元素（没设置z-index的定位元素默认z-index值为auto），以及 z-index 是 0 的堆叠上下文
 7. 堆叠级别为正值的堆叠上下文
 
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250706.png)
+
+[scroll]
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html{
+            background: lightblue;
+        }
+        .container{
+            background: #008c8c;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            /* z-index: 0; */
+            margin: 50px;
+        }
+
+        .item{
+            width: 200px;
+            height: 200px;
+            background: red;
+            z-index: -1;
+            position: absolute;
+            left: -80px;
+            top: -40px;
+        }
+
+        .normal{
+            width: 200px;
+            height: 200px;
+            background: chocolate;
+            margin-top: -380px;
+        }
+        .float{
+            width: 200px;
+            height: 200px;
+            background: brown;
+            float: left;
+            margin-left: 100px;
+            margin-top: -370px;
+        }
+        .position-index{
+            position: relative;
+            width: 100px;
+            height: 50px;
+            background-color: aliceblue;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <p style="background: lightyellow">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque suscipit ullam nam corporis at placeat, tempore tenetur? Impedit, aliquid provident officiis aspernatur ea pariatur optio! Laudantium dolor voluptatibus explicabo quae?
+    </p>
+    <div class="container">
+        <div class="item"></div>
+    </div>
+    <div class="float"></div>
+    <div class="normal"></div>
+   <div class="position-index"></div>
+</body>
+</html>
+```
+以上元素均处于html所创建的堆叠上下文
+若是多个不同堆叠上下文
 每个堆叠上下文，独立于其他堆叠上下文，它们之间不能相互穿插。
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250706-1.png)
+```html
+<style>
+	html {
+		background: lightblue;
+	}
+
+	.c1 {
+		position: relative;
+		z-index: 0;
+		width: 200px;
+		height: 200px;
+		background: #008c8c;
+	}
+
+	.c2 {
+		position: absolute;
+		z-index: -1;
+		width: 200px;
+		height: 200px;
+		background: chocolate;
+		left: 100px;
+		top: 100px;
+	}
+	.item1{
+		position: absolute;
+		width: 100px;
+		height: 100px;
+	}
+	.item1{
+		right: -50px;
+		bottom: -50px;
+	}
+</style>
+</head>
+
+<body>
+<div class="c1">
+	<div class="item1" style="background: red; z-index: -9999;"></div>
+ 
+</div>
+<div class="c2">
+	<div class="item1" style="background: rgb(145, 0, 0); z-index: 9999;"></div>
+
+</div>
+</body>
+```
 ## 11.\[扩展]svg
 # svg
 
