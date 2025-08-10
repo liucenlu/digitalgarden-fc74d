@@ -1,11 +1,11 @@
 ---
-{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML5+CSS3/","created":"2025-08-10T09:47:52.805+08:00","updated":"2025-08-10T09:55:42.050+08:00"}
+{"dg-publish":true,"permalink":"/01_HTML+CSS/HTML5+CSS3/","created":"2025-08-10T09:47:52.805+08:00","updated":"2025-08-10T10:02:42.330+08:00"}
 ---
 
 # CSS3
 # 布局
 
-![image-20210511102549096](http://mdrs.yuanjin.tech/img/20210511102802.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-5.png)
 
 **浮动**：做文字环绕效果
 
@@ -21,7 +21,7 @@
 
 ### 生成弹性容器和弹性项目
 
-![image-20210511112624876](http://mdrs.yuanjin.tech/img/20210511112624.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-6.png)
 
 **默认情况下，**弹性项目沿着主轴依次排列，侧轴拉伸
 
@@ -29,19 +29,19 @@
 
 通过`flex-direction`可更改主轴方向
 
-![image-20210511112510632](http://mdrs.yuanjin.tech/img/20210511112510.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-7.png)
 
 ### 主轴排列
 
 通过`justify-content`属性，可以影响主轴的排列方式
 
-![image-20210511113617325](http://mdrs.yuanjin.tech/img/20210511113617.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-8.png)
 
 ### 侧轴排列
 
 通过`align-items`属性，可以影响侧轴的排列方式
 
-![image-20210511114016304](http://mdrs.yuanjin.tech/img/20210511114016.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-9.png)
 
 ### 弹性项目伸缩
 
@@ -51,11 +51,11 @@
 
 拉伸示例：
 
-![image-20210511120916571](http://mdrs.yuanjin.tech/img/20210511120916.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-10.png)
 
 压缩示例：
 
-![image-20210511121459341](http://mdrs.yuanjin.tech/img/20210511121459.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-11.png)
 
 默认情况下，`flex: 0 1 auto`
 
@@ -65,7 +65,7 @@
 
 给**弹性容器**设置`flex-wrap: wrap`，即可主轴换行
 
-<img src="http://mdrs.yuanjin.tech/img/20210511123310.png" alt="image-20210511123310673" style="zoom:50%;" />
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-12.png)
 
 > 尽管如此，多行多列仍然推荐使用网格布局
 
@@ -81,7 +81,7 @@
 
 ### 生成网格布局
 
-<img src="http://mdrs.yuanjin.tech/img/20210511165317.png" alt="image-20210511165317363" style="zoom:50%;" />
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-13.png)
 
 容器生成网格布局后，其所有子元素为**网格项目**
 
@@ -93,13 +93,13 @@
 
 **它们的语法是相同的**
 
-![image-20210511172305100](http://mdrs.yuanjin.tech/img/20210511172305.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-14.png)
 
 ### 改变排列方向
 
 使用属性`grid-auto-flow: column`，可使子元素按列排放
 
-<img src="http://mdrs.yuanjin.tech/img/20210511173447.png" alt="image-20210511173447321" style="zoom:50%;" />
+![](attachments/Pasted%20image%2020250810095942.png)
 
 ### 单元格之间的间隙
 
@@ -109,7 +109,7 @@ column-gap: 20px; /* 列间隙为20px */
 gap: 10px 20px; /* 行间隙为10px，列间隙为20px */
 ```
 
-![image-20210512132025687](http://mdrs.yuanjin.tech/img/20210512132025.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-16.png)
 
 ### 单元格内部的对齐
 
@@ -126,7 +126,7 @@ justify-items: start 左 | end 右 | center 中 | stretch 拉伸;
 align-items: start 上 | end 下 | center 中 | stretch 拉伸;
 ```
 
-<img src="http://mdrs.yuanjin.tech/img/20210511174450.png" alt="image-20210511174450356" style="zoom:50%;" />
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-17.png)
 
 可以使用速写属性`place-items: 垂直对齐方式 水平对齐方式`同时设置这两个值
 
@@ -146,7 +146,7 @@ place-items: start center; /* 垂直靠上，水平居中 */
 grid-area: 起始行线编号/起始列线编号/结束行线编号/结束列线编号;
 ```
 
-<img src="http://mdrs.yuanjin.tech/img/20210511180028.png" alt="image-20210511180027983" style="zoom:50%;" />
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-18.png)
 
 # 视觉
 
@@ -180,7 +180,7 @@ grid-area: 起始行线编号/起始列线编号/结束行线编号/结束列线
 
 通过设置`border-radius`，可以设置盒子的圆角
 
-![image-20210512131026084](http://mdrs.yuanjin.tech/img/20210512131026.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-19.png)
 
 `border-radius`可以有很多灵活的用法，将下面的代码依次粘贴到页面中测试一下
 
@@ -205,7 +205,7 @@ border-radius: 10px 20px 30px 40px; /* 分别设置左上、右上、右下、�
 background: linear-gradient(to bottom, #e66465, #9198e5);
 ```
 
-![image-20210512135024676](http://mdrs.yuanjin.tech/img/20210512135028.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-20.png)
 
 ## 变形
 
@@ -227,13 +227,13 @@ background: linear-gradient(to bottom, #e66465, #9198e5);
 
 使用`translate`可以让盒子在原来位置上产生位移，类似于相对定位
 
-![image-20210512140622630](http://mdrs.yuanjin.tech/img/20210512140643.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-21.png)
 
 ### scale 缩放
 
 使用`translate`可以让盒子在基于原来的尺寸发生缩放
 
-![image-20210512141500499](http://mdrs.yuanjin.tech/img/20210512141500.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-22.png)
 
 ### rotate 旋转
 
@@ -339,7 +339,7 @@ transition: 过渡属性 持续时间 过渡函数 过渡延迟
 
 **动画的本质是预先定义的一套css变化规则，然后给该规则取个名字**
 
-![image-20210513172902413](http://mdrs.yuanjin.tech/img/20210513172902.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-23.png)
 
 然后，其他元素即可使用这样的规则：
 
@@ -368,7 +368,7 @@ animation: 规则名 持续时间 重复次数 时间函数 动画方向 延迟�
 
 一图胜千言
 
-![image-20210514150015660](http://mdrs.yuanjin.tech/img/20210514150015.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-24.png)
 
 使用`border-box`控制尺寸更加直观，因此，很多网站都会加入下面的代码
 
@@ -404,7 +404,7 @@ css3属性`object-fit`可以控制**多媒体内容和与元素**的适应方式
 
 下图中的所有`img`元素均被固定了宽高，溢出img的部分实际上均不会显示
 
-![image-20210514134908778](http://mdrs.yuanjin.tech/img/20210514134908.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-25.png)
 
 ## 视口单位
 
@@ -416,7 +416,7 @@ css3支持使用`vw`和`vh`作为单位，分别表示`视口宽度`和`视口�
 
 通过`::before`和`::after`选择器，可以通过css给元素生成两个子元素
 
-<img src="http://mdrs.yuanjin.tech/img/20210514140049.png" alt="image-20210514140049244" style="zoom:50%;" />
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-26.png)
 
 使用伪元素可以避免在HTML中使用过多的空元素
 
@@ -432,7 +432,7 @@ css3支持使用`vw`和`vh`作为单位，分别表示`视口宽度`和`视口�
 
 # HTML5手册
 
-![image-20210518112556986](http://mdrs.yuanjin.tech/img/20210518112557.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-27.png)
 
 HTML5包含两个部分的更新，分别是`文档`和`web api`
 
@@ -538,7 +538,7 @@ HTML5包含两个部分的更新，分别是`文档`和`web api`
 
 ### 自定义数据属性
 
-![image-20210518123117393](http://mdrs.yuanjin.tech/img/20210518123117.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-28.png)
 
 ### input的新增属性
 
@@ -622,7 +622,7 @@ JSON.parse(jsonString); // 将JSON格式的字符串转换为对象或数组
 
 浮动的帧率就导致一个问题，我们在使用`setInterval`等计时器实现某些动画效果时，如何才能保证每一帧只执行一次动画效果呢？
 
-![image-20210518133821647](http://mdrs.yuanjin.tech/img/20210518133821.png)
+![](/img/user/01_HTML+CSS/attachments/Paste-image-20250810-29.png)
 
 为了解决该问题，HTML5新增API`requestAnimationFrame`，用于在每一帧渲染**之前**做某些事
 
