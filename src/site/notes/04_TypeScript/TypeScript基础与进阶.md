@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/04_TypeScript/TypeScript基础与进阶/","created":"2025-07-29T19:45:18.750+08:00","updated":"2025-10-09T19:02:00.640+08:00"}
+{"dg-publish":true,"permalink":"/04_TypeScript/TypeScript基础与进阶/","created":"2025-07-29T19:45:18.750+08:00","updated":"2025-10-09T19:10:28.863+08:00"}
 ---
 
 # 1.TypeScript概述
@@ -434,39 +434,39 @@ TypeScript的接口：用于约束类、对象、函数的契约（标准）
 
 1. 接口约束对象
 	```ts
-interface User {
-	name: string
-	age: number
-	sayHello(): void
-	//sayHello: () => void
-}
-
-let u: User = {
-	name: "sdfds",
-	age: 33,
-	sayHello() {
-		console.log("asfadasfaf");
+	interface User {
+		name: string
+		age: number
+		sayHello(): void
+		//sayHello: () => void
 	}
-}
+	
+	let u: User = {
+		name: "sdfds",
+		age: 33,
+		sayHello() {
+			console.log("asfadasfaf");
+		}
+	}
 	```
 2. 接口约束函数
 	```ts
-interface Condition {
-	(n: number): boolean
-}
-
-function sum(numbers: number[], callBack: Condition) {
-	let s = 0;
-	numbers.forEach(n => {
-		if (callBack(n)) {
-			s += n;
-		}
-	})
-	return s;
-}
-
-const result = sum([3, 4, 5, 7, 11], n => n % 2 !== 0);
-console.log(result);
+	interface Condition {
+		(n: number): boolean
+	}
+	
+	function sum(numbers: number[], callBack: Condition) {
+		let s = 0;
+		numbers.forEach(n => {
+			if (callBack(n)) {
+				s += n;
+			}
+		})
+		return s;
+	}
+	
+	const result = sum([3, 4, 5, 7, 11], n => n % 2 !== 0);
+	console.log(result);
 	```
     
 
@@ -474,17 +474,17 @@ console.log(result);
 
 可以通过接口之间的继承，实现多种接口的组合
 ```ts
-interface A {
-    T1: string
-}
-
-interface B {
-    T2: number
-}
-
-interface C extends A, B {
-    T3: boolean
-}
+	interface A {
+	    T1: string
+	}
+	
+	interface B {
+	    T2: number
+	}
+	
+	interface C extends A, B {
+	    T3: boolean
+	}
 ```
 使用类型别名可以实现类似的组合效果，需要通过`&`，它叫做交叉类型
 ```ts
