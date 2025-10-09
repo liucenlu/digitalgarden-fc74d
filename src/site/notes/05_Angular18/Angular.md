@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/05_Angular18/Angular/","created":"2025-07-29T16:13:55.673+08:00","updated":"2025-10-09T19:11:47.966+08:00"}
+{"dg-publish":true,"permalink":"/05_Angular18/Angular/","created":"2025-07-29T16:13:55.673+08:00","updated":"2025-10-09T19:17:28.590+08:00"}
 ---
 
 ## 学习资源
@@ -362,9 +362,9 @@ Angular 支持 **按需加载（Lazy Loading）**，即用户访问某个页面�
 	```
 3. 在todos组件中注入服务|==inject()==
 	```ts
-export class TodosComponent {
-  todoService = inject(TodosService)
-}
+	export class TodosComponent {
+	  todoService = inject(TodosService)
+	}
 	```
 4. 在todos组件中使用服务
 ```ts
