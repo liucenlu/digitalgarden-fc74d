@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/04_TypeScript/TypeScript基础与进阶/","created":"2025-07-29T19:45:18.750+08:00","updated":"2025-10-09T19:10:28.863+08:00"}
+{"dg-publish":true,"permalink":"/04_TypeScript/TypeScript基础与进阶/","created":"2025-07-29T19:45:18.750+08:00","updated":"2025-10-10T17:30:19.043+08:00"}
 ---
 
 # 1.TypeScript概述
@@ -295,6 +295,13 @@ sum(3, 4);
 
 sum(3, 4, 5);
 ```
+
+```ts
+(option: MessageOption) => void
+```
+(option: MessageOption)：函数的「输入参数列表」
+=>：分隔符：左边是 “输入参数”，右边是 “返回值”，表示 “这个函数接收左边的参数，会产生右边的返回值”。
+void：函数的「返回值类型」
 # 4.扩展类型-枚举
 
 > 扩展类型：类型别名、枚举、接口、类
